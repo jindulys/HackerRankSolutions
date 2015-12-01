@@ -204,4 +204,58 @@ class PalindromeIndex {
     }
 }
 
+// https://www.hackerrank.com/challenges/sherlock-and-valid-string
+class SherlockAndValidString {
+    var characterCounts = [Character: Int]()
+    func solution() {
+        let s = getLine()
+        for c in s.characters {
+            if let count = characterCounts[c] {
+                characterCounts[c] = count + 1
+            } else {
+                characterCounts[c] = 1
+            }
+        }
+        
+        var countsOccurrence = [Int: Int]()
+        for i in characterCounts.values {
+            if let occurrence = countsOccurrence[i] {
+                countsOccurrence[i] = occurrence + 1
+            } else {
+                countsOccurrence[i] = 1
+            }
+        }
+        
+        if countsOccurrence.keys.count > 2 {
+            print("NO")
+        } else if countsOccurrence.keys.count == 2 {
+            let keys = [Int](countsOccurrence.keys)
+            let bigKey = max(keys[0], keys[1])
+            let smallKey = min(keys[0], keys[1])
+            
+            // case 1 we could always remove smallkey that only occur 1 and count is 1
+            if (smallKey*countsOccurrence[smallKey]! == 1) {
+                print("YES")
+            } else {
+                
+                // case 2 keys difference great than 2 then must be "NO"
+                if (abs(keys[0] - keys[1]) > 1) {
+                    print("NO")
+                } else {
+                    // case 3 if bigKey's count == 1 then no matter what smallkey's count we could just remove one bigkey's count
+                    if countsOccurrence[bigKey]! == 1 {
+                        print("YES")
+                        // case 3 if bigKey's count != 1, then we could only remove 1 smallkey to success, this element's occurence must be exactly 1
+                    } else {
+                        print("NO")
+                    }
+                }
+
+            }
+        } else {
+            print("YES")
+        }
+    }
+}
+
 
