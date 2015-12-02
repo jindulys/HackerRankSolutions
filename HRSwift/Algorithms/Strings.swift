@@ -234,23 +234,12 @@ class SherlockAndValidString {
             let smallKey = min(keys[0], keys[1])
             
             // case 1 we could always remove smallkey that only occur 1 and count is 1
-            if (smallKey*countsOccurrence[smallKey]! == 1) {
+            // case 2 the difference of occurence is 1 and bigkey is only 1 element
+            if (smallKey*countsOccurrence[smallKey]! == 1 ||
+                (abs(keys[0] - keys[1]) == 1 && countsOccurrence[bigKey]! == 1)) {
                 print("YES")
             } else {
-                
-                // case 2 keys difference great than 2 then must be "NO"
-                if (abs(keys[0] - keys[1]) > 1) {
-                    print("NO")
-                } else {
-                    // case 3 if bigKey's count == 1 then no matter what smallkey's count we could just remove one bigkey's count
-                    if countsOccurrence[bigKey]! == 1 {
-                        print("YES")
-                        // case 3 if bigKey's count != 1, then we could only remove 1 smallkey to success, this element's occurence must be exactly 1
-                    } else {
-                        print("NO")
-                    }
-                }
-
+                print("NO")
             }
         } else {
             print("YES")
