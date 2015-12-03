@@ -332,5 +332,18 @@ extension Queue: CollectionType {
 }
 
 
+/**
+*   ListNode Class
+*/
+class ListNode<T> {
+    var value: T!
+    var next: ListNode?
+    var pre: ListNode?
+    
+    init(_ value: T) {
+        self.value = value
+    }
+}
+
 
 
