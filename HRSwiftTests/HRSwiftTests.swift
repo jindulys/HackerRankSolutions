@@ -65,4 +65,14 @@ class HRSwiftTests: XCTestCase {
         XCTAssert(test3.isPalindrome(), "Pass")
     }
     
+    func testQueueImplementation() {
+        var queue = Queue<String>()
+        queue.enqueue("Yansong")
+        queue.enqueue("Li")
+        queue.enqueue("Great")
+        XCTAssert(queue.dequeue() == .Some("Yansong"), "Pass")
+        XCTAssert(queue.dequeue() == "Li", "Pass")
+        XCTAssert(queue.dequeue() == "Great", "Pass")
+    }
+    
 }

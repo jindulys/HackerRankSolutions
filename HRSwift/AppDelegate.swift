@@ -54,6 +54,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let zC: Character = "z"
         print(zC.unicodeScalarCodePoint())
         
+        let myFirstNode = ListNode(10)
+        myFirstNode.next = ListNode(100)
+        print(myFirstNode)
+        
+        let mySecondNode = ListNode.reverse(myFirstNode)
+        print(mySecondNode)
+        print(myFirstNode)
+        
+        let myLinkedListNode = LinkedListQueue<Int>()
+        myLinkedListNode.enqueue(10)
+        myLinkedListNode.enqueue(100)
+        myLinkedListNode.enqueue(1000)
+        myLinkedListNode.description()
+        print(myLinkedListNode.isEmpty())
+        
+        print(myLinkedListNode.dequeue())
+        print(myLinkedListNode.dequeue())
+        print(myLinkedListNode.dequeue())
+        print(myLinkedListNode.dequeue())
+        print(myLinkedListNode.isEmpty())
+        
+        
         return true
     }
 

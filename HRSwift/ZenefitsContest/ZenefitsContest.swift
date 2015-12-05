@@ -319,6 +319,9 @@ class BattleOfRyloth {
     // Queue to store all the leaves
     var leafNodes = Queue<Int>()
     
+    // Used LinkedListQueue to try to improve performance, failed
+    var leafNodes2 = LinkedListQueue<Int>()
+    
     
     func solution() {
         let numberOfNodes = Int(getLine())!
@@ -365,6 +368,97 @@ class BattleOfRyloth {
                 available[adjacentNode] += extraPersonCount
                 answer += abs(extraPersonCount)
             }
+        }
+        print(answer)
+    }
+    
+    
+    func solution2() {
+        let numberOfNodes = Int(getLine())!
+        for i in 0..<numberOfNodes {
+            let infoArray = getLineToArray().map {Int($0)!}
+            available[i] = infoArray[0]
+            required[i] = infoArray[1]
+        }
+        
+        for _ in 0..<numberOfNodes-1 {
+            let edge = getLineToArray().map {Int($0)!}
+            degree[edge[0]]++;
+            degree[edge[1]]++;
+            graph[edge[0]].append(edge[1])
+            graph[edge[1]].append(edge[0])
+        }
+        
+        // save leaf to leafQueue
+        for i in 0..<numberOfNodes {
+            if degree[i] == 1 {
+                leafNodes2.enqueue(i)
+            }
+        }
+        
+        var answer = 0
+        while !leafNodes2.isEmpty() {
+            let currentLeaf = leafNodes2.dequeue()! as Int
+            // Maybe negative
+            let extraPersonCount = available[currentLeaf] - required[currentLeaf]
+            
+            // delete current leaf node from tree
+            degree[currentLeaf] = 0
+            
+            for i in 0..<graph[currentLeaf].count {
+                let adjacentNode = graph[currentLeaf][i]
+                if degree[adjacentNode] == 0 {
+                    continue
+                }
+                
+                degree[adjacentNode]--
+                if degree[adjacentNode] == 1 {
+                    leafNodes2.enqueue(adjacentNode)
+                }
+                available[adjacentNode] += extraPersonCount
+                answer += abs(extraPersonCount)
+            }
+        }
+        print(answer)
+    }
+    
+    func solution3() {
+        let numberOfNodes = Int(getLine())!
+        for i in 0..<numberOfNodes {
+            let infoArray = getLineToArray().map {Int($0)!}
+            available[i] = infoArray[0]
+            required[i] = infoArray[1]
+        }
+        
+        for _ in 0..<numberOfNodes-1 {
+            let edge = getLineToArray().map {Int($0)!}
+            graph[edge[0]].append(edge[1])
+            graph[edge[1]].append(edge[0])
+        }
+        
+        var seq: [Int] = [Int](count: numberOfNodes, repeatedValue: 0)
+        var p: [Int] = [Int](count: numberOfNodes, repeatedValue: 0)
+        
+        seq[0] = 0
+        p[0] = -1
+        var top = 1
+        
+        for i in SRange(end: numberOfNodes - 1) {
+            let now = seq[i]
+            for j in graph[now] {
+                if j != p[now] {
+                    p[j] = now
+                    seq[top] = j
+                    top += 1
+                }
+            }
+        }
+        
+        var answer = 0
+        for i in SRange(start: numberOfNodes-1, end: 0, step: -1) {
+            let x = seq[i]
+            answer += abs(available[x] - required[x])
+            available[p[x]] += available[x] - required[x]
         }
         print(answer)
     }

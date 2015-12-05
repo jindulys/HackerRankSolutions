@@ -282,7 +282,7 @@ class RangeGenerator: GeneratorType {
 // MARK: Data Structures
 
 /**
-*  Queue
+*  Queue FIFO, this implementation could achieve amortised O(1) enqueue and dequeue
 */
 
 struct Queue<Element> {
@@ -333,17 +333,107 @@ extension Queue: CollectionType {
 
 
 /**
+    LinkedListQueue 
+*/
+class LinkedListQueue<Element: CustomStringConvertible> {
+    private var head: ListNode<Element>
+    private var end: ListNode<Element>
+    
+    init() {
+        head = ListNode<Element>()
+        end = head
+    }
+    
+    func enqueue(element: Element) {
+        let newNode = ListNode(element)
+        end.next = newNode
+        newNode.pre = end
+        end = newNode
+    }
+    
+    func dequeue() -> Element? {
+        if isEmpty() {
+            return nil
+        }
+        let retVal = head.next!.value!
+        if let nextHead = head.next!.next {
+            head.next = nextHead
+            nextHead.pre = head
+        } else {
+            end = head
+        }
+        return retVal
+    }
+    
+    func isEmpty() -> Bool {
+        return head === end
+    }
+    
+    func description() {
+        print(head)
+    }
+}
+
+
+/**
 *   ListNode Class
 */
-class ListNode<T> {
-    var value: T!
+class ListNode<T: CustomStringConvertible>{
+    var value: T?
     var next: ListNode?
     var pre: ListNode?
     
-    init(_ value: T) {
+    init() {}
+    
+    convenience init(_ value: T) {
+        self.init()
         self.value = value
     }
+    
+    /**
+     Reverse a ListNode return a new ListNode with reversed order
+     
+     - parameter node: node to be reversed
+     
+     - returns: a brand new node with reversed elements
+     */
+    static func reverse(node: ListNode?) -> ListNode? {
+        var prev: ListNode? = nil
+        var head = node
+        while head != nil {
+            let newHead = ListNode(head!.value!)
+            let tmp = head!.next
+            newHead.next = prev
+            prev = newHead
+            head = tmp
+        }
+        return prev
+    }
+    
 }
+
+extension ListNode: CustomStringConvertible {
+    var description:String {
+        if let next = next {
+            if let value = value {
+                return "Node(v:\(value)) -> \(next)"
+            } else {
+                return "Node(v: NULL) -> \(next)"
+            }
+        } else {
+            if let value = value {
+                return "Node(v:\(value)) -> NULL"
+            } else {
+                return "Node(v: NULL) -> NULL"
+            }
+        }
+    }
+}
+
+// TODO: AVL Tree
+
+
+// TODO: Priority Queue
 
 
 
