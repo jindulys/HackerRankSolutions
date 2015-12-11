@@ -432,6 +432,313 @@ extension ListNode: CustomStringConvertible {
 
 // TODO: AVL Tree
 
+//
+//  AVLTree.swift
+//  AVLTree
+//
+//  Swift port of immutable AVLTree I implemented with Stephan Partzsch
+//
+//  Original ObjC implementation: https://github.com/StephanPartzsch/AVLTree
+//
+//  Copyright (c) 2014 Maxim Zaks. All rights reserved.
+//
+
+func ||<T>(optional : Optional<T>, defaultValue : T) -> T {
+    if let value = optional {
+        return value
+    }
+    return defaultValue
+}
+
+public func +<T>(node : AVLNode<T>, newValue : T) -> AVLNode<T> {
+    var newLeft : AVLNode<T>? = node.left
+    var newRight : AVLNode<T>? = node.right
+    if(newValue < node.value) {
+        if let left = node.left {
+            newLeft = left + newValue
+        } else {
+            newLeft = AVLNode(newValue)
+        }
+    } else if(newValue > node.value) {
+        if let right = node.right {
+            newRight = right + newValue
+        } else {
+            newRight = AVLNode(newValue)
+        }
+    } else {
+        return node
+    }
+    
+    let newRoot = AVLNode(value: node.value, left: newLeft, right: newRight)
+    
+    return newRoot.fixBalance()
+}
+
+public func-<T>(node: AVLNode<T>?, value : T) -> AVLNode<T>? {
+    return node?.remove(value).result
+}
+
+
+
+public final class AVLNode<T : Comparable> {
+    typealias Element = T
+    let left : AVLNode<Element>?
+    let right : AVLNode<Element>?
+    public let count : UInt
+    let depth : UInt
+    let balance : Int
+    let value : Element!
+    
+    public convenience init(_ value : T){
+        self.init(value: value, left: nil, right: nil)
+    }
+    
+    public func contains(value : T) -> Bool{
+        if self.value == value {
+            return true
+        }
+        if left?.contains(value) == true {
+            return true
+        }
+        if right?.contains(value) == true {
+            return true
+        }
+        
+        return false
+    }
+    
+    init(value : T, left: AVLNode<T>?, right: AVLNode<T>?){
+        self.value = value
+        self.left = left
+        self.right = right
+        self.count = 1 + (left?.count || 0) + (right?.count || 0)
+        self.depth = 1 + max((left?.depth || 0), (right?.depth || 0))
+        self.balance = Int((left?.depth || 0)) - Int((right?.depth || 0))
+    }
+    
+    func fixBalance() -> AVLNode<Element> {
+        if abs(balance) < 2 {
+            return self
+        }
+        
+        if (balance == 2)
+        {
+            let leftBalance = self.left?.balance || 0
+            
+            if (leftBalance == 1 || leftBalance == 0)
+            {
+                //Easy case:
+                return rotateToRight()
+            }
+            
+            if (leftBalance == -1)
+            {
+                //Rotate Left to left
+                let newLeft = left!.rotateToLeft()
+                let newRoot = AVLNode(value: value, left: newLeft, right: right)
+                
+                return newRoot.rotateToRight()
+            }
+            
+            fatalError("LeftNode too unbalanced")
+        }
+        
+        if (balance == -2)
+        {
+            let rightBalance = right?.balance || 0
+            
+            if (rightBalance == -1 || rightBalance == 0)
+            {
+                //Easy case:
+                return rotateToLeft()
+            }
+            
+            if (rightBalance == 1)
+            {
+                //Rotate right to right
+                let newRight = right!.rotateToRight()
+                let newRoot = AVLNode(value: value, left: left, right: newRight)
+                
+                return newRoot.rotateToLeft()
+            }
+            
+            fatalError("RightNode too unbalanced")
+        }
+        
+        fatalError("Tree too unbalanced")
+        
+        return self
+    }
+    
+    func remove(value : Element) -> (result: AVLNode<Element>?, foundFlag :Bool){
+        if value < self.value {
+            
+            let removeResult = left?.remove(value)
+            
+            if removeResult == nil || removeResult!.foundFlag == false {
+                // Not found, so nothing changed
+                return (self, false)
+            }
+            
+            let newRoot = AVLNode(value: self.value, left: removeResult!.result, right: right).fixBalance()
+            
+            return (newRoot, true)
+        }
+        
+        if value > self.value {
+            let removeResult = right?.remove(value)
+            
+            if removeResult == nil || removeResult!.foundFlag == false {
+                // Not found, so nothing changed
+                return (self, false)
+            }
+            
+            let newRoot = AVLNode(value: self.value, left: left, right: removeResult!.result)
+            
+            return (newRoot, true)
+        }
+        
+        //found it
+        return (removeRoot(), true)
+    }
+    
+    func removeMin()-> (min : AVLNode<Element>, result : AVLNode<Element>?){
+        if left == nil {
+            //We are the minimum:
+            return (self, right)
+        } else {
+            //Go down:
+            let (min, newLeft) = left!.removeMin()
+            let newRoot = AVLNode(value: value, left: newLeft, right: right)
+            
+            return (min, newRoot.fixBalance())
+        }
+    }
+    
+    func removeMax()-> (max : AVLNode<Element>, result : AVLNode<Element>?){
+        if right == nil {
+            //We are the max:
+            return (self, left)
+        } else {
+            //Go down:
+            let (max, newRight) = right!.removeMax()
+            let newRoot = AVLNode(value: value, left: left, right: newRight)
+            
+            return (max, newRoot.fixBalance())
+        }
+    }
+    
+    func removeRoot() -> AVLNode<Element>? {
+        if left == nil {
+            return right
+        }
+        
+        if right == nil {
+            return left
+        }
+        
+        //Neither are empty:
+        if left!.count < right!.count {
+            // LeftNode has fewer, so promote from RightNode to minimize depth
+            let (min, newRight) = right!.removeMin()
+            let newRoot = AVLNode(value: min.value, left: left, right: newRight)
+            
+            return newRoot.fixBalance()
+        }
+        else
+        {
+            let (max, newLeft) = left!.removeMax()
+            let newRoot = AVLNode(value: max.value, left: newLeft, right: right)
+            
+            return newRoot.fixBalance()
+        }
+    }
+    
+    func rotateToRight() -> AVLNode<Element> {
+        let newRight = AVLNode(value: value, left: left!.right, right: right)
+        return AVLNode(value: left!.value, left: left!.left, right: newRight)
+    }
+    
+    func rotateToLeft() -> AVLNode<Element> {
+        let newLeft = AVLNode(value: value, left: left, right: right!.left)
+        return AVLNode(value: right!.value, left: newLeft, right: right!.right)
+    }
+}
+
+extension AVLNode : CustomStringConvertible, CustomDebugStringConvertible {
+    public var description : String {
+        get {
+            let empty = "_"
+            return "(\(value) \(left?.description || empty) \(right?.description || empty))"
+        }
+    }
+    
+    public var debugDescription : String {
+        get {
+            return self.description
+        }
+    }
+}
+
+
+//  SequenceType implementation is based on following blog post:
+//  http://www.spazcosoft.com/posts/data-structures-in-swift-part-1-wow-thats-an-unstable-compiler/
+
+extension AVLNode : SequenceType {
+    public func generate() -> AnyGenerator<T> {
+        
+        var stack : [AVLNode<Element>] = []
+        var current : AVLNode<Element>? = self
+        
+        return anyGenerator {
+            while(stack.count != 0 || current != nil){
+                if(current != nil) {
+                    stack.append(current!)
+                    current = current!.left
+                } else {
+                    let retval = stack.removeLast();
+                    current = retval.right
+                    return retval.value
+                }
+            }
+            
+            return nil
+        }
+    }
+}
+
+struct ReversedSequenceOfAvlNode<T : Comparable> : SequenceType {
+    let node : AVLNode<T>
+    func generate() -> AnyGenerator<T> {
+        
+        var stack : [AVLNode<T>] = []
+        var current : AVLNode<T>? = node
+        
+        return anyGenerator {
+            while(stack.count != 0 || current != nil){
+                if(current != nil) {
+                    stack.append(current!)
+                    current = current!.right
+                } else {
+                    let retval = stack.removeLast();
+                    current = retval.left
+                    return retval.value
+                }
+            }
+            
+            return nil
+        }
+    }
+}
+
+extension AVLNode {
+    public var reversed : AnySequence<T> {
+        get {
+            return AnySequence(ReversedSequenceOfAvlNode(node: self))
+        }
+    }
+}
+
 
 // TODO: Priority Queue
 
