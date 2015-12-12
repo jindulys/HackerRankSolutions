@@ -20,6 +20,7 @@
 		0E5741BC1C002025004EB0FA /* HackerRankHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5741BB1C002025004EB0FA /* HackerRankHelper.swift */; };
 		0E5741BF1C002EF0004EB0FA /* ZenefitsContest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5741BE1C002EF0004EB0FA /* ZenefitsContest.swift */; };
 		0E8BAEDC1C054CF900FF8697 /* Implementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BAEDB1C054CF900FF8697 /* Implementation.swift */; };
+		0E92A31D1C1C747E0029BC9E /* IndeedPrime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E92A31C1C1C747E0029BC9E /* IndeedPrime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		0E5741BB1C002025004EB0FA /* HackerRankHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HackerRankHelper.swift; path = HackerRankHelper/HackerRankHelper.swift; sourceTree = "<group>"; };
 		0E5741BE1C002EF0004EB0FA /* ZenefitsContest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZenefitsContest.swift; path = ZenefitsContest/ZenefitsContest.swift; sourceTree = "<group>"; };
 		0E8BAEDB1C054CF900FF8697 /* Implementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Implementation.swift; path = Algorithms/Implementation.swift; sourceTree = "<group>"; };
+		0E92A31C1C1C747E0029BC9E /* IndeedPrime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndeedPrime.swift; path = IndeedPrime/IndeedPrime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		0E5741891C001FAF004EB0FA /* HRSwift */ = {
 			isa = PBXGroup;
 			children = (
+				0E92A31E1C1C748C0029BC9E /* IndeedPrime */,
 				0E8BAEDA1C054CA900FF8697 /* Algorithms */,
 				0E5741BD1C002EBA004EB0FA /* ZenefitsContest */,
 				0E5741BA1C001FD3004EB0FA /* HackerRankHelper */,
@@ -161,6 +164,14 @@
 				0E5381D11C0B4F29001BFEE5 /* Strings.swift */,
 			);
 			name = Algorithms;
+			sourceTree = "<group>";
+		};
+		0E92A31E1C1C748C0029BC9E /* IndeedPrime */ = {
+			isa = PBXGroup;
+			children = (
+				0E92A31C1C1C747E0029BC9E /* IndeedPrime.swift */,
+			);
+			name = IndeedPrime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +310,7 @@
 				0E57418B1C001FAF004EB0FA /* AppDelegate.swift in Sources */,
 				0E8BAEDC1C054CF900FF8697 /* Implementation.swift in Sources */,
 				0E5381D21C0B4F29001BFEE5 /* Strings.swift in Sources */,
+				0E92A31D1C1C747E0029BC9E /* IndeedPrime.swift in Sources */,
 				0E5741BC1C002025004EB0FA /* HackerRankHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -478,6 +478,35 @@ public func-<T>(node: AVLNode<T>?, value : T) -> AVLNode<T>? {
     return node?.remove(value).result
 }
 
+public func +<T>(tree : AVLTree<T>, newValue : T) {
+    if let root = tree.root {
+        tree.root = root + newValue
+    } else {
+        tree.root = AVLNode(newValue)
+    }
+    tree.count = tree.root!.count
+}
+
+public func-<T>(tree: AVLTree<T>, value : T) {
+    if let root = tree.root {
+        tree.root = root - value
+        tree.count = tree.root?.count ?? 0
+    }
+}
+
+public class AVLTree<T: Comparable> {
+    var root: AVLNode<T>?
+    var count: UInt = 0
+}
+
+public extension AVLTree {
+    
+    convenience init(value: T) {
+        self.init()
+        root = AVLNode(value)
+        count = root!.count
+    }
+}
 
 
 public final class AVLNode<T : Comparable> {

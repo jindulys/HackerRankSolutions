@@ -75,7 +75,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(myLinkedListNode.dequeue())
         print(myLinkedListNode.isEmpty())
         
+        var myTree = AVLNode(10)
+        myTree = myTree + 10
+        myTree = myTree + 100
+        myTree = myTree + 6
+        myTree = myTree + 5
+        myTree = myTree + 3
+        myTree = myTree + 1
+        myTree = myTree + 100
+        print(myTree.description)
+        myTree = (myTree - 100)!
+        print(myTree.description)
         
+        var myTree1 = AVLTree<Int>()
+        print(myTree1.root?.description)
+        
+        myTree1 + 10
+        myTree1 + 100
+        myTree1 + 6
+        myTree1 + 5
+        myTree1 + 3
+        myTree1 + 1
+        myTree1 + 100
+        print(myTree1.root?.description)
+        myTree1 - 100
+        print(myTree1.root?.description)
+        
+        //let myArray = Array(count: 5, repeatedValue: AVLTree<Int>())
+        var myArray = [AVLTree<Int>]()
+        myArray.append(AVLTree<Int>())
+        myArray.append(AVLTree<Int>())
+        myArray.append(AVLTree<Int>())
+        myArray[0] + 1
+        myArray[1] + 2
+        myArray[2] + 3
+        print(myArray[0].root?.description)
+        print(myArray[1].root?.description)
+        print(myArray[2].root?.description)
         return true
     }
 
