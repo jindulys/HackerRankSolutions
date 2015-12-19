@@ -112,6 +112,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(myArray[0].root?.description)
         print(myArray[1].root?.description)
         print(myArray[2].root?.description)
+        let myRangeTest = SRange(start: 1100, end: 1092, step: -1)
+        for i in myRangeTest {
+            print("current index is \(i)")
+        }
+        
         return true
     }
 

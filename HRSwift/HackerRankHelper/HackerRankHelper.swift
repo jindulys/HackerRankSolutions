@@ -376,8 +376,8 @@ class LinkedListQueue<Element: CustomStringConvertible> {
 
 
 /**
-*   ListNode Class
-*/
+ *   ListNode Class
+ */
 class ListNode<T: CustomStringConvertible>{
     var value: T?
     var next: ListNode?
