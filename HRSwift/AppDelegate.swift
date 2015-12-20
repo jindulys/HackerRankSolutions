@@ -117,6 +117,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("current index is \(i)")
         }
         
+        // Test last non-zero digit
+        print("1's last non-zero position is \(Int(1)&Int(-1))")
+        print("8's last non-zero position is \(Int(8)&Int(-8))")
+        print("6's last non-zero position is \(Int(6)&Int(-6))")
+        
+        let myBIT = BinaryIndexedTree(size: 10)
+        myBIT.update(1, val: 1)
+        
         return true
     }
 

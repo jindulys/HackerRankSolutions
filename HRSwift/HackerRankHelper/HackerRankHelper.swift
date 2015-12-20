@@ -769,6 +769,56 @@ extension AVLNode {
 }
 
 
+/**
+ * BinaryIndexedTree: a data structure used for storing frequencies and manipulating cumulative frequency.
+ *
+ * e.g to search a frequency from n..m O(n), by using BIT we could fast get this result O(lgn)
+ *
+ */
+
+public class BinaryIndexedTree {
+    // we ignore 0th element, since it's no sence to count non-exist element's occurence.
+    
+    // size is actually the maximum count that could occur.
+    let size: Int
+    var tree: [Int]
+    
+    
+    init(size: Int) {
+        self.size = size
+        tree = Array(count: size+1, repeatedValue: 0)
+    }
+    
+    /**
+     * Update BIT at pos with some val
+     *
+     * - parameter pos: Index to BIT array, usually means number for item quantity
+     * - parameter val: this index's frequency's change
+     */
+    func update(var pos: Int, val: Int) {
+        guard pos > 0 else { return }
+        while pos <= size {
+            tree[pos] += val
+            pos += (Int(pos)&Int(-pos))
+        }
+    }
+    
+    /**
+     * Query BIT the cumulative frequencies for index pos
+     *
+     * - parameter pos: Index to query, usually means number for item quantity
+     */
+    func query(var pos: Int) -> Int {
+        var sum = 0
+        while pos > 0 {
+            sum += tree[pos]
+            pos -= (Int(pos)&Int(-pos))
+        }
+        return sum
+    }
+}
+
+
 // TODO: Priority Queue
 
 

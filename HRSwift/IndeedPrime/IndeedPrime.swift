@@ -111,6 +111,54 @@ class Gretchen {
             }
         }
     }
+    
+    // Overtime
+    func BITSolution() {
+        var parameters = getLineToArray().map {Int($0)!}
+        let M = parameters[0]
+        let N = parameters[1]
+        let Q = parameters[2]
+        
+        var actors = getLineToArray().map {Int($0)!}
+        var segCount = Array(count: M, repeatedValue: 0)
+        
+        for i in 0..<N {
+            segCount[actors[i]]++
+        }
+        
+        // create and update BIT
+        let BIT = BinaryIndexedTree(size: N)
+        for i in 0..<M {
+            BIT.update(segCount[i], val: 1)
+        }
+        
+        for _ in 0..<Q {
+            let actions = getLineToArray().map {Int($0)!}
+            if actions[0] == 1 {
+                // move actor Ni to Mi
+                let currentActor = actions[1]
+                let newScene = actions[2]
+                
+                let oldScene = actors[currentActor]
+                let oldCount1 = segCount[oldScene]
+                let newCount1 = oldCount1 - 1
+                BIT.update(oldCount1, val: -1)
+                BIT.update(newCount1, val: 1)
+                segCount[oldScene]--
+                
+                let oldCount2 = segCount[newScene]
+                let newCount2 = oldCount2 + 1
+                BIT.update(oldCount2, val: -1)
+                BIT.update(newCount2, val: 1)
+                segCount[newScene]++
+                
+                actors[currentActor] = newScene
+            } else {
+                let above = BIT.query(N) - BIT.query(actions[1] - 1)
+                print("\(M - above)")
+            }
+        }
+    }
 }
 
 
