@@ -40,7 +40,8 @@ public func getInt() -> Int {
 
 public func getLineToArray() -> [String] {
     let currentLine = getLine()
-    return currentLine.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    let retVal = currentLine.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    return retVal.filter { Int($0) != nil }
 }
 
 /**

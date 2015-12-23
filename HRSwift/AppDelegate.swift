@@ -125,6 +125,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let myBIT = BinaryIndexedTree(size: 10)
         myBIT.update(1, val: 1)
         
+        let myCoins = CoinChangeProblem()
+        myCoins.solveChanges([1, 2, 3], coinsCounts: 3, total: 4)
+        
         return true
     }
 
