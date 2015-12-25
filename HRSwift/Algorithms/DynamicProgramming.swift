@@ -49,4 +49,38 @@ class CoinChangeProblem {
     }
 }
 
+class MaximumSubArray {
+    func solution() {
+        let T = Int(getLine())!
+        for _ in 0..<T {
+            let _ = getLine()
+            let inputs = getLineToArray().map {Int($0)!}
+            solve(inputs)
+        }
+    }
+    
+    func solve(inputs:[Int]) {
+        let maxElement = inputs.maxElement()
+        if let maxE = maxElement where maxE < 0 {
+            print("\(maxE) \(maxE)")
+            return
+        }
+        // non-contiguous subarray
+        let nonContiguous = inputs.filter {$0 > 0}.reduce(0) {total, num in total + num}
+        
+        // contiguous subarray
+        var currentMax = 0
+        var currentSum = 0
+        for i in 0..<inputs.count {
+            currentSum += inputs[i]
+            if currentSum < 0 {
+                currentSum = 0
+            }
+            if currentSum > currentMax { currentMax = currentSum }
+        }
+        
+        print("\(currentMax) \(nonContiguous)")
+    }
+}
+
 
