@@ -1,7 +1,34 @@
-# HackerRankSolutions
-This is a repo for HackerRankSolutions with Swift
+# HackerRankSolutions ![Language](https://img.shields.io/badge/language-Swift-orange.svg)
+This is a repo for [HackerRank](https://www.hackerrank.com/domains) Solutions in Swift
 
-Different folders are named after those domain names or contest names.
+Different folders are named after corresponding domain names or contest names.
+
+## Algorithms
+ Problem         |    Time           | Space           | Difficulty    | Tag          | Note
+---------------- |  ---------------- | --------------- | ------------- |--------------| -----
+[Angry Professor](https://www.hackerrank.com/challenges/angry-professor) |  _O(n)_   |    | Easy | Implementation
+[SherlockAndTheBeast](https://www.hackerrank.com/challenges/sherlock-and-the-beast) |  _O(n)_   |    | Easy | Implementation
+[Utopian Tree](https://www.hackerrank.com/challenges/utopian-tree) |  _O(n)_   |    | Easy | Implementation
+[Find Digits](https://www.hackerrank.com/challenges/find-digits) |  _O(n)_   |    | Easy | Implementation
+[Funny String](https://www.hackerrank.com/challenges/funny-string) |  _O(n)_   |    | Easy | String
+[Pangrams](https://www.hackerrank.com/challenges/pangrams) |  _O(n)_   |  _O(1)_  | Easy | String
+[Two Strings](https://www.hackerrank.com/challenges/two-strings) |  _O(n)_   |  _O(1)_  | Medium | String | Set
+[Palindrome Index](https://www.hackerrank.com/challenges/palindrome-index) |  _O(n)_   |  _O(1)_  | Easy | String 
+[Sherlock And Valid String](https://www.hackerrank.com/challenges/sherlock-and-valid-string) |  _O(n)_   |  _O(1)_  | Difficult | String | Dictionary
+[The Maximum Subarray](https://www.hackerrank.com/challenges/maxsubarray) |  _O(n)_   | _O(n)_  | Easy | Dynamic Programming
+[The Coin Change Problem](https://www.hackerrank.com/challenges/coin-change) |  _O(MN)_   | _O(MN)_  | Medium | Dynamic Programming | bottom-up table construction
+
+## Contests
+* [IndeedPrimeCodeSprint](https://www.hackerrank.com/contests/indeed-prime-codesprint/challenges)
+* [ZenefitsCodeSprint](https://www.hackerrank.com/contests/zenhacks/challenges)
+
+## Data Structures in [HackerRankHelper](HRSwift/HackerRankHelper/HackerRankHelper.swift)
+* FIFO Queue with Two Array
+* FIFO Queue with Listnode
+* ListNode
+* AVLNode
+* AVLTree
+* BinaryIndexedTree
 
 # Usage
 
