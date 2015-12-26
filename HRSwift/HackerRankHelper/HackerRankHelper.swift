@@ -111,7 +111,15 @@ func Fibonacci(n: Int) -> Int {
     return n < 2 ? n : Fibonacci(n-1) + Fibonacci(n-2)
 }
 
-func memoize<T: Hashable, U>( body:((T)->U, T)->U ) -> (T)->U {
+
+/**
+    Swift implementation of memoization 
+    
+    - parameter body: a closure with itself type and input, who's input want to be memorized
+ 
+    - returns: a closure who's input has already in a memorized way
+ */
+func memoize<T: Hashable, U: Comparable>( body:((T)->U, T)->U ) -> (T)->U {
     var memo = Dictionary<T, U>()
     var result: ((T)->U)!
     result = { x in

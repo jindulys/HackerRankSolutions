@@ -83,4 +83,64 @@ class MaximumSubArray {
     }
 }
 
+// Implement KnapSackPair because our memoize function only take one type which is hashable for input
+struct KnapSackPair {
+    var itemIndex: Int
+    var capacity: Int
+}
+
+extension KnapSackPair : Hashable {
+    var hashValue : Int {
+        get {
+            return itemIndex.hashValue + capacity.hashValue
+        }
+    }
+}
+
+func ==(lhs: KnapSackPair, rhs: KnapSackPair) -> Bool {
+    return lhs.itemIndex == rhs.itemIndex && lhs.capacity == rhs.capacity
+}
+
+class Knapsack {
+    func solution() {
+        let T = getInt()
+        for _ in 0..<T {
+            let metrics = getLineToArray().map { Int($0)! }
+            let array = getLineToArray().map { Int($0)! }
+            solveWithMemo(metrics[0], K: metrics[1], array: array)
+        }
+    }
+    
+    /**
+     * This solution used memoization approach, which is a fantistic feature from Swift
+     */
+    func solveWithMemo(N: Int, K: Int, array:[Int]) {
+        if K == 0 {
+            print("0")
+            return
+        }
+        
+        let knapsack: (KnapSackPair)->Int = memoize{ knapsack, knapSackPair in
+            let i = knapSackPair.itemIndex
+            let k = knapSackPair.capacity
+            
+            if i < 1 { return 0 }
+            // not choose current item
+            let upperValue = knapsack(KnapSackPair(itemIndex: i - 1, capacity: k))
+            
+            // choose current item more than 1 time
+            let leftValue = k < array[i-1] ? 0 : knapsack(KnapSackPair(itemIndex: i, capacity: k - array[i-1])) + array[i - 1]
+            
+            // choose current item for the first time
+            let leftUpperValue = k < array[i-1] ? 0 : knapsack(KnapSackPair(itemIndex: i-1, capacity: k - array[i-1])) + array[i - 1]
+            
+            let bigger = max(upperValue, leftValue)
+            
+            return max(bigger, leftUpperValue)
+        }
+        
+        print(knapsack(KnapSackPair(itemIndex: N, capacity: K)))
+    }
+}
+
 

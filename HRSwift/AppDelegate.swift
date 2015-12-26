@@ -129,10 +129,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         myCoins.solveChanges([1, 2, 3], coinsCounts: 3, total: 4)
         
         var start = NSDate()
-        let myTestFibonnaci = Fibonacci(45)
+        //let myTestFibonnaci = Fibonacci(45)
         var end = NSDate()
         var timeInterval = end.timeIntervalSinceDate(start)
-        print("Fibonnaci 45 is \(myTestFibonnaci): \(timeInterval) seconds")
+        //print("Fibonnaci 45 is \(myTestFibonnaci): \(timeInterval) seconds")
         
         let factorial = memoize {factorial, x in x < 2 ? x : factorial(x-1) + factorial(x - 2)}
         start = NSDate()
@@ -141,6 +141,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         timeInterval = end.timeIntervalSinceDate(start)
         print("Fibonnaci 45 is \(myMemoFibonnaci): \(timeInterval) seconds")
         
+        let myKnapSack = Knapsack()
+        myKnapSack.solveWithMemo(5, K: 9, array: [3, 4, 4, 4, 8])
         return true
     }
 
