@@ -128,6 +128,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let myCoins = CoinChangeProblem()
         myCoins.solveChanges([1, 2, 3], coinsCounts: 3, total: 4)
         
+        var start = NSDate()
+        let myTestFibonnaci = Fibonacci(45)
+        var end = NSDate()
+        var timeInterval = end.timeIntervalSinceDate(start)
+        print("Fibonnaci 45 is \(myTestFibonnaci): \(timeInterval) seconds")
+        
+        let factorial = memoize {factorial, x in x < 2 ? x : factorial(x-1) + factorial(x - 2)}
+        start = NSDate()
+        let myMemoFibonnaci = factorial(45)
+        end = NSDate()
+        timeInterval = end.timeIntervalSinceDate(start)
+        print("Fibonnaci 45 is \(myMemoFibonnaci): \(timeInterval) seconds")
+        
         return true
     }
 

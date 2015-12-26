@@ -107,6 +107,22 @@ public func binarySearchLessOrEqualIndex(inputs:[Int], target:Int) -> Int {
     return higherIndex + 1
 }
 
+func Fibonacci(n: Int) -> Int {
+    return n < 2 ? n : Fibonacci(n-1) + Fibonacci(n-2)
+}
+
+func memoize<T: Hashable, U>( body:((T)->U, T)->U ) -> (T)->U {
+    var memo = Dictionary<T, U>()
+    var result: ((T)->U)!
+    result = { x in
+        if let q = memo[x] { return q }
+        let r = body(result, x)
+        memo[x] = r
+        return r
+    }
+    return result
+}
+
 
 // MARK: extensions
 
