@@ -23,7 +23,7 @@ Different folders are named after corresponding domain names or contest names.
 * [ZenefitsCodeSprint](https://www.hackerrank.com/contests/zenhacks/challenges)
 
 ## Data Structures in [HackerRankHelper](HRSwift/HackerRankHelper/HackerRankHelper.swift)
-* FIFO Queue with Two Array
+* FIFO Queue with Two Arraies
 * FIFO Queue with Listnode
 * ListNode
 * AVLNode
