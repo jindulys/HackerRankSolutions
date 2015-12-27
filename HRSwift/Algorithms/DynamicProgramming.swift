@@ -143,4 +143,38 @@ class Knapsack {
     }
 }
 
+class LongestIncreasingSubsequence {
+    func solution() {
+        let N = getInt()
+        let array = getLinesToArray(N).map { Int($0)! }
+        solve(array)
+    }
+    
+    /**
+     *  Construct LIS(longestIncreasingSubsequence) for each i, which ends at ith element of the array.
+     *  LIS[i] = max(LIS) 
+     *  time efficiency O(n^2)
+     */
+    func solve(array:[Int]) {
+        let N = array.count
+        var LIS = Array(count: N, repeatedValue: 0)
+        LIS[0] = 1
+        for i in 1..<N {
+            var atLeastFindOne = false
+            for j in 0..<i {
+                if array[j] < array[i] && LIS[j] + 1 > LIS[i] {
+                    LIS[i] = LIS[j] + 1
+                    atLeastFindOne = true
+                }
+            }
+            if !atLeastFindOne { LIS[i] = 1}
+        }
+        
+        let maximum = LIS.reduce(0) {result, current in
+            return current > result ? current : result
+        }
+        print("\(maximum)")
+    }
+}
+
 

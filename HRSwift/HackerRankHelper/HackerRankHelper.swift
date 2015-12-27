@@ -45,6 +45,19 @@ public func getLineToArray() -> [String] {
 }
 
 /**
+ *  reading into n lines and combine them into an Array
+ *  
+ *  - parameter n: number of lines you want to read in
+ */
+public func getLinesToArray(n: Int) -> [String] {
+    var retVal: [String] = []
+    for _ in 0..<n {
+        retVal.append(getLine())
+    }
+    return retVal
+}
+
+/**
     this get primes is better and finally score 100.0
 */
 public func getBetterPrimes(length:Int) -> [Int] {
