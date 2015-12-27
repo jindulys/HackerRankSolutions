@@ -3,7 +3,7 @@ This is a repo for [HackerRank](https://www.hackerrank.com/domains) Solutions in
 
 Different folders are named after corresponding domain names or contest names.
 
-## Algorithms
+## [Algorithms](HRSwift/Algorithms)
  Problem         |    Time           | Space           | Difficulty    | Tag          | Note
 ---------------- |  ---------------- | --------------- | ------------- |--------------| -----
 [Angry Professor](https://www.hackerrank.com/challenges/angry-professor) |  _O(n)_   |    | Easy | Implementation
