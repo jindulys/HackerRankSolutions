@@ -143,6 +143,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let myKnapSack = Knapsack()
         myKnapSack.solveWithMemo(5, K: 9, array: [3, 4, 4, 4, 8])
+        
+        print("Index found is \(ceilIndex([0, 1, 3,19, 20], l: -1, r: 4, key: 18))")
+        print("Index found is \(ceilIndex([0, 1, 3,19, 20], l: -1, r: 4, key: -1))")
+        print("Index found is \(ceilIndex([0, 1, 3,19, 20], l: -1, r: 4, key: 180))")
+        print("Index found is \(ceilIndex([0, 1, 3,19, 20], l: -1, r: 4, key: 19))")
+        print("Index found is \(ceilIndex([0, 1, 3,19, 20], l: 0, r: 4, key: 18))")
+        
+        let myLIS = LongestIncreasingSubsequence()
+        myLIS.betterSolve([2, 5, 3, 7, 11, 8, 10, 13, 6])
         return true
     }
 

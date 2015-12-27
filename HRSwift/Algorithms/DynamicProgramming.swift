@@ -147,7 +147,7 @@ class LongestIncreasingSubsequence {
     func solution() {
         let N = getInt()
         let array = getLinesToArray(N).map { Int($0)! }
-        solve(array)
+        betterSolve(array)
     }
     
     /**
@@ -174,6 +174,32 @@ class LongestIncreasingSubsequence {
             return current > result ? current : result
         }
         print("\(maximum)")
+    }
+    
+    /**
+     * http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
+     */
+    func betterSolve(array:[Int]) {
+        let N = array.count
+        // Auxiliary array to store each appropriate end element
+        var endElements = Array(count: N, repeatedValue: 0)
+        endElements[0] = array[0]
+        var len = 1
+        
+        for i in 1..<N {
+            if array[i] < endElements[0] {
+                // replace the first element
+                endElements[0] = array[i]
+            } else if array[i] > endElements[len - 1] {
+                // extend endElements array
+                len += 1
+                endElements[len - 1] = array[i]
+            } else {
+                // replace the smallest element that is larger than array[i]
+                endElements[ceilIndex(endElements, l: -1, r: len - 1, key: array[i])] = array[i]
+            }
+        }
+        print("\(len)")
     }
 }
 

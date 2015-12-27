@@ -95,8 +95,11 @@ public func getBetterPrimes(length:Int) -> [Int] {
 /**
  
     This method return the num of elements that less than or equal to target
- 
     e.g. [2, 3, 5] input 5, will return 3 means there are 3 elements less than or equal to 5
+    
+    - parameter inputs: array that to be processed
+    - target: target to be found
+ 
  */
 
 public func binarySearchLessOrEqualIndex(inputs:[Int], target:Int) -> Int {
@@ -118,6 +121,26 @@ public func binarySearchLessOrEqualIndex(inputs:[Int], target:Int) -> Int {
     
     // At this point our lower exceed higher
     return higherIndex + 1
+}
+
+/**
+ *  give an array find the smallest element's index that is larger or equal to key
+ *  
+ *  - parameter inputs: array to be operated on
+ *  - parameter l:      left boundary
+ *  - parameter r:      right boundary
+ *  - parameter key:    target to be found
+ */
+public func ceilIndex<T: Comparable>(inputs:[T], var l: Int, var r: Int, key: T) -> Int {
+    while r - l > 1 {
+        var m = l + (r - l)/2
+        if inputs[m] >= key {
+            r = m
+        } else {
+            l = m
+        }
+    }
+    return r
 }
 
 func Fibonacci(n: Int) -> Int {
