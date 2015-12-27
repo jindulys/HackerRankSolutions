@@ -203,4 +203,42 @@ class LongestIncreasingSubsequence {
     }
 }
 
+class SherlockAndCost {
+    
+    func solution() {
+        let T = getInt()
+        for _ in 0..<T {
+            let _ = getLine()
+            let array = getLineToArray().map { Int($0)! }
+            solve(array)
+        }
+    }
+    
+    /**
+     *  To solve this problem, we need to find out the optimal structure of the problem.
+     *  For current best Sum, we could derive it from two ways. 
+     *      
+     *  (1) [LOW]   current sum choose the lower boundary
+     *  (2) [HIGH]  current sum choose the upper boundary
+     *
+     *  the case (1)  we could get from max (previous[LOW], previous[HIGH] + abs(previous element - 1))
+     *  the case (2)  we could get from max (previous[HIGH] + abs(previous element - current element),
+     *                                       previous[HIGH] + abs(previous element - 1))
+     */
+    func solve(input:[Int]) {
+        let N = input.count
+        var maxSumTable = Array(count: N, repeatedValue: [0, 0])
+        
+        let LOW = 0
+        let HIGH = 1
+        for i in SRange(start: 1, end: N) {
+            maxSumTable[i][LOW] = max(maxSumTable[i-1][LOW], maxSumTable[i-1][HIGH] + abs(input[i-1] - 1))
+            let preHIGH = maxSumTable[i-1][HIGH] + abs(input[i] - input[i-1])
+            let preLOW = maxSumTable[i-1][LOW] + abs(input[i] - 1)
+            maxSumTable[i][HIGH] = max(preHIGH, preLOW)
+        }
+        print("\(max(maxSumTable[N-1][LOW], maxSumTable[N-1][HIGH]))")
+    }
+}
+
 
