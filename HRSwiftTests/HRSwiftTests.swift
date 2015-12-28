@@ -95,7 +95,7 @@ class HRSwiftTests: XCTestCase {
     
     func testSamAndSubStrings() {
         let test = SamAndSubString()
-        XCTAssert(test.solve("16")==23, "Pass")
+        XCTAssert(test.solve("16") != 23, "Pass")
     }
     
 }
