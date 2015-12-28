@@ -152,6 +152,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let myLIS = LongestIncreasingSubsequence()
         myLIS.betterSolve([2, 5, 3, 7, 11, 8, 10, 13, 6])
+        
+        let myhex = HexagonalGrid()
+        myhex.solve([[0,0],[1,1]])
+        
         return true
     }
 

@@ -241,4 +241,68 @@ class SherlockAndCost {
     }
 }
 
+class HexagonalGrid {
+    static let nextPos = [(1, 0), (1, -1), (0, 1)]
+    
+    func solution() {
+        let T = getInt()
+        for _ in 0..<T {
+            let _ = getInt()
+            let firstLine = getLine()
+            var firstArray:[Int] = []
+            for i in firstLine.characters {
+                firstArray.append(Int(String(i))!)
+            }
+            let secondLine = getLine()
+            var secondArray:[Int] = []
+            for i in secondLine.characters {
+                secondArray.append(Int(String(i))!)
+            }
+            let grids = [firstArray, secondArray]
+            solve(grids)
+        }
+    }
+    
+    func solve(grid:[[Int]]) {
+        var currentGrid = grid
+        if rec(&currentGrid) {
+            print("YES")
+        } else {
+            print("NO")
+        }
+    }
+    
+    /**
+     *  Recursive Solution
+     */
+    func rec(inout grid:[[Int]]) -> Bool {
+        let m = grid.count
+        let n = grid[0].count
+        
+        var changed = false
+        for i in 0..<m {
+            for j in 0..<n {
+                if grid[i][j] == 0 {
+                    if changed == false {
+                        changed = true
+                        grid[i][j] = 1
+                        for candidate in HexagonalGrid.nextPos {
+                            let nextI = i + candidate.0
+                            let nextJ = j + candidate.1
+                            if nextI >= 0 && nextI < m && nextJ >= 0 && nextJ < n && grid[nextI][nextJ] == 0 {
+                                grid[nextI][nextJ] = 1
+                                if rec(&grid) { return true }
+                                grid[nextI][nextJ] = 0
+                            }
+                        }
+                        grid[i][j] = 0
+                    }
+                }
+            }
+        }
+        
+        return !changed
+    }
+}
+
 
