@@ -75,4 +75,10 @@ class HRSwiftTests: XCTestCase {
         XCTAssert(queue.dequeue() == "Great", "Pass")
     }
     
+    func testHexagonalGrid() {
+        let test = HexagonalGrid()
+        var grid = [[0,0],[1,1]]
+        XCTAssert(test.rec(&grid),"Pass")
+    }
+    
 }
