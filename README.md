@@ -14,15 +14,16 @@ Different folders are named after corresponding domain names or contest names.
 [Find Digits](https://www.hackerrank.com/challenges/find-digits) |  _O(n)_   |    | Easy | Implementation
 [Funny String](https://www.hackerrank.com/challenges/funny-string) |  _O(n)_   |    | Easy | String
 [Pangrams](https://www.hackerrank.com/challenges/pangrams) |  _O(n)_   |  _O(1)_  | Easy | String
-[Two Strings](https://www.hackerrank.com/challenges/two-strings) |  _O(n)_   |  _O(1)_  | Medium | String | Set
+[Two Strings](https://www.hackerrank.com/challenges/two-strings) |  _O(n)_   |  _O(1)_  | Moderate | String | Set
 [Palindrome Index](https://www.hackerrank.com/challenges/palindrome-index) |  _O(n)_   |  _O(1)_  | Easy | String 
 [Sherlock And Valid String](https://www.hackerrank.com/challenges/sherlock-and-valid-string) |  _O(n)_   |  _O(1)_  | Difficult | String | Dictionary
 [The Maximum Subarray](https://www.hackerrank.com/challenges/maxsubarray) |  _O(n)_   | _O(n)_  | Easy | Dynamic Programming
 [The Coin Change Problem](https://www.hackerrank.com/challenges/coin-change) |  _O(MN)_   | _O(MN)_  | Medium | Dynamic Programming | bottom-up table construction
-[Knapsack](https://www.hackerrank.com/challenges/unbounded-knapsack) |  _O(MN)_   | _O(MN)_  | Medium | Dynamic Programming | memoization in swift
+[Knapsack](https://www.hackerrank.com/challenges/unbounded-knapsack) |  _O(MN)_   | _O(MN)_  | Moderate | Dynamic Programming | memoization in swift
 [The Longest Increasing Subsequence](https://www.hackerrank.com/challenges/longest-increasing-subsequent) |  _O(N^2)_   | _O(N)_  | Advanced | Dynamic Programming | time out
-[Sherlock and Cost](https://www.hackerrank.com/challenges/sherlock-and-cost) |  _O(N)_   | _O(N)_  | Medium | Dynamic Programming | 
-[Hexagonal Gird](https://www.hackerrank.com/challenges/hexagonal-grid) |  _O(N^2)_   | _O(N)_  | Medium | Dynamic Programming | recursive solution
+[Sherlock and Cost](https://www.hackerrank.com/challenges/sherlock-and-cost) |  _O(N)_   | _O(N)_  | Moderate | Dynamic Programming | 
+[Hexagonal Gird](https://www.hackerrank.com/challenges/hexagonal-grid) |  _O(N^2)_   | _O(N)_  | Moderate | Dynamic Programming | recursive solution
+[Sam and SubStrings](https://www.hackerrank.com/challenges/sam-and-substrings) |  _O(N)_   | _O(N)_  | Moderate | Dynamic Programming | 
 
 ## Contests
 * [IndeedPrimeCodeSprint](https://www.hackerrank.com/contests/indeed-prime-codesprint/challenges)
