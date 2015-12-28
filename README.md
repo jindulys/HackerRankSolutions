@@ -1,4 +1,6 @@
-# HackerRankSolutions ![Language](https://img.shields.io/badge/language-Swift-orange.svg)
+# HackerRankSolutions 
+![Language](https://img.shields.io/badge/language-Swift-orange.svg)[![Build Status](https://travis-ci.org/jindulys/HackerRankSolutions.svg)](https://travis-ci.org/jindulys/HackerRankSolutions)
+
 This is a repo for [HackerRank](https://www.hackerrank.com/domains) Solutions in Swift
 
 Different folders are named after corresponding domain names or contest names.
