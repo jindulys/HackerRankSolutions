@@ -77,8 +77,25 @@ class HRSwiftTests: XCTestCase {
     
     func testHexagonalGrid() {
         let test = HexagonalGrid()
-        var grid = [[0,0],[1,1]]
-        XCTAssert(test.rec(&grid),"Pass")
+        var testGrid1 = [[0,0], [0,0]]
+        var testGrid2 = [[0,0], [1,0]]
+        var testGrid3 = [[0,0], [0,1]]
+        var testGrid4 = [[0,0], [1,1]]
+        var testGrid5 = [[1,0], [0,0]]
+        var testGrid6 = [[1,0], [1,0]]
+        var testGrid7 = [[1,0], [0,1]]
+        XCTAssert(test.rec(&testGrid1),"Pass")
+        XCTAssert(!test.rec(&testGrid2),"Pass")
+        XCTAssert(!test.rec(&testGrid3),"Pass")
+        XCTAssert(test.rec(&testGrid4),"Pass")
+        XCTAssert(!test.rec(&testGrid5),"Pass")
+        XCTAssert(test.rec(&testGrid6),"Pass")
+        XCTAssert(test.rec(&testGrid7),"Pass")
+    }
+    
+    func testSamAndSubStrings() {
+        let test = SamAndSubString()
+        XCTAssert(test.solve("16")==23, "Pass")
     }
     
 }

@@ -305,4 +305,37 @@ class HexagonalGrid {
     }
 }
 
+class SamAndSubString {
+    static let MOD = Int(1e9 + 7)
+    
+    func solution() {
+        let input = getLine()
+        solve(input)
+    }
+    
+    func solve(input:String) -> Int {
+        let N = input.characters.count
+        var preSum = Array(count: N, repeatedValue: 0)
+        preSum[0] = Int(String(input.characters.first!))!
+        var i = 1
+        var currentIndex = input.characters.startIndex.successor()
+        /**
+         *  each time when we add a new element, there is a relationship between previous sum and current sum
+         */
+        while currentIndex != input.characters.endIndex {
+            preSum[i] = (preSum[i-1]*10 + Int(String(input.characters[currentIndex]))!*(i+1))%SamAndSubString.MOD
+            i += 1
+            currentIndex = currentIndex.successor()
+        }
+        let retVal = preSum.reduce(0) { total, currentE in
+            let newTotal = (total + currentE) % SamAndSubString.MOD
+            return newTotal
+        }
+        print(retVal)
+        return retVal
+    }
+}
+
+
+
 
