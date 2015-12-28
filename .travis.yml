@@ -5,4 +5,4 @@ xcode_scheme: HRSwift
 SDK: iphonesimulator9.0
 script:
 - xctool -project HRSwift.xcodeproj -scheme HRSwift clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
-- xctool test -project HRSwift.xcodeproj -scheme HRSwfitTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool test -project HRSwift.xcodeproj -scheme HRSwiftTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
