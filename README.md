@@ -20,6 +20,7 @@ Different folders are named after corresponding domain names or contest names.
 [Knapsack](https://www.hackerrank.com/challenges/unbounded-knapsack) |  _O(MN)_   | _O(MN)_  | Medium | Dynamic Programming | memoization in swift
 [The Longest Increasing Subsequence](https://www.hackerrank.com/challenges/longest-increasing-subsequent) |  _O(N^2)_   | _O(N)_  | Advanced | Dynamic Programming | time out
 [Sherlock and Cost](https://www.hackerrank.com/challenges/sherlock-and-cost) |  _O(N)_   | _O(N)_  | Medium | Dynamic Programming | 
+[Hexagonal Gird](https://www.hackerrank.com/challenges/hexagonal-grid) |  _O(N^2)_   | _O(N)_  | Medium | Dynamic Programming | recursive solution
 
 ## Contests
 * [IndeedPrimeCodeSprint](https://www.hackerrank.com/contests/indeed-prime-codesprint/challenges)
