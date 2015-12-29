@@ -24,6 +24,7 @@ Different folders are named after corresponding domain names or contest names.
 [Sherlock and Cost](https://www.hackerrank.com/challenges/sherlock-and-cost) |  _O(N)_   | _O(N)_  | Moderate | Dynamic Programming | 
 [Hexagonal Gird](https://www.hackerrank.com/challenges/hexagonal-grid) |  _O(N^2)_   | _O(N)_  | Moderate | Dynamic Programming | recursive solution
 [Sam and SubStrings](https://www.hackerrank.com/challenges/sam-and-substrings) |  _O(N)_   | _O(N)_  | Moderate | Dynamic Programming | 
+[Travel Around the World](https://www.hackerrank.com/challenges/travel-around-the-world) |  _O(N)_   | _O(N)_  | Moderate | Dynamic Programming | validation pass and candidates finding pass
 
 ## Contests
 * [IndeedPrimeCodeSprint](https://www.hackerrank.com/contests/indeed-prime-codesprint/challenges)
