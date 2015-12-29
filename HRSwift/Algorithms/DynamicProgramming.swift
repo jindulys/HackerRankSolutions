@@ -336,6 +336,36 @@ class SamAndSubString {
     }
 }
 
+class TravelAroundTheWorld {
+    func solution() {
+        let metrics = getLineToArray().map { Int($0)! }
+        let a = getLineToArray().map() { Int($0)! }
+        let b = getLineToArray().map() { Int($0)! }
+        solve(metrics[1], a: a, b: b)
+    }
+    
+    func solve(c:Int, a:[Int], b:[Int]) -> Int {
+        let N = a.count
+        var earthA = Array(count: 2*N, repeatedValue: 0)
+        var earthB = Array(count: 2*N, repeatedValue: 0)
+        
+        for i in 0..<N {
+            let currentA = min(a[i], c)
+            earthA[i] = currentA
+            earthA[i+N] = currentA
+            if b[i] <= c {
+                earthB[i] = b[i]
+                earthB[i+N] = b[i]
+            } else {
+                print("0")
+                return 0
+            }
+        }
+        return 0
+        //for i in N..
+    }
+}
+
 
 
 
