@@ -98,4 +98,9 @@ class HRSwiftTests: XCTestCase {
         XCTAssert(test.solve("16") == 23, "Pass")
     }
     
+    func testTravelAroundTheWorld() {
+        let test = TravelAroundTheWorld()
+        XCTAssert(test.solve(3, a: [3,1,2], b: [2,2,2]) == 2, "Pass")
+    }
+    
 }

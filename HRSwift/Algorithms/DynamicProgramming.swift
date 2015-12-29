@@ -344,12 +344,26 @@ class TravelAroundTheWorld {
         solve(metrics[1], a: a, b: b)
     }
     
+    /**
+     * we should solve this problem in two part
+     * (1)  the first part we should ensure that we could find a suitable start city
+     *      the idea is that, if we start from city s, then if it is viable(current fuel left + a[i] - b[i] > 0), 
+     *      then we move to next city s+1 and so on, until we reach a city s + j, where we dont have enough fuel,
+     *      then we should start from s+j and continue looking. if there is no such city, then we have no solution
+     *      to travel the whole world.
+     * (2)  If we find some suitable start point s, we could consider the city before it could work or not.
+     *      let need[i] means at city i, the need of fuel to next city.
+     *      we have the formula need[i] = max(0, need[i+1] + b[i] - min(capacity, a[i]))
+     *      all of the city with need[i] == 0 is suitable start point
+     *
+     */
     func solve(c:Int, a:[Int], b:[Int]) -> Int {
         let N = a.count
         var earthA = Array(count: 2*N, repeatedValue: 0)
         var earthB = Array(count: 2*N, repeatedValue: 0)
         
         for i in 0..<N {
+            // append a copy of the array to simulate cycle
             let currentA = min(a[i], c)
             earthA[i] = currentA
             earthA[i+N] = currentA
@@ -361,8 +375,40 @@ class TravelAroundTheWorld {
                 return 0
             }
         }
-        return 0
-        //for i in N..
+        
+        var s = 0
+        var balance = 0
+        for i in 0..<2*N {
+            // careful balance may exceed capacity
+            // wrong: balance += a[i]-b[i]
+            balance += earthA[i]
+            balance = min(c, balance)
+            balance -= earthB[i]
+            if balance < 0 {
+                s = i+1
+                balance = 0
+            }
+        }
+        
+        var retVal:Int
+        var need = Array(count: 2*N, repeatedValue: 0)
+        // check whether s >= n, which means we could not find a city within n-1, that could walk through the whole map
+        if s >= N {
+            print("0")
+            return 0
+        } else {
+            // check other potential start positions
+            retVal = 1
+            need[s+N] = 0
+            for i in 1..<N {
+                let currentPos = s + N - i
+                need[currentPos] = max(0, need[currentPos + 1] + earthB[currentPos] - earthA[currentPos])
+                if need[currentPos] == 0 { retVal++ }
+            }
+        }
+        
+        print("\(retVal)")
+        return retVal
     }
 }
 
