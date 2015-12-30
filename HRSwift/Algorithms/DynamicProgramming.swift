@@ -412,6 +412,34 @@ class TravelAroundTheWorld {
     }
 }
 
+class RedJohnisBack {
+    func solution() {
+        let T = getInt()
+        for _ in 0..<T {
+            let N = getInt()
+            solve(N)
+        }
+    }
+    
+    // Use a way similar to fibonacci sequence
+    func solve(n:Int) -> Int {
+        let fibOneAndFour: (Int)->Int = memoize { fibOneAndFour, n in
+            if n>=1 && n<=3 {
+                return 1
+            }
+            if n == 4 {
+                return 2
+            }
+            
+            return fibOneAndFour(n-1) + fibOneAndFour(n-4)
+        }
+        let combinations = fibOneAndFour(n)
+        let primes = getBetterPrimes(combinations)
+        print(primes.count)
+        return primes.count
+    }
+}
+
 
 
 

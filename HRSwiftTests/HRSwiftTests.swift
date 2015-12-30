@@ -103,4 +103,10 @@ class HRSwiftTests: XCTestCase {
         XCTAssert(test.solve(3, a: [3,1,2], b: [2,2,2]) == 2, "Pass")
     }
     
+    func testRedJohnisBack() {
+        let test = RedJohnisBack()
+        XCTAssert(test.solve(7) == 3, "Pass")
+        XCTAssert(test.solve(38) == 10794, "Pass")
+    }
+    
 }

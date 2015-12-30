@@ -58,7 +58,10 @@ public func getLinesToArray(n: Int) -> [String] {
 }
 
 /**
-    this get primes is better and finally score 100.0
+    Get all primes up to length
+    
+    - parameter length: the upper boundary for primes
+    - returns : an array of all primes in that range
 */
 public func getBetterPrimes(length:Int) -> [Int] {
     // Here the length means how many elements we have
@@ -70,7 +73,7 @@ public func getBetterPrimes(length:Int) -> [Int] {
     }
     
     // here since we want to find gap, length should not be included, start from 2 since 2 is the smallest prime
-    for i in 2..<length {
+    for i in 2...length {
         var currentIsPrime = true
         // check prime is general, we should use count from 2 to sqrt(i) to see whether or not it
         // could be divided.
