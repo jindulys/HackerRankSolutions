@@ -109,4 +109,13 @@ class HRSwiftTests: XCTestCase {
         XCTAssert(test.solve(38) == 10794, "Pass")
     }
     
+    func testDorsyThief() {
+        let test = DorseyThief()
+        let passenger1 = Passenger(offer: 460, weight: 4)
+        let passenger2 = Passenger(offer: 590, weight: 6)
+        let passenger3 = Passenger(offer: 590, weight: 5)
+        let passenger4 = Passenger(offer: 550, weight: 5)
+        XCTAssertTrue(test.solve([passenger1, passenger2, passenger3, passenger4], c: 10) == 1140)
+    }
+    
 }

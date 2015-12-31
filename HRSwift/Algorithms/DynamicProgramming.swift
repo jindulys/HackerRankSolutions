@@ -440,6 +440,97 @@ class RedJohnisBack {
     }
 }
 
+/**
+ *  Struct Passenger to store information like offer value and accept weight of gold
+ *  Using struct here is for sorting
+ */
+struct Passenger {
+    let offer: Int
+    let weight: Int
+}
+
+extension Passenger : Hashable {
+    var hashValue : Int {
+        get {
+            return offer.hashValue + weight.hashValue
+        }
+    }
+}
+
+func ==(lhs: Passenger, rhs: Passenger) -> Bool {
+    return lhs.offer == rhs.offer && lhs.weight == rhs.weight
+}
+
+let LOWESTNUMBER = -1 * NSIntegerMax
+
+class DorseyThief {
+    func solution() {
+        let metrics = getLineToArray().map { Int($0)! }
+        var array: [Passenger] = []
+        for _ in 0..<metrics[0] {
+            let passenger = getLineToArray().map { Int($0)! }
+            array.append(Passenger(offer: passenger[0], weight: passenger[1]))
+        }
+        
+        solve(array, c:metrics[1])
+    }
+    
+    func solve(array:[Passenger],c:Int)->Int {
+        // sort the input array
+        let sortedArray = array.sort { p1, p2 in
+            if p1.offer == p2.offer {
+                return p1.weight > p2.weight
+            }
+            return p1.offer > p2.offer
+        }
+        
+        var offersByAmount = Array(count: c, repeatedValue: [Passenger]())
+        for passenger in sortedArray {
+            if passenger.weight <= c {
+                var currentArray = offersByAmount[passenger.weight-1]
+                // Thief could not sell that much, here is the limitation. this is the key for optimization
+                if currentArray.count < c/passenger.weight {
+                    currentArray.append(passenger)
+                }
+                offersByAmount[passenger.weight - 1] = currentArray
+            }
+        }
+        
+        var offers = offersByAmount.reduce([Passenger]()) { retVal, currentArray in
+            var tmp = retVal
+            for passenger in currentArray {
+                tmp.append(passenger)
+            }
+            return tmp
+        }
+        
+        let N = offers.count
+        
+        var K = [Passenger:Int]()
+        K[Passenger(offer: 0, weight: 0)] = 0
+        for x in 1..<c+1 {
+            K[Passenger(offer: 0, weight: x)] = LOWESTNUMBER
+        }
+        
+        for i in 1..<N+1 {
+            let passenger = offers[i-1]
+            let v_i = passenger.offer
+            let a_i = passenger.weight
+            for x in 0..<c+1 {
+                let t = x - a_i >= 0 ? K[Passenger(offer: i-1, weight: x - a_i)] : LOWESTNUMBER
+                K[Passenger(offer: i, weight: x)] = max(K[Passenger(offer: i-1, weight: x)]!, t! + v_i)
+            }
+        }
+        
+        if K[Passenger(offer: N, weight: c)]! < 0 {
+            print("Got caught!")
+        } else {
+            print(K[Passenger(offer: N, weight: c)]!)
+        }
+        return K[Passenger(offer: N, weight: c)]!
+    }
+}
+
 
 
 
