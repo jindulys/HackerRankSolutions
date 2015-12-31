@@ -495,21 +495,20 @@ class DorseyThief {
                 offersByAmount[passenger.weight - 1] = currentArray
             }
         }
-        
-        var offers = offersByAmount.reduce([Passenger]()) { retVal, currentArray in
-            var tmp = retVal
-            for passenger in currentArray {
-                tmp.append(passenger)
+              
+        var offers: [Passenger] = []
+        for offerList in offersByAmount {
+            for passenger in offerList {
+                offers.append(passenger)
             }
-            return tmp
         }
         
         let N = offers.count
         
-        var K = [Passenger:Int]()
-        K[Passenger(offer: 0, weight: 0)] = 0
+        var K = Array(count: N+1, repeatedValue: Array(count: c+1, repeatedValue: 0))
+       
         for x in 1..<c+1 {
-            K[Passenger(offer: 0, weight: x)] = LOWESTNUMBER
+            K[0][x] = LOWESTNUMBER
         }
         
         for i in 1..<N+1 {
@@ -517,17 +516,17 @@ class DorseyThief {
             let v_i = passenger.offer
             let a_i = passenger.weight
             for x in 0..<c+1 {
-                let t = x - a_i >= 0 ? K[Passenger(offer: i-1, weight: x - a_i)] : LOWESTNUMBER
-                K[Passenger(offer: i, weight: x)] = max(K[Passenger(offer: i-1, weight: x)]!, t! + v_i)
+                let t = x - a_i >= 0 ? K[i-1][x - a_i] : LOWESTNUMBER
+                K[i][x] = max(K[i-1][x], t + v_i)
             }
         }
         
-        if K[Passenger(offer: N, weight: c)]! < 0 {
+        if K[N][c] < 0 {
             print("Got caught!")
         } else {
-            print(K[Passenger(offer: N, weight: c)]!)
+            print(K[N][c])
         }
-        return K[Passenger(offer: N, weight: c)]!
+        return K[N][c]
     }
 }
 
