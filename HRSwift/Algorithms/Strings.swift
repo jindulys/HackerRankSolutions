@@ -8,10 +8,57 @@
 
 import Foundation
 
+// https://www.hackerrank.com/challenges/pangrams
+class Pangrams {
+    func solution() {
+        checkPangramsWithSet(getLine())
+    }
+    
+    /**
+     CheckPangramsWithSet
+     
+     - parameter s: string to check
+     */
+    func checkPangramsWithSet(s: String) {
+        if s.containsAllEnglishCharacters() {
+            print("pangram")
+        } else {
+            print("not pangram")
+        }
+    }
+    
+    func checkPangramsWithArray(s: String) -> Bool {
+        var indexArray = [Bool](count: 26, repeatedValue: false)
+        let a: Character = "a"
+        
+        for c in s.characters {
+            let lowerCs = String(c).lowercaseString.characters
+            let lowerC = lowerCs[lowerCs.startIndex]
+            let index = lowerC.unicodeScalarCodePoint() - a.unicodeScalarCodePoint()
+            switch index {
+                case 0..<26:
+                    indexArray[index] = true
+                default:
+                    continue
+            }
+        }
+        
+        let result = indexArray.reduce(true){result,current in result && current}
+        if result {
+            print("pangram")
+        } else {
+            print("not pangram")
+        }
+        
+        // Return result for unit testing
+        return result
+    }
+}
+
 // https://www.hackerrank.com/challenges/funny-string
 
 class FunnyString {
-
+    
     func solution() -> Void {
         let T = getInt()
         for _ in 0..<T {
@@ -24,10 +71,10 @@ class FunnyString {
     }
     
     /**
-    This method time out, I think it is because advancedBy take O(n) time and the for loop itself also takes O(n), so the total time is O(n^2)
-    
-    - parameter s: the string to be resolved
-    */
+     This method time out, I think it is because advancedBy take O(n) time and the for loop itself also takes O(n), so the total time is O(n^2)
+     
+     - parameter s: the string to be resolved
+     */
     
     
     func solve(s: String) -> Void {
@@ -91,53 +138,31 @@ class FunnyString {
     }
 }
 
-// https://www.hackerrank.com/challenges/pangrams
-class Pangrams {
+class AlternatingCharcters {
     func solution() {
-        checkPangramsWithSet(getLine())
-    }
-    
-    /**
-     CheckPangramsWithSet
-     
-     - parameter s: string to check
-     */
-    func checkPangramsWithSet(s: String) {
-        if s.containsAllEnglishCharacters() {
-            print("pangram")
-        } else {
-            print("not pangram")
+        let T = getInt()
+        for _ in 0..<T {
+            let currentLine = getLine()
+            solve(currentLine)
         }
     }
     
-    func checkPangramsWithArray(s: String) -> Bool {
-        var indexArray = [Bool](count: 26, repeatedValue: false)
-        let a: Character = "a"
-        
-        for c in s.characters {
-            let lowerCs = String(c).lowercaseString.characters
-            let lowerC = lowerCs[lowerCs.startIndex]
-            let index = lowerC.unicodeScalarCodePoint() - a.unicodeScalarCodePoint()
-            switch index {
-                case 0..<26:
-                    indexArray[index] = true
-                default:
-                    continue
+    func solve(input: String) -> Int {
+        var previous = input.characters.first!
+        var currentIndex = input.characters.startIndex.successor()
+        var toDelete = 0
+        while currentIndex != input.characters.endIndex {
+            let current = input.characters[currentIndex]
+            if current == previous {
+                toDelete += 1
             }
+            previous = current
+            currentIndex = currentIndex.successor()
         }
-        
-        let result = indexArray.reduce(true){result,current in result && current}
-        if result {
-            print("pangram")
-        } else {
-            print("not pangram")
-        }
-        
-        // Return result for unit testing
-        return result
+        print("\(toDelete)")
+        return toDelete
     }
 }
-
 
 // https://www.hackerrank.com/challenges/two-strings
 class TwoStrings {

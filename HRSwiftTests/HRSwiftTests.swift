@@ -118,4 +118,8 @@ class HRSwiftTests: XCTestCase {
         XCTAssertTrue(test.solve([passenger1, passenger2, passenger3, passenger4], c: 10) == 1140)
     }
     
+    func testAlternatingCharacters() {
+        let test = AlternatingCharcters()
+        XCTAssertTrue(test.solve("ABAA") == 1)
+    }
 }
