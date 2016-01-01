@@ -15,6 +15,7 @@ Different folders are named after corresponding domain names or contest names.
 [Funny String](https://www.hackerrank.com/challenges/funny-string) |  _O(n)_   |    | Easy | String
 [Pangrams](https://www.hackerrank.com/challenges/pangrams) |  _O(n)_   |  _O(1)_  | Easy | String
 [Alternating Characters](https://www.hackerrank.com/challenges/alternating-characters) |  _O(n)_   |  _O(1)_  | Easy | String
+[Game of Thrones](https://www.hackerrank.com/challenges/game-of-thrones) |  _O(n)_   |  _O(1)_  | Easy | String
 [Two Strings](https://www.hackerrank.com/challenges/two-strings) |  _O(n)_   |  _O(1)_  | Moderate | String | Set
 [Palindrome Index](https://www.hackerrank.com/challenges/palindrome-index) |  _O(n)_   |  _O(1)_  | Easy | String 
 [Sherlock And Valid String](https://www.hackerrank.com/challenges/sherlock-and-valid-string) |  _O(n)_   |  _O(1)_  | Difficult | String | Dictionary
