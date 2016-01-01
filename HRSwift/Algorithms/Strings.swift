@@ -187,6 +187,37 @@ class GameofThrones {
     }
 }
 
+class MakeItAnagram {
+    func solution() {
+        let line1 = getLine()
+        let line2 = getLine()
+        
+        solve(line1, line2: line2)
+    }
+    
+    func solve(line1: String, line2: String) -> Int {
+        var line1Counts = Array(count: 26, repeatedValue: 0)
+        var line2Counts = Array(count: 26, repeatedValue: 0)
+        
+        for c in line1.characters {
+            let currentIndex = c.unicodeScalarCodePoint() - 97
+            line1Counts[currentIndex] = line1Counts[currentIndex] + 1
+        }
+        
+        for c in line2.characters {
+            let currentIndex = c.unicodeScalarCodePoint() - 97
+            line2Counts[currentIndex] = line2Counts[currentIndex] + 1
+        }
+        
+        var sum = 0
+        for i in 0..<26 {
+            sum += abs(line1Counts[i] - line2Counts[i])
+        }
+        print(sum)
+        return sum
+    }
+}
+
 // https://www.hackerrank.com/challenges/two-strings
 class TwoStrings {
     func solution() {

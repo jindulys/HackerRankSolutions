@@ -664,8 +664,6 @@ public final class AVLNode<T : Comparable> {
         }
         
         fatalError("Tree too unbalanced")
-        
-        return self
     }
     
     func remove(value : Element) -> (result: AVLNode<Element>?, foundFlag :Bool){

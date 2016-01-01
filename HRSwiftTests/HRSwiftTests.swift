@@ -122,4 +122,9 @@ class HRSwiftTests: XCTestCase {
         let test = AlternatingCharcters()
         XCTAssertTrue(test.solve("ABAA") == 1)
     }
+    
+    func testMakeItAnagram() {
+        let test = MakeItAnagram()
+        XCTAssertTrue(test.solve("cde", line2: "abc")==4)
+    }
 }
