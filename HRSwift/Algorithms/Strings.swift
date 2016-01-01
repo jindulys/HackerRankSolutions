@@ -164,6 +164,29 @@ class AlternatingCharcters {
     }
 }
 
+class GameofThrones {
+    func solution() {
+        let input = getLine()
+        solve(input)
+    }
+    
+    func solve(input: String) -> Bool {
+        var charactersArray = Array(count: 26, repeatedValue: 0)
+        for c in input.characters {
+            let currentIndex = c.unicodeScalarCodePoint() - 97
+            charactersArray[currentIndex] = charactersArray[currentIndex] + 1
+        }
+        let oddCount = charactersArray.filter { $0%2 == 1 }.count
+        if oddCount > 1 {
+            print("NO")
+            return false
+        } else {
+            print("YES")
+            return true
+        }
+    }
+}
+
 // https://www.hackerrank.com/challenges/two-strings
 class TwoStrings {
     func solution() {
