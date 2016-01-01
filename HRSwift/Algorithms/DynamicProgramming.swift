@@ -457,6 +457,10 @@ extension Passenger : Hashable {
     }
 }
 
+extension Passenger : CustomStringConvertible {
+    var description: String { return "Passenger offer \(offer) for \(weight)grams" }
+}
+
 func ==(lhs: Passenger, rhs: Passenger) -> Bool {
     return lhs.offer == rhs.offer && lhs.weight == rhs.weight
 }
@@ -484,22 +488,24 @@ class DorseyThief {
             return p1.offer > p2.offer
         }
         
-        var offersByAmount = Array(count: c, repeatedValue: [Passenger]())
+        var offersByAmount = [LinkedListQueue<Passenger>]()
+        for _ in 0..<c {
+            offersByAmount.append(LinkedListQueue<Passenger>())
+        }
         for passenger in sortedArray {
             if passenger.weight <= c {
-                var currentArray = offersByAmount[passenger.weight-1]
+                let currentQueue = offersByAmount[passenger.weight-1]
                 // Thief could not sell that much, here is the limitation. this is the key for optimization
-                if currentArray.count < c/passenger.weight {
-                    currentArray.append(passenger)
+                if currentQueue.count < c/passenger.weight {
+                    currentQueue.enqueue(passenger)
                 }
-                offersByAmount[passenger.weight - 1] = currentArray
             }
         }
               
         var offers: [Passenger] = []
         for offerList in offersByAmount {
-            for passenger in offerList {
-                offers.append(passenger)
+            while !offerList.isEmpty() {
+                offers.append(offerList.dequeue()!)
             }
         }
         

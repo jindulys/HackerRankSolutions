@@ -399,20 +399,24 @@ extension Queue: CollectionType {
 /**
     LinkedListQueue 
 */
-class LinkedListQueue<Element: CustomStringConvertible> {
+public class LinkedListQueue<Element: CustomStringConvertible> {
     private var head: ListNode<Element>
     private var end: ListNode<Element>
+    public var count: Int
     
     init() {
+        // dumped node stands for head
         head = ListNode<Element>()
         end = head
+        count = 0
     }
     
-    func enqueue(element: Element) {
+    public func enqueue(element: Element) {
         let newNode = ListNode(element)
         end.next = newNode
         newNode.pre = end
         end = newNode
+        count += 1
     }
     
     func dequeue() -> Element? {
@@ -426,6 +430,7 @@ class LinkedListQueue<Element: CustomStringConvertible> {
         } else {
             end = head
         }
+        count -= 1
         return retVal
     }
     
