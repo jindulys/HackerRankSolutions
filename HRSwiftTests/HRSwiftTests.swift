@@ -127,4 +127,11 @@ class HRSwiftTests: XCTestCase {
         let test = MakeItAnagram()
         XCTAssertTrue(test.solve("cde", line2: "abc")==4)
     }
+    
+    func testAnagram() {
+        let test = Anagram()
+        XCTAssert(test.solve("aaabbb") == 3, "Pass")
+        XCTAssert(test.solve("ab") == 1, "Pass")
+        XCTAssert(test.solve("abc") == -1, "Pass")
+    }
 }

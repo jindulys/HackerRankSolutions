@@ -218,6 +218,51 @@ class MakeItAnagram {
     }
 }
 
+class Anagram {
+    func solution() {
+        let T = getInt()
+        for _ in 0..<T {
+            let input = getLine()
+            solve(input)
+        }
+    }
+    
+    func solve(input: String) -> Int {
+        if input.characters.count % 2 != 0 {
+            print("-1")
+            return -1
+        }
+        
+        let count = input.characters.count
+        // Use string index to operate on String
+        let midIndex = input.startIndex.advancedBy(count/2)
+        
+        let a = input.substringToIndex(midIndex)
+        let b = input.substringFromIndex(midIndex)
+        
+        var aCharacters = Array(count: 26, repeatedValue: 0)
+        var bCharacters = Array(count: 26, repeatedValue: 0)
+        
+        for c in a.characters {
+            let currentIndex = c.unicodeScalarCodePoint() - 97
+            aCharacters[currentIndex] += 1
+        }
+        
+        for c in b.characters {
+            let currentIndex = c.unicodeScalarCodePoint() - 97
+            bCharacters[currentIndex] += 1
+        }
+        
+        var sum = 0
+        for i in 0..<26 {
+            sum += abs(aCharacters[i] - bCharacters[i])
+        }
+        
+        print("\(sum/2)")
+        return sum/2
+    }
+}
+
 // https://www.hackerrank.com/challenges/two-strings
 class TwoStrings {
     func solution() {
