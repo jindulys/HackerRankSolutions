@@ -134,4 +134,9 @@ class HRSwiftTests: XCTestCase {
         XCTAssert(test.solve("ab") == 1, "Pass")
         XCTAssert(test.solve("abc") == -1, "Pass")
     }
+    
+    func testSherlockAndAnagrams() {
+        let test = SherlockAndAnagrams()
+        XCTAssert(test.solve("abba") == 4, "Pass")
+    }
 }

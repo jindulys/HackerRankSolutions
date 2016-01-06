@@ -289,6 +289,43 @@ class TwoStrings {
     }
 }
 
+class SherlockAndAnagrams {
+    func solution() {
+        let T = getInt()
+        for _ in 0..<T {
+            let input = getLine()
+            solve(input)
+        }
+    }
+    
+    func solve(input: String) -> Int {
+        // Generate all possible substrings, which requires O(n^2) time.
+        let N = input.characters.count
+        var subStringDict = [String: Int]()
+        var currentIndex = input.characters.startIndex
+        for i in SRange(end: N) {
+            for l in SRange(start: 1, end: N-i+1) {
+                let endIndex = currentIndex.advancedBy(l)
+                let subString = input.substringWithRange(Range<String.CharacterView.Index>(start: currentIndex, end: endIndex))
+                let sortedSubString = String(Array(subString.characters).sort())
+                if let currentSubStringCount = subStringDict[sortedSubString] {
+                    subStringDict[sortedSubString] = currentSubStringCount + 1
+                } else {
+                    subStringDict[sortedSubString] = 1
+                }
+            }
+            currentIndex = currentIndex.advancedBy(1)
+        }
+        
+        var sum = 0
+        for value in subStringDict.values {
+            sum += value * (value - 1) / 2
+        }
+        print(sum)
+        return sum
+    }
+}
+
 // https://www.hackerrank.com/challenges/palindrome-index
 class PalindromeIndex {
     func solution() {
