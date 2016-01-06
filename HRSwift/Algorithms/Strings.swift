@@ -307,7 +307,12 @@ class SherlockAndAnagrams {
             for l in SRange(start: 1, end: N-i+1) {
                 let endIndex = currentIndex.advancedBy(l)
                 let subString = input.substringWithRange(Range<String.CharacterView.Index>(start: currentIndex, end: endIndex))
-                let sortedSubString = String(Array(subString.characters).sort())
+                
+                //let sortedSubString = String(Array(subString.characters).sort())
+                
+                // This solution might slightly improve performance
+                let sortedSubString = String(Array(subString.utf16).sort())
+                
                 if let currentSubStringCount = subStringDict[sortedSubString] {
                     subStringDict[sortedSubString] = currentSubStringCount + 1
                 } else {
