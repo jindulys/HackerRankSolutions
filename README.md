@@ -19,6 +19,7 @@ Different folders are named after corresponding domain names or contest names.
 [Make it anagram](https://www.hackerrank.com/challenges/make-it-anagram) |  _O(n)_   |  _O(1)_  | Easy | String
 [Anagram](https://www.hackerrank.com/challenges/anagram) |  _O(n)_   |  _O(1)_  | Easy | String
 [Two Strings](https://www.hackerrank.com/challenges/two-strings) |  _O(n)_   |  _O(1)_  | Moderate | String | Set
+[SherlockAndAnagrams](https://www.hackerrank.com/challenges/sherlock-and-anagrams) |  _O(n^3lgn)_   |  _O(n^2)_  | Moderate | String | Sort, Dictionary, Permutation
 [Palindrome Index](https://www.hackerrank.com/challenges/palindrome-index) |  _O(n)_   |  _O(1)_  | Easy | String 
 [Sherlock And Valid String](https://www.hackerrank.com/challenges/sherlock-and-valid-string) |  _O(n)_   |  _O(1)_  | Difficult | String | Dictionary
 [The Maximum Subarray](https://www.hackerrank.com/challenges/maxsubarray) |  _O(n)_   | _O(n)_  | Easy | Dynamic Programming
