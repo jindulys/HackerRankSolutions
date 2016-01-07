@@ -62,7 +62,7 @@ I created class for each problem. If you want to test those solution on HackerRa
 
 HackerRank lover, swift lover do not hesitate. There are tons of unsolved questions. If you want to contribute a little bit, please write your own swift solutions then make a pull request.
 
-For each question, you should write your own Class in corresponding file, inside that Class define a **solution** method. For example, if you want to submit solution of **Algorithms** --> **Strings** --> **Gemstones**, you should write your solution inside [String.swift](HRSwift/Algorithms/Strings.swift). If there is no related file for a subdomains, please create a file.
+For each question, you should write your own Class in corresponding file, inside that Class define a **solution** method. For example, if you want to submit solution of **Algorithms** --> **Strings** --> **Gemstones**, you should write your solution inside [String.swift](HRSwift/Algorithms/Strings.swift). If there is no related file for a subdomain, please create a file.
 
 Write a test case in [HRSwiftTests.swift](HRSwiftTests/HRSwiftTests.swift). You could use sample input and sample output from that question as a test.
 
