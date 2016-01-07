@@ -139,4 +139,9 @@ class HRSwiftTests: XCTestCase {
         let test = SherlockAndAnagrams()
         XCTAssert(test.solve("abba") == 4, "Pass")
     }
+    
+    func testCommonChile() {
+        let test = CommonChild()
+        XCTAssert(test.solve("ABCD", second: "ABDC") == 3, "Pass")
+    }
 }

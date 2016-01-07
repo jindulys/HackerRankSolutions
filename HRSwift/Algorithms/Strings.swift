@@ -413,4 +413,53 @@ class SherlockAndValidString {
     }
 }
 
+class CommonChild {
+    func solution() {
+        let a = getLine()
+        let b = getLine()
+        solve(a, second: b)
+    }
+    
+    /**
+     Solve this problem use dynamic programming.
+     
+     The basic idea is that we could take current character if current one and test one are equal, otherwise we
+     could choose max from 
+     
+     (1) take this character and dont take test one
+     
+     (2) take the test one and ignore current one
+     
+         dp[i][j] = dp[i-1][j-1] + 1 if first[i] == first[j]
+         dp[i][j] = max(dp[i][j-1], dp[i-1][j]) if first[i] != first[j]
+     
+     - parameter first:  input one
+     - parameter second: input two
+     
+     - returns: the length of longest subString of both inputs
+     */
+    func solve(first: String, second: String) -> Int {
+        let N = first.characters.count
+        // Construct a N+1 by N+1 matrix so we could deal with 0 element.
+        var dp = Array(count: N+1, repeatedValue: Array(count: N+1, repeatedValue: 0))
+        
+        // Swift string do not support subscript so we should use index instead.
+        var currentFirstIndex = first.characters.startIndex
+        for i in 1..<N+1 {
+            var currentSecondIndex = second.characters.startIndex
+            for j in 1..<N+1 {
+                if first.characters[currentFirstIndex] == second.characters[currentSecondIndex] {
+                    dp[i][j] = dp[i-1][j-1] + 1
+                } else {
+                    dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+                }
+                currentSecondIndex = currentSecondIndex.successor()
+            }
+            currentFirstIndex = currentFirstIndex.successor()
+        }
+        print(dp[N][N])
+        return dp[N][N]
+    }
+}
+
 
