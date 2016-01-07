@@ -22,6 +22,7 @@ Different folders are named after corresponding domain names or contest names.
 [SherlockAndAnagrams](https://www.hackerrank.com/challenges/sherlock-and-anagrams) |  _O(n^3lgn)_   |  _O(n^2)_  | Moderate | String | Sort, Dictionary, Permutation
 [Palindrome Index](https://www.hackerrank.com/challenges/palindrome-index) |  _O(n)_   |  _O(1)_  | Easy | String 
 [Sherlock And Valid String](https://www.hackerrank.com/challenges/sherlock-and-valid-string) |  _O(n)_   |  _O(1)_  | Difficult | String | Dictionary
+[Common Child](https://www.hackerrank.com/challenges/common-child) |  _O(n^2)_   |  _O(n^2)_  | Difficult | String | Dynamic Programming
 [The Maximum Subarray](https://www.hackerrank.com/challenges/maxsubarray) |  _O(n)_   | _O(n)_  | Easy | Dynamic Programming
 [The Coin Change Problem](https://www.hackerrank.com/challenges/coin-change) |  _O(MN)_   | _O(MN)_  | Medium | Dynamic Programming | bottom-up table construction
 [Knapsack](https://www.hackerrank.com/challenges/unbounded-knapsack) |  _O(MN)_   | _O(MN)_  | Moderate | Dynamic Programming | memoization in swift
