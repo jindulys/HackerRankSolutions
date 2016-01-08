@@ -10,6 +10,9 @@ import Foundation
 
 // https://www.hackerrank.com/challenges/pangrams
 public class Pangrams {
+    
+    public init() {}
+    
     func solution() {
         checkPangramsWithSet(getLine())
     }
@@ -58,6 +61,8 @@ public class Pangrams {
 // https://www.hackerrank.com/challenges/funny-string
 
 public class FunnyString {
+    
+    public init() {}
     
     func solution() -> Void {
         let T = getInt()
@@ -139,6 +144,9 @@ public class FunnyString {
 }
 
 public class AlternatingCharcters {
+    
+    public init() {}
+    
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -165,6 +173,9 @@ public class AlternatingCharcters {
 }
 
 public class GameofThrones {
+    
+    public init() {}
+    
     func solution() {
         let input = getLine()
         solve(input)
@@ -188,6 +199,9 @@ public class GameofThrones {
 }
 
 public class MakeItAnagram {
+    
+    public init() {}
+    
     func solution() {
         let line1 = getLine()
         let line2 = getLine()
@@ -219,6 +233,9 @@ public class MakeItAnagram {
 }
 
 public class Anagram {
+    
+    public init() {}
+    
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -265,6 +282,9 @@ public class Anagram {
 
 // https://www.hackerrank.com/challenges/two-strings
 public class TwoStrings {
+    
+    public init() {}
+    
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -290,6 +310,9 @@ public class TwoStrings {
 }
 
 public class SherlockAndAnagrams {
+    
+    public init() {}
+    
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -333,6 +356,9 @@ public class SherlockAndAnagrams {
 
 // https://www.hackerrank.com/challenges/palindrome-index
 public class PalindromeIndex {
+    
+    public init() {}
+    
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -372,6 +398,9 @@ public class PalindromeIndex {
 
 // https://www.hackerrank.com/challenges/sherlock-and-valid-string
 public class SherlockAndValidString {
+    
+    public init() {}
+    
     var characterCounts = [Character: Int]()
     func solution() {
         let s = getLine()
@@ -414,6 +443,9 @@ public class SherlockAndValidString {
 }
 
 public class CommonChild {
+    
+    public init() {}
+    
     func solution() {
         let a = getLine()
         let b = getLine()
