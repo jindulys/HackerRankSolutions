@@ -52,26 +52,55 @@ I created class for each problem. If you want to test those solution on HackerRa
 
 1. create a constant with class name.
 
-        let mySolution = MyClass()
+```swift
+let mySolution = MyClass()
+```
 2. call *solution* method on that constant
 
-        mySolution.solution()
+```swift
+mySolution.solution()
+```
+
 3. copy and paste related helper methods from *HackerRankHelper* folder, eg. *getLine()*, *getInt()*
 
+# Swift Package Manager
+
+If you want to use this module to play with local test files, you might need to import this module. [Swift Package Manager](https://github.com/apple/swift-package-manager) is a good tool.
+
+Firstly, add following `Package.swift` to your root directory.
+
+```swift
+import PackageDescription
+
+let package = Package(
+    name:"YourModuleName",
+    dependencies: [
+        .Package(url:"https://github.com/jindulys/HackerRankSolutions.git", majorVersion:1),
+    ]
+)
+```
+
+ Secondly, when you use this module in your source file, you should:
+ 
+```swift
+import HRSwift
+```
 # Contribution Guidelines
 
 HackerRank lover, swift lover do not hesitate. There are tons of unsolved questions. If you want to contribute a little bit, please write your own swift solutions then make a pull request.
 
-For each question, you should write your own Class in corresponding file, inside that Class define a **solution** method. For example, if you want to submit solution of **Algorithms** --> **Strings** --> **Gemstones**, you should write your solution inside [String.swift](Sources/Strings.swift). If there is no related file for a subdomain, please create a file.
+For each question, you should write your own Class in corresponding file, inside that Class define a **solution** method, which is used for Hackerrank submission. This module could be imported by other packages, so make your class and those usable methods **public**. If you want to submit solution of **Algorithms** --> **Strings** --> **Gemstones**, you should write your solution inside [String.swift](Sources/Strings.swift). If there is no related file for a subdomain, please create a new file.
 
 Write a test case in [HRSwiftTests.swift](HRSwiftTests/HRSwiftTests.swift). You could use sample input and sample output from that question as a test.
 
-     func testAnagram() {
-         let test = Anagram()
-         XCTAssert(test.solve("aaabbb") == 3, "Pass")
-         XCTAssert(test.solve("ab") == 1, "Pass")
-         XCTAssert(test.solve("abc") == -1, "Pass")
-     }
+```swift
+ func testAnagram() {
+     let test = Anagram()
+     XCTAssert(test.solve("aaabbb") == 3, "Pass")
+     XCTAssert(test.solve("ab") == 1, "Pass")
+     XCTAssert(test.solve("abc") == -1, "Pass")
+ }
+```
 
 If you write some general code that could be used afterwards, please write them in [HackerRankHelper](Sources/HackerRankHelper.swift)
 
