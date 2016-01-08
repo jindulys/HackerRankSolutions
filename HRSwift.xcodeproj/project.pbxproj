@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E5381D21C0B4F29001BFEE5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5381D11C0B4F29001BFEE5 /* Strings.swift */; };
-		0E5381D31C0BADA4001BFEE5 /* HackerRankHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5741BB1C002025004EB0FA /* HackerRankHelper.swift */; };
-		0E5381D41C0BB65A001BFEE5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5381D11C0B4F29001BFEE5 /* Strings.swift */; };
 		0E57418B1C001FAF004EB0FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E57418A1C001FAF004EB0FA /* AppDelegate.swift */; };
 		0E57418D1C001FAF004EB0FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E57418C1C001FAF004EB0FA /* ViewController.swift */; };
 		0E5741901C001FAF004EB0FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E57418E1C001FAF004EB0FA /* Main.storyboard */; };
@@ -17,11 +14,12 @@
 		0E5741951C001FAF004EB0FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5741931C001FAF004EB0FA /* LaunchScreen.storyboard */; };
 		0E5741A01C001FAF004EB0FA /* HRSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E57419F1C001FAF004EB0FA /* HRSwiftTests.swift */; };
 		0E5741AB1C001FAF004EB0FA /* HRSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5741AA1C001FAF004EB0FA /* HRSwiftUITests.swift */; };
-		0E5741BC1C002025004EB0FA /* HackerRankHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5741BB1C002025004EB0FA /* HackerRankHelper.swift */; };
-		0E5741BF1C002EF0004EB0FA /* ZenefitsContest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5741BE1C002EF0004EB0FA /* ZenefitsContest.swift */; };
-		0E8BAEDC1C054CF900FF8697 /* Implementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BAEDB1C054CF900FF8697 /* Implementation.swift */; };
-		0E92A31D1C1C747E0029BC9E /* IndeedPrime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E92A31C1C1C747E0029BC9E /* IndeedPrime.swift */; };
-		0E9B05C01C271058002CC520 /* DynamicProgramming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9B05BF1C271058002CC520 /* DynamicProgramming.swift */; };
+		0EEDD4C41C3F635A00F94031 /* DynamicProgramming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */; };
+		0EEDD4C51C3F635A00F94031 /* HackerRankHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BF1C3F635A00F94031 /* HackerRankHelper.swift */; };
+		0EEDD4C61C3F635A00F94031 /* Implementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4C01C3F635A00F94031 /* Implementation.swift */; };
+		0EEDD4C71C3F635A00F94031 /* IndeedPrime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4C11C3F635A00F94031 /* IndeedPrime.swift */; };
+		0EEDD4C81C3F635A00F94031 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4C21C3F635A00F94031 /* Strings.swift */; };
+		0EEDD4C91C3F635A00F94031 /* ZenefitsContest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4C31C3F635A00F94031 /* ZenefitsContest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E5381D11C0B4F29001BFEE5 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Algorithms/Strings.swift; sourceTree = "<group>"; };
 		0E5741871C001FAF004EB0FA /* HRSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E57418A1C001FAF004EB0FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E57418C1C001FAF004EB0FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,11 +53,12 @@
 		0E5741A61C001FAF004EB0FA /* HRSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HRSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5741AA1C001FAF004EB0FA /* HRSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRSwiftUITests.swift; sourceTree = "<group>"; };
 		0E5741AC1C001FAF004EB0FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E5741BB1C002025004EB0FA /* HackerRankHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HackerRankHelper.swift; path = HackerRankHelper/HackerRankHelper.swift; sourceTree = "<group>"; };
-		0E5741BE1C002EF0004EB0FA /* ZenefitsContest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZenefitsContest.swift; path = ZenefitsContest/ZenefitsContest.swift; sourceTree = "<group>"; };
-		0E8BAEDB1C054CF900FF8697 /* Implementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Implementation.swift; path = Algorithms/Implementation.swift; sourceTree = "<group>"; };
-		0E92A31C1C1C747E0029BC9E /* IndeedPrime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndeedPrime.swift; path = IndeedPrime/IndeedPrime.swift; sourceTree = "<group>"; };
-		0E9B05BF1C271058002CC520 /* DynamicProgramming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicProgramming.swift; path = Algorithms/DynamicProgramming.swift; sourceTree = "<group>"; };
+		0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicProgramming.swift; path = Sources/DynamicProgramming.swift; sourceTree = "<group>"; };
+		0EEDD4BF1C3F635A00F94031 /* HackerRankHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HackerRankHelper.swift; path = Sources/HackerRankHelper.swift; sourceTree = "<group>"; };
+		0EEDD4C01C3F635A00F94031 /* Implementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Implementation.swift; path = Sources/Implementation.swift; sourceTree = "<group>"; };
+		0EEDD4C11C3F635A00F94031 /* IndeedPrime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndeedPrime.swift; path = Sources/IndeedPrime.swift; sourceTree = "<group>"; };
+		0EEDD4C21C3F635A00F94031 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Sources/Strings.swift; sourceTree = "<group>"; };
+		0EEDD4C31C3F635A00F94031 /* ZenefitsContest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZenefitsContest.swift; path = Sources/ZenefitsContest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +89,7 @@
 		0E57417E1C001FAF004EB0FA = {
 			isa = PBXGroup;
 			children = (
+				0EEDD4BD1C3F634500F94031 /* Sources */,
 				0E5741891C001FAF004EB0FA /* HRSwift */,
 				0E57419E1C001FAF004EB0FA /* HRSwiftTests */,
 				0E5741A91C001FAF004EB0FA /* HRSwiftUITests */,
@@ -111,10 +110,6 @@
 		0E5741891C001FAF004EB0FA /* HRSwift */ = {
 			isa = PBXGroup;
 			children = (
-				0E92A31E1C1C748C0029BC9E /* IndeedPrime */,
-				0E8BAEDA1C054CA900FF8697 /* Algorithms */,
-				0E5741BD1C002EBA004EB0FA /* ZenefitsContest */,
-				0E5741BA1C001FD3004EB0FA /* HackerRankHelper */,
 				0E57418A1C001FAF004EB0FA /* AppDelegate.swift */,
 				0E57418C1C001FAF004EB0FA /* ViewController.swift */,
 				0E57418E1C001FAF004EB0FA /* Main.storyboard */,
@@ -143,38 +138,17 @@
 			path = HRSwiftUITests;
 			sourceTree = "<group>";
 		};
-		0E5741BA1C001FD3004EB0FA /* HackerRankHelper */ = {
+		0EEDD4BD1C3F634500F94031 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				0E5741BB1C002025004EB0FA /* HackerRankHelper.swift */,
+				0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */,
+				0EEDD4BF1C3F635A00F94031 /* HackerRankHelper.swift */,
+				0EEDD4C01C3F635A00F94031 /* Implementation.swift */,
+				0EEDD4C11C3F635A00F94031 /* IndeedPrime.swift */,
+				0EEDD4C21C3F635A00F94031 /* Strings.swift */,
+				0EEDD4C31C3F635A00F94031 /* ZenefitsContest.swift */,
 			);
-			name = HackerRankHelper;
-			sourceTree = "<group>";
-		};
-		0E5741BD1C002EBA004EB0FA /* ZenefitsContest */ = {
-			isa = PBXGroup;
-			children = (
-				0E5741BE1C002EF0004EB0FA /* ZenefitsContest.swift */,
-			);
-			name = ZenefitsContest;
-			sourceTree = "<group>";
-		};
-		0E8BAEDA1C054CA900FF8697 /* Algorithms */ = {
-			isa = PBXGroup;
-			children = (
-				0E8BAEDB1C054CF900FF8697 /* Implementation.swift */,
-				0E5381D11C0B4F29001BFEE5 /* Strings.swift */,
-				0E9B05BF1C271058002CC520 /* DynamicProgramming.swift */,
-			);
-			name = Algorithms;
-			sourceTree = "<group>";
-		};
-		0E92A31E1C1C748C0029BC9E /* IndeedPrime */ = {
-			isa = PBXGroup;
-			children = (
-				0E92A31C1C1C747E0029BC9E /* IndeedPrime.swift */,
-			);
-			name = IndeedPrime;
+			name = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,14 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E5741BF1C002EF0004EB0FA /* ZenefitsContest.swift in Sources */,
+				0EEDD4C91C3F635A00F94031 /* ZenefitsContest.swift in Sources */,
+				0EEDD4C71C3F635A00F94031 /* IndeedPrime.swift in Sources */,
+				0EEDD4C61C3F635A00F94031 /* Implementation.swift in Sources */,
 				0E57418D1C001FAF004EB0FA /* ViewController.swift in Sources */,
+				0EEDD4C41C3F635A00F94031 /* DynamicProgramming.swift in Sources */,
 				0E57418B1C001FAF004EB0FA /* AppDelegate.swift in Sources */,
-				0E9B05C01C271058002CC520 /* DynamicProgramming.swift in Sources */,
-				0E8BAEDC1C054CF900FF8697 /* Implementation.swift in Sources */,
-				0E5381D21C0B4F29001BFEE5 /* Strings.swift in Sources */,
-				0E92A31D1C1C747E0029BC9E /* IndeedPrime.swift in Sources */,
-				0E5741BC1C002025004EB0FA /* HackerRankHelper.swift in Sources */,
+				0EEDD4C51C3F635A00F94031 /* HackerRankHelper.swift in Sources */,
+				0EEDD4C81C3F635A00F94031 /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,8 +298,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E5741A01C001FAF004EB0FA /* HRSwiftTests.swift in Sources */,
-				0E5381D41C0BB65A001BFEE5 /* Strings.swift in Sources */,
-				0E5381D31C0BADA4001BFEE5 /* HackerRankHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
