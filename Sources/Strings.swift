@@ -9,7 +9,7 @@
 import Foundation
 
 // https://www.hackerrank.com/challenges/pangrams
-class Pangrams {
+public class Pangrams {
     func solution() {
         checkPangramsWithSet(getLine())
     }
@@ -19,7 +19,7 @@ class Pangrams {
      
      - parameter s: string to check
      */
-    func checkPangramsWithSet(s: String) {
+    public func checkPangramsWithSet(s: String) {
         if s.containsAllEnglishCharacters() {
             print("pangram")
         } else {
@@ -57,7 +57,7 @@ class Pangrams {
 
 // https://www.hackerrank.com/challenges/funny-string
 
-class FunnyString {
+public class FunnyString {
     
     func solution() -> Void {
         let T = getInt()
@@ -77,7 +77,7 @@ class FunnyString {
      */
     
     
-    func solve(s: String) -> Void {
+    public func solve(s: String) -> Void {
         var values = [Int]()
         var reversed = [Int]()
         
@@ -108,7 +108,7 @@ class FunnyString {
      
      - parameter s: the string to be resolved
      */
-    func solveAlternative(s: String) -> Void {
+    public func solveAlternative(s: String) -> Void {
         var values = [Int]()
         var reversed = [Int]()
         
@@ -138,7 +138,7 @@ class FunnyString {
     }
 }
 
-class AlternatingCharcters {
+public class AlternatingCharcters {
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -147,7 +147,7 @@ class AlternatingCharcters {
         }
     }
     
-    func solve(input: String) -> Int {
+    public func solve(input: String) -> Int {
         var previous = input.characters.first!
         var currentIndex = input.characters.startIndex.successor()
         var toDelete = 0
@@ -164,13 +164,13 @@ class AlternatingCharcters {
     }
 }
 
-class GameofThrones {
+public class GameofThrones {
     func solution() {
         let input = getLine()
         solve(input)
     }
     
-    func solve(input: String) -> Bool {
+    public func solve(input: String) -> Bool {
         var charactersArray = Array(count: 26, repeatedValue: 0)
         for c in input.characters {
             let currentIndex = c.unicodeScalarCodePoint() - 97
@@ -187,7 +187,7 @@ class GameofThrones {
     }
 }
 
-class MakeItAnagram {
+public class MakeItAnagram {
     func solution() {
         let line1 = getLine()
         let line2 = getLine()
@@ -195,7 +195,7 @@ class MakeItAnagram {
         solve(line1, line2: line2)
     }
     
-    func solve(line1: String, line2: String) -> Int {
+    public func solve(line1: String, line2: String) -> Int {
         var line1Counts = Array(count: 26, repeatedValue: 0)
         var line2Counts = Array(count: 26, repeatedValue: 0)
         
@@ -218,7 +218,7 @@ class MakeItAnagram {
     }
 }
 
-class Anagram {
+public class Anagram {
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -227,7 +227,7 @@ class Anagram {
         }
     }
     
-    func solve(input: String) -> Int {
+    public func solve(input: String) -> Int {
         if input.characters.count % 2 != 0 {
             print("-1")
             return -1
@@ -264,7 +264,7 @@ class Anagram {
 }
 
 // https://www.hackerrank.com/challenges/two-strings
-class TwoStrings {
+public class TwoStrings {
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -274,7 +274,7 @@ class TwoStrings {
         }
     }
     
-    func checkSubStringsExists(s: String, t: String) -> Bool {
+    public func checkSubStringsExists(s: String, t: String) -> Bool {
         let sSet = s.convertToCharacterSet()
         let tSet = t.convertToCharacterSet()
         
@@ -289,7 +289,7 @@ class TwoStrings {
     }
 }
 
-class SherlockAndAnagrams {
+public class SherlockAndAnagrams {
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -298,7 +298,7 @@ class SherlockAndAnagrams {
         }
     }
     
-    func solve(input: String) -> Int {
+    public func solve(input: String) -> Int {
         // Generate all possible substrings, which requires O(n^2) time.
         let N = input.characters.count
         var subStringDict = [String: Int]()
@@ -332,7 +332,7 @@ class SherlockAndAnagrams {
 }
 
 // https://www.hackerrank.com/challenges/palindrome-index
-class PalindromeIndex {
+public class PalindromeIndex {
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -340,7 +340,7 @@ class PalindromeIndex {
         }
     }
     
-    func solve(s: String) {
+    public func solve(s: String) {
         var start = s.startIndex
         var end = s.endIndex.predecessor()
         
@@ -371,7 +371,7 @@ class PalindromeIndex {
 }
 
 // https://www.hackerrank.com/challenges/sherlock-and-valid-string
-class SherlockAndValidString {
+public class SherlockAndValidString {
     var characterCounts = [Character: Int]()
     func solution() {
         let s = getLine()
@@ -413,7 +413,7 @@ class SherlockAndValidString {
     }
 }
 
-class CommonChild {
+public class CommonChild {
     func solution() {
         let a = getLine()
         let b = getLine()
@@ -438,7 +438,7 @@ class CommonChild {
      
      - returns: the length of longest subString of both inputs
      */
-    func solve(first: String, second: String) -> Int {
+    public func solve(first: String, second: String) -> Int {
         let N = first.characters.count
         // Construct a N+1 by N+1 matrix so we could deal with 0 element.
         var dp = Array(count: N+1, repeatedValue: Array(count: N+1, repeatedValue: 0))

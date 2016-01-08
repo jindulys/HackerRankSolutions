@@ -158,7 +158,7 @@ func Fibonacci(n: Int) -> Int {
  
     - returns: a closure who's input has already in a memorized way
  */
-func memoize<T: Hashable, U: Comparable>( body:((T)->U, T)->U ) -> (T)->U {
+public func memoize<T: Hashable, U: Comparable>( body:((T)->U, T)->U ) -> (T)->U {
     var memo = Dictionary<T, U>()
     var result: ((T)->U)!
     result = { x in
@@ -299,23 +299,23 @@ public extension Double {
  *   it will generate a sequence from start to end with step. e.g start 1, end 10, step 2 -> 1, 3, 5, 7, 9
  */
 
-struct SRange: SequenceType {
+public struct SRange: SequenceType {
     var start: Int = 0
     var end: Int = 0
     var step: Int = 0
     
-    init(start: Int = 0, end: Int, step: Int = 1) {
+    public init(start: Int = 0, end: Int, step: Int = 1) {
         self.start = start
         self.end = end
         self.step = step
     }
     
-    func generate() -> RangeGenerator {
+    public func generate() -> RangeGenerator {
         return RangeGenerator(start: start, end: end, step: step)
     }
 }
 
-class RangeGenerator: GeneratorType {
+public class RangeGenerator: GeneratorType {
     let start: Int
     let end: Int
     let step: Int
@@ -323,14 +323,14 @@ class RangeGenerator: GeneratorType {
     
     var stepNum = 0
     
-    init(start: Int, end: Int, step: Int) {
+    public init(start: Int, end: Int, step: Int) {
         self.start = start
         self.end = end
         self.step = step
         clockWise = step > 0
     }
     
-    func next() -> Int? {
+    public func next() -> Int? {
         if clockWise {
             guard start + stepNum * step < end else { return nil }
             return start + step * stepNum++
@@ -349,11 +349,11 @@ class RangeGenerator: GeneratorType {
 *  Queue FIFO, this implementation could achieve amortised O(1) enqueue and dequeue
 */
 
-struct Queue<Element> {
+public struct Queue<Element> {
     private var left: [Element]
     private var right: [Element]
     
-    init() {
+    public init() {
         left = []
         right = []
     }
@@ -363,11 +363,11 @@ struct Queue<Element> {
      
      - parameter element: the element that need to be enqueued
      */
-    mutating func enqueue(element: Element) {
+    public mutating func enqueue(element: Element) {
         right.append(element)
     }
     
-    mutating func dequeue() -> Element? {
+    public mutating func dequeue() -> Element? {
         guard !(left.isEmpty && right.isEmpty) else { return nil }
         if left.isEmpty {
             left = right.reverse()
@@ -376,16 +376,16 @@ struct Queue<Element> {
         return left.removeLast()
     }
     
-    func isEmpty() -> Bool {
+    public func isEmpty() -> Bool {
         return left.isEmpty && right.isEmpty
     }
 }
 
 extension Queue: CollectionType {
-    var startIndex: Int { return 0 }
-    var endIndex: Int { return left.count + right.count }
+    public var startIndex: Int { return 0 }
+    public var endIndex: Int { return left.count + right.count }
     
-    subscript(idx: Int) -> Element {
+    public subscript(idx: Int) -> Element {
         guard idx < endIndex else { fatalError("Index out of bounds") }
         if idx < left.endIndex {
             return left[left.count - idx.successor()]
@@ -404,7 +404,7 @@ public class LinkedListQueue<Element: CustomStringConvertible> {
     private var end: ListNode<Element>
     public var count: Int
     
-    init() {
+    public init() {
         // dumped node stands for head
         head = ListNode<Element>()
         end = head
@@ -419,7 +419,7 @@ public class LinkedListQueue<Element: CustomStringConvertible> {
         count += 1
     }
     
-    func dequeue() -> Element? {
+    public func dequeue() -> Element? {
         if isEmpty() {
             return nil
         }
@@ -434,11 +434,11 @@ public class LinkedListQueue<Element: CustomStringConvertible> {
         return retVal
     }
     
-    func isEmpty() -> Bool {
+    public func isEmpty() -> Bool {
         return head === end
     }
     
-    func description() {
+    public func description() {
         print(head)
     }
 }
@@ -447,14 +447,14 @@ public class LinkedListQueue<Element: CustomStringConvertible> {
 /**
  *   ListNode Class
  */
-class ListNode<T: CustomStringConvertible>{
+public class ListNode<T: CustomStringConvertible>{
     var value: T?
     var next: ListNode?
     var pre: ListNode?
     
-    init() {}
+    public init() {}
     
-    convenience init(_ value: T) {
+    public convenience init(_ value: T) {
         self.init()
         self.value = value
     }
@@ -466,7 +466,7 @@ class ListNode<T: CustomStringConvertible>{
      
      - returns: a brand new node with reversed elements
      */
-    static func reverse(node: ListNode?) -> ListNode? {
+    public static func reverse(node: ListNode?) -> ListNode? {
         var prev: ListNode? = nil
         var head = node
         while head != nil {
@@ -482,7 +482,7 @@ class ListNode<T: CustomStringConvertible>{
 }
 
 extension ListNode: CustomStringConvertible {
-    var description:String {
+    public var description:String {
         if let next = next {
             if let value = value {
                 return "Node(v:\(value)) -> \(next)"
@@ -512,7 +512,7 @@ extension ListNode: CustomStringConvertible {
 //  Copyright (c) 2014 Maxim Zaks. All rights reserved.
 //
 
-func ||<T>(optional : Optional<T>, defaultValue : T) -> T {
+public func ||<T>(optional : Optional<T>, defaultValue : T) -> T {
     if let value = optional {
         return value
     }
@@ -605,7 +605,7 @@ public final class AVLNode<T : Comparable> {
         return false
     }
     
-    init(value : T, left: AVLNode<T>?, right: AVLNode<T>?){
+    public init(value : T, left: AVLNode<T>?, right: AVLNode<T>?){
         self.value = value
         self.left = left
         self.right = right
@@ -851,7 +851,7 @@ public class BinaryIndexedTree {
     var tree: [Int]
     
     
-    init(size: Int) {
+    public init(size: Int) {
         self.size = size
         tree = Array(count: size+1, repeatedValue: 0)
     }
@@ -862,7 +862,7 @@ public class BinaryIndexedTree {
      * - parameter pos: Index to BIT array, usually means number for item quantity
      * - parameter val: this index's frequency's change
      */
-    func update(var pos: Int, val: Int) {
+    public func update(var pos: Int, val: Int) {
         guard pos > 0 else { return }
         while pos <= size {
             tree[pos] += val
@@ -875,7 +875,7 @@ public class BinaryIndexedTree {
      *
      * - parameter pos: Index to query, usually means number for item quantity
      */
-    func query(var pos: Int) -> Int {
+    public func query(var pos: Int) -> Int {
         var sum = 0
         while pos > 0 {
             sum += tree[pos]
