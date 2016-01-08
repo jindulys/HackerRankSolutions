@@ -79,12 +79,13 @@ let package = Package(
     ]
 )
 ```
-
- Secondly, when you use this module in your source file, you should:
+Secondly, when you use this module in your source file, you should:
  
 ```swift
 import HRSwift
 ```
+Then run `swift build`, and `.build/debug/YourModuleName`, Alright, Run!!
+
 # Contribution Guidelines
 
 HackerRank lover, swift lover do not hesitate. There are tons of unsolved questions. If you want to contribute a little bit, please write your own swift solutions then make a pull request.
