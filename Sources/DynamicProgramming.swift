@@ -8,7 +8,9 @@
 
 import Foundation
 
-class CoinChangeProblem {
+public class CoinChangeProblem {
+    public init() {}
+    
     func solution() {
         // read in N, M
         let metrics = getLineToArray().map {Int($0)!}
@@ -26,7 +28,7 @@ class CoinChangeProblem {
     //  1. dont use the mth coin
     //  2. use at least 1 mth coin
     // By constructing a table we could avoid overlapping subproblems
-    func solveChanges(coins:[Int], coinsCounts:Int, total:Int) {
+    public func solveChanges(coins:[Int], coinsCounts:Int, total:Int) {
         // 1. construct matrix to save result
         //      - row represent total count from 0 to total
         //      - col represent mth coin to use
@@ -49,7 +51,10 @@ class CoinChangeProblem {
     }
 }
 
-class MaximumSubArray {
+public class MaximumSubArray {
+    
+    public init() {}
+    
     func solution() {
         let T = Int(getLine())!
         for _ in 0..<T {
@@ -59,7 +64,7 @@ class MaximumSubArray {
         }
     }
     
-    func solve(inputs:[Int]) {
+    public func solve(inputs:[Int]) {
         let maxElement = inputs.maxElement()
         if let maxE = maxElement where maxE < 0 {
             print("\(maxE) \(maxE)")
@@ -101,7 +106,10 @@ func ==(lhs: KnapSackPair, rhs: KnapSackPair) -> Bool {
     return lhs.itemIndex == rhs.itemIndex && lhs.capacity == rhs.capacity
 }
 
-class Knapsack {
+public class Knapsack {
+    
+    public init() {}
+    
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -114,7 +122,7 @@ class Knapsack {
     /**
      * This solution used memoization approach, which is a fantistic feature from Swift
      */
-    func solveWithMemo(N: Int, K: Int, array:[Int]) {
+    public func solveWithMemo(N: Int, K: Int, array:[Int]) {
         if K == 0 {
             print("0")
             return
@@ -143,7 +151,10 @@ class Knapsack {
     }
 }
 
-class LongestIncreasingSubsequence {
+public class LongestIncreasingSubsequence {
+    
+    public init() {}
+    
     func solution() {
         let N = getInt()
         let array = getLinesToArray(N).map { Int($0)! }
@@ -155,7 +166,7 @@ class LongestIncreasingSubsequence {
      *  LIS[i] = max(LIS) 
      *  time efficiency O(n^2)
      */
-    func solve(array:[Int]) {
+    public func solve(array:[Int]) {
         let N = array.count
         var LIS = Array(count: N, repeatedValue: 0)
         LIS[0] = 1
@@ -203,7 +214,9 @@ class LongestIncreasingSubsequence {
     }
 }
 
-class SherlockAndCost {
+public class SherlockAndCost {
+    
+    public init() {}
     
     func solution() {
         let T = getInt()
@@ -241,8 +254,11 @@ class SherlockAndCost {
     }
 }
 
-class HexagonalGrid {
+public class HexagonalGrid {
+    
     static let nextPos = [(1, 0), (1, -1), (0, 1)]
+    
+    public init() {}
     
     func solution() {
         let T = getInt()
@@ -263,7 +279,7 @@ class HexagonalGrid {
         }
     }
     
-    func solve(grid:[[Int]]) {
+    public func solve(grid:[[Int]]) {
         var currentGrid = grid
         if rec(&currentGrid) {
             print("YES")
@@ -305,7 +321,10 @@ class HexagonalGrid {
     }
 }
 
-class SamAndSubString {
+public class SamAndSubString {
+    
+    public init() {}
+    
     static let MOD = Int(1e9 + 7)
     
     func solution() {
@@ -313,7 +332,7 @@ class SamAndSubString {
         solve(input)
     }
     
-    func solve(input:String) -> Int {
+    public func solve(input:String) -> Int {
         let N = input.characters.count
         var preSum = Array(count: N, repeatedValue: 0)
         preSum[0] = Int(String(input.characters.first!))!
@@ -336,7 +355,10 @@ class SamAndSubString {
     }
 }
 
-class TravelAroundTheWorld {
+public class TravelAroundTheWorld {
+    
+    public init() {}
+    
     func solution() {
         let metrics = getLineToArray().map { Int($0)! }
         let a = getLineToArray().map() { Int($0)! }
@@ -357,7 +379,7 @@ class TravelAroundTheWorld {
      *      all of the city with need[i] == 0 is suitable start point
      *
      */
-    func solve(c:Int, a:[Int], b:[Int]) -> Int {
+    public func solve(c:Int, a:[Int], b:[Int]) -> Int {
         let N = a.count
         var earthA = Array(count: 2*N, repeatedValue: 0)
         var earthB = Array(count: 2*N, repeatedValue: 0)
@@ -412,7 +434,10 @@ class TravelAroundTheWorld {
     }
 }
 
-class RedJohnisBack {
+public class RedJohnisBack {
+    
+    public init() {}
+    
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -422,7 +447,7 @@ class RedJohnisBack {
     }
     
     // Use a way similar to fibonacci sequence
-    func solve(n:Int) -> Int {
+    public func solve(n:Int) -> Int {
         let fibOneAndFour: (Int)->Int = memoize { fibOneAndFour, n in
             if n>=1 && n<=3 {
                 return 1
@@ -444,13 +469,13 @@ class RedJohnisBack {
  *  Struct Passenger to store information like offer value and accept weight of gold
  *  Using struct here is for sorting
  */
-struct Passenger {
+public struct Passenger {
     let offer: Int
     let weight: Int
 }
 
 extension Passenger : Hashable {
-    var hashValue : Int {
+    public var hashValue : Int {
         get {
             return offer.hashValue + weight.hashValue
         }
@@ -458,16 +483,19 @@ extension Passenger : Hashable {
 }
 
 extension Passenger : CustomStringConvertible {
-    var description: String { return "Passenger offer \(offer) for \(weight)grams" }
+    public var description: String { return "Passenger offer \(offer) for \(weight)grams" }
 }
 
-func ==(lhs: Passenger, rhs: Passenger) -> Bool {
+public func ==(lhs: Passenger, rhs: Passenger) -> Bool {
     return lhs.offer == rhs.offer && lhs.weight == rhs.weight
 }
 
 let LOWESTNUMBER = -1 * NSIntegerMax
 
-class DorseyThief {
+public class DorseyThief {
+    
+    public init() {}
+    
     func solution() {
         let metrics = getLineToArray().map { Int($0)! }
         var array: [Passenger] = []
@@ -479,7 +507,7 @@ class DorseyThief {
         solve(array, c:metrics[1])
     }
     
-    func solve(array:[Passenger],c:Int)->Int {
+    public func solve(array:[Passenger],c:Int)->Int {
         // sort the input array
         let sortedArray = array.sort { p1, p2 in
             if p1.offer == p2.offer {

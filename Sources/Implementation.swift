@@ -9,7 +9,10 @@
 import Foundation
 
 // https://www.hackerrank.com/challenges/angry-professor
-class AngryProfessor {
+public class AngryProfessor {
+    
+    public init() {}
+    
     func solution() -> Void {
         let TN = Int(getLine())!
         for _ in 0..<TN {
@@ -29,7 +32,10 @@ class AngryProfessor {
 }
 
 // https://www.hackerrank.com/challenges/sherlock-and-the-beast
-class SherlockAndTheBeast {
+public class SherlockAndTheBeast {
+    
+    public init() {}
+    
     func solution() -> Void {
         let TN = Int(getLine())!
         for _ in 0..<TN {
@@ -38,7 +44,7 @@ class SherlockAndTheBeast {
         }
     }
     
-    func cypherOutput(cypher: Int) -> String {
+    public func cypherOutput(cypher: Int) -> String {
         for i in SRange(start: cypher/3*3, end:-1, step:-3) {
             if (cypher - i) % 5 == 0 {
                 let fives = String(count: i, repeatedValue: Character("5"))
@@ -50,7 +56,7 @@ class SherlockAndTheBeast {
     }
 }
 
-class UtopianTree {
+public class UtopianTree {
     var heights:[Int]
     
     static func generatesHeights() -> [Int] {
@@ -69,7 +75,7 @@ class UtopianTree {
         return heights
     }
     
-    init() {
+    public init() {
         heights = UtopianTree.generatesHeights()
     }
     
@@ -82,8 +88,11 @@ class UtopianTree {
     }
 }
 
-class FindDigits {
-    func countN(n: String) {
+public class FindDigits {
+    
+    public init() {}
+    
+    public func countN(n: String) {
         let N = Int(n)!
         var count = 0
         for c in n.characters {

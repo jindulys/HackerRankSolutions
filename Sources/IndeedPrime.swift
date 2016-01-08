@@ -8,7 +8,9 @@
 
 import Foundation
 
-class TheUltimateQuestion {
+public class TheUltimateQuestion {
+    public init() {}
+    
     func solution() {
         let inputs = getLineToArray().map {Int($0)!}
         let addSum = (inputs.reduce(0, combine: +), "\(inputs[0])+\(inputs[1])+\(inputs[2])")
@@ -26,7 +28,8 @@ class TheUltimateQuestion {
     }
 }
 
-class RelatedSpecies {
+public class RelatedSpecies {
+    public init() {}
     func solution() {
         let T = Int(getLine())!
         for _ in 0..<T {
@@ -38,7 +41,7 @@ class RelatedSpecies {
     }
     
     // This solution timeout
-    func solve(a: [Int], b: [Int], N: Int) {
+    public func solve(a: [Int], b: [Int], N: Int) {
         var current = 0
         for i in 0..<N {
             let currentMax = max(a[i], b[i])
@@ -59,7 +62,9 @@ class RelatedSpecies {
     // Divide and conquer
 }
 
-class Gretchen {
+public class Gretchen {
+    
+    public init() {}
     // Overtime
     func solution() {
         var parameters = getLineToArray().map {Int($0)!}
