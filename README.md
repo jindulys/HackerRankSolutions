@@ -5,7 +5,7 @@ This is a repo for [HackerRank](https://www.hackerrank.com/domains) Solutions in
 
 Different folders are named after corresponding domain names or contest names.
 
-## [Algorithms](HRSwift/Algorithms)
+## [Algorithms](Sources/)
  Problem         |    Time           | Space           | Difficulty    | Tag          | Note       | Score    | Max Score
 ---------------- |  ---------------- | --------------- | ------------- |--------------| -----------| ---------| --------
 [Angry Professor](https://www.hackerrank.com/challenges/angry-professor) |  _O(n)_   |    | Easy | Implementation | | 20.0 | 20.0
@@ -38,7 +38,7 @@ Different folders are named after corresponding domain names or contest names.
 * [IndeedPrimeCodeSprint](https://www.hackerrank.com/contests/indeed-prime-codesprint/challenges)
 * [ZenefitsCodeSprint](https://www.hackerrank.com/contests/zenhacks/challenges)
 
-## Data Structures in [HackerRankHelper](HRSwift/HackerRankHelper/HackerRankHelper.swift)
+## Data Structures in [HackerRankHelper](Sources/HackerRankHelper.swift)
 * FIFO Queue with Two Arraies
 * FIFO Queue with Listnode
 * ListNode
@@ -62,7 +62,7 @@ I created class for each problem. If you want to test those solution on HackerRa
 
 HackerRank lover, swift lover do not hesitate. There are tons of unsolved questions. If you want to contribute a little bit, please write your own swift solutions then make a pull request.
 
-For each question, you should write your own Class in corresponding file, inside that Class define a **solution** method. For example, if you want to submit solution of **Algorithms** --> **Strings** --> **Gemstones**, you should write your solution inside [String.swift](HRSwift/Algorithms/Strings.swift). If there is no related file for a subdomain, please create a file.
+For each question, you should write your own Class in corresponding file, inside that Class define a **solution** method. For example, if you want to submit solution of **Algorithms** --> **Strings** --> **Gemstones**, you should write your solution inside [String.swift](Sources/Strings.swift). If there is no related file for a subdomain, please create a file.
 
 Write a test case in [HRSwiftTests.swift](HRSwiftTests/HRSwiftTests.swift). You could use sample input and sample output from that question as a test.
 
@@ -73,7 +73,7 @@ Write a test case in [HRSwiftTests.swift](HRSwiftTests/HRSwiftTests.swift). You 
          XCTAssert(test.solve("abc") == -1, "Pass")
      }
 
-If you write some general code that could be used afterwards, please write them in [HackerRankHelper](HRSwift/HackerRankHelper/HackerRankHelper.swift)
+If you write some general code that could be used afterwards, please write them in [HackerRankHelper](Sources/HackerRankHelper.swift)
 
 Make sure your solution get a **reasonable score** on HackerRank then pull request.
 
