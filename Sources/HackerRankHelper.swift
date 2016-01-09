@@ -60,7 +60,7 @@ public func getLinesToArray(n: Int) -> [String] {
 /** Class for reading data from files
  *  Reference: http://stackoverflow.com/questions/24581517/read-a-file-url-line-by-line-in-swift/24648951#24648951
  */
-class StreamReader {
+public class StreamReader {
     // Encoding used by data
     let encoding: UInt
     let chunkSize: Int
@@ -71,7 +71,7 @@ class StreamReader {
     
     var atEof: Bool = false
     
-    init?(path: String, delimiter: String = "\n", encoding: UInt = NSUTF8StringEncoding, chunkSize: Int = 4096) {
+    public init?(path: String, delimiter: String = "\n", encoding: UInt = NSUTF8StringEncoding, chunkSize: Int = 4096) {
         self.encoding = encoding
         self.chunkSize = chunkSize
         
@@ -91,7 +91,7 @@ class StreamReader {
         self.close()
     }
     
-    func nextLine() -> String? {
+    public func nextLine() -> String? {
         precondition(fileHandle != nil, "Attempt to read from closed file")
         
         if atEof {
@@ -120,13 +120,13 @@ class StreamReader {
         return retVal as String?
     }
     
-    func rewind() -> Void {
+    public func rewind() -> Void {
         self.fileHandle.seekToFileOffset(0)
         dataBuffer.length = 0
         atEof = false
     }
     
-    func close() -> Void {
+    public func close() -> Void {
         self.fileHandle.closeFile()
     }
 }
