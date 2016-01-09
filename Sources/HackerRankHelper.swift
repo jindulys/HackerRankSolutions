@@ -71,6 +71,16 @@ public class StreamReader {
     
     var atEof: Bool = false
     
+    /**
+     Returns a StreamReader with related parameters
+     
+     - parameter path:      path to a file
+     - parameter delimiter: delimiter for `nextLine()`
+     - parameter encoding:  encoding method
+     - parameter chunkSize: chunkSize of reading for each time
+     
+     - returns: fully-fledged instance or nil if meet with some error
+     */
     public init?(path: String, delimiter: String = "\n", encoding: UInt = NSUTF8StringEncoding, chunkSize: Int = 4096) {
         self.encoding = encoding
         self.chunkSize = chunkSize
@@ -91,6 +101,11 @@ public class StreamReader {
         self.close()
     }
     
+    /**
+     Process and return the nextLine for the file
+     
+     - returns: the next line of the file
+     */
     public func nextLine() -> String? {
         precondition(fileHandle != nil, "Attempt to read from closed file")
         
@@ -120,6 +135,9 @@ public class StreamReader {
         return retVal as String?
     }
     
+    /**
+     Back to the beginning of a file
+     */
     public func rewind() -> Void {
         self.fileHandle.seekToFileOffset(0)
         dataBuffer.length = 0
@@ -131,8 +149,31 @@ public class StreamReader {
     }
 }
 
+extension StreamReader {
+    public func getLine() -> String {
+        return self.nextLine()!
+    }
+}
+
 
 // MARK: Tool Functions
+
+/**
+A helper function which takes in a block execute, print out executionTime
+
+- parameter executedBlock: block to be executed
+
+- returns: execution time
+*/
+public func logRunTime(executedBlock:()->()) -> NSTimeInterval {
+    let startDate = NSDate()
+    executedBlock()
+    let endDate = NSDate()
+    let executionTime = endDate.timeIntervalSinceDate(startDate)
+    print("ExecutionTime = \(executionTime)")
+    return executionTime
+}
+
 /**
     Get all primes up to length
     
