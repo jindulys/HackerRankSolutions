@@ -15,7 +15,7 @@ import Foundation
  
 */
  
-// MARK: Basic Operations
+// MARK: Basic Text/File Operations
 
 /**
     HackerRank GetLine
@@ -57,6 +57,82 @@ public func getLinesToArray(n: Int) -> [String] {
     return retVal
 }
 
+/** Class for reading data from files
+ *  Reference: http://stackoverflow.com/questions/24581517/read-a-file-url-line-by-line-in-swift/24648951#24648951
+ */
+class StreamReader {
+    // Encoding used by data
+    let encoding: UInt
+    let chunkSize: Int
+    
+    let dataBuffer: NSMutableData!
+    let fileHandle: NSFileHandle!
+    let delimData: NSData!
+    
+    var atEof: Bool = false
+    
+    init?(path: String, delimiter: String = "\n", encoding: UInt = NSUTF8StringEncoding, chunkSize: Int = 4096) {
+        self.encoding = encoding
+        self.chunkSize = chunkSize
+        
+        if let fileHandle = NSFileHandle(forReadingAtPath: path), delimData = delimiter.dataUsingEncoding(encoding), dataBuffer = NSMutableData(capacity: chunkSize)  {
+            self.fileHandle = fileHandle
+            self.delimData = delimData
+            self.dataBuffer = dataBuffer
+        } else {
+            self.fileHandle = nil
+            self.delimData = nil
+            self.dataBuffer = nil
+            return nil
+        }
+    }
+    
+    deinit {
+        self.close()
+    }
+    
+    func nextLine() -> String? {
+        precondition(fileHandle != nil, "Attempt to read from closed file")
+        
+        if atEof {
+            return nil
+        }
+        
+        var range = dataBuffer.rangeOfData(delimData, options: [], range: NSMakeRange(0, dataBuffer.length))
+        while range.location == NSNotFound {
+            let tmpData = fileHandle.readDataOfLength(chunkSize)
+            if tmpData.length == 0 {
+                // EOF or error
+                atEof = true
+                if dataBuffer.length > 0 {
+                    let retVal = NSString(data: dataBuffer, encoding: encoding)
+                    dataBuffer.length = 0
+                    return retVal as String?
+                }
+                return nil
+            }
+            dataBuffer.appendData(tmpData)
+            range = dataBuffer.rangeOfData(delimData, options: [], range: NSMakeRange(0, dataBuffer.length))
+        }
+        
+        let retVal = NSString(data: dataBuffer.subdataWithRange(NSMakeRange(0, range.location)), encoding: encoding)
+        dataBuffer.replaceBytesInRange(NSMakeRange(0, range.location + range.length), withBytes: nil, length: 0)
+        return retVal as String?
+    }
+    
+    func rewind() -> Void {
+        self.fileHandle.seekToFileOffset(0)
+        dataBuffer.length = 0
+        atEof = false
+    }
+    
+    func close() -> Void {
+        self.fileHandle.closeFile()
+    }
+}
+
+
+// MARK: Tool Functions
 /**
     Get all primes up to length
     
@@ -498,8 +574,6 @@ extension ListNode: CustomStringConvertible {
         }
     }
 }
-
-// TODO: AVL Tree
 
 //
 //  AVLTree.swift
