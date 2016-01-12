@@ -307,6 +307,10 @@ public extension Character {
     }
 }
 
+public extension String.CharacterView {
+    public var stringValue: String { return String(self) }
+}
+
 public extension Dictionary {
     
 //    /**
