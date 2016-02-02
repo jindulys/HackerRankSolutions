@@ -710,27 +710,28 @@ public final class AVLNode<T : Comparable> {
         self.init(value: value, left: nil, right: nil)
     }
     
-    public func contains(value : T) -> Bool{
-        if self.value == value {
-            return true
-        }
-        if left?.contains(value) == true {
-            return true
-        }
-        if right?.contains(value) == true {
-            return true
-        }
-        
-        return false
-    }
-    
-    public init(value : T, left: AVLNode<T>?, right: AVLNode<T>?){
+    public init(value: T, left: AVLNode<T>?, right: AVLNode<T>?) {
         self.value = value
         self.left = left
         self.right = right
-        self.count = 1 + (left?.count || 0) + (right?.count || 0)
-        self.depth = 1 + max((left?.depth || 0), (right?.depth || 0))
-        self.balance = Int((left?.depth || 0)) - Int((right?.depth || 0))
+        self.balance = Int(left?.depth ?? 0) - Int(right?.depth ?? 0)
+        self.count = 1 + (left?.count ?? 0) + (right?.count ?? 0)
+        self.depth = 1 + max(left?.depth ?? 0, right?.depth ?? 0)
+    }
+    
+    public func contains(value: T) -> Bool {
+        if self.value == value {
+            return true
+        } else if self.value < value {
+            if right?.contains(value) == true {
+                return true
+            }
+        } else {
+            if left?.contains(value) == true {
+                return true
+            }
+        }
+        return false
     }
     
     func fixBalance() -> AVLNode<Element> {
@@ -738,50 +739,31 @@ public final class AVLNode<T : Comparable> {
             return self
         }
         
-        if (balance == 2)
-        {
-            let leftBalance = self.left?.balance || 0
-            
-            if (leftBalance == 1 || leftBalance == 0)
-            {
-                //Easy case:
+        if balance == 2 {
+            let leftBalance = left!.balance
+            if leftBalance == 1 || leftBalance == 0 {
                 return rotateToRight()
             }
             
-            if (leftBalance == -1)
-            {
-                //Rotate Left to left
+            if leftBalance == -1 {
                 let newLeft = left!.rotateToLeft()
                 let newRoot = AVLNode(value: value, left: newLeft, right: right)
-                
                 return newRoot.rotateToRight()
             }
-            
-            fatalError("LeftNode too unbalanced")
         }
         
-        if (balance == -2)
-        {
-            let rightBalance = right?.balance || 0
-            
-            if (rightBalance == -1 || rightBalance == 0)
-            {
-                //Easy case:
+        if balance == -2 {
+            let rightBalance = right!.balance
+            if rightBalance == -1 || rightBalance == 0 {
                 return rotateToLeft()
             }
             
-            if (rightBalance == 1)
-            {
-                //Rotate right to right
+            if rightBalance == 1 {
                 let newRight = right!.rotateToRight()
                 let newRoot = AVLNode(value: value, left: left, right: newRight)
-                
                 return newRoot.rotateToLeft()
             }
-            
-            fatalError("RightNode too unbalanced")
         }
-        
         fatalError("Tree too unbalanced")
     }
     
@@ -808,7 +790,7 @@ public final class AVLNode<T : Comparable> {
                 return (self, false)
             }
             
-            let newRoot = AVLNode(value: self.value, left: left, right: removeResult!.result)
+            let newRoot = AVLNode(value: self.value, left: left, right: removeResult!.result).fixBalance()
             
             return (newRoot, true)
         }
