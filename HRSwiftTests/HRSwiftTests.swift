@@ -144,4 +144,14 @@ class HRSwiftTests: XCTestCase {
         let test = CommonChild()
         XCTAssert(test.solve("ABCD", second: "ABDC") == 3, "Pass")
     }
+    
+    func testFibonacci() {
+        let fib: (Int)->Int = memoize { (fib, x) in
+            if x < 2 {
+                return x
+            }
+            return fib(x-1) + fib(x-2)
+        }
+        XCTAssert(fib(8) == 21, "Pass")
+    }
 }
