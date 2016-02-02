@@ -109,6 +109,3 @@ Make sure your solution get a **reasonable score** on HackerRank then pull reque
 
 You should obey [Raywenderlich Swift Style Guide](https://github.com/raywenderlich/swift-style-guide) 
 
-# Note
-
-All those solution I wrote used Swift1.2, since HackerRank only supports Swift1.* for now. But it is not a big deal since those solutions usually don't need too much new language features.
