@@ -7,7 +7,7 @@
 //
 
 import Foundation
-let N = 300
+let N = 600000
 let LargeInt = 1 << 12
 
 

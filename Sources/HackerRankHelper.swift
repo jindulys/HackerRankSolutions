@@ -252,8 +252,9 @@ public func binarySearchLessOrEqualIndex(inputs:[Int], target:Int) -> Int {
  *  - parameter key:    target to be found
  */
 public func ceilIndex<T: Comparable>(inputs:[T], var l: Int, var r: Int, key: T) -> Int {
+    var m = 0
     while r - l > 1 {
-        var m = l + (r - l)/2
+        m = l + (r - l)/2
         if inputs[m] >= key {
             r = m
         } else {
@@ -285,6 +286,98 @@ public func memoize<T: Hashable, U: Comparable>( body:((T)->U, T)->U ) -> (T)->U
         return r
     }
     return result
+}
+
+/**
+ QuickSortSlow a slow version of quick sort since it uses a bunch of filter, copy.
+ 
+ - parameter array: array to be sorted
+ 
+ - returns: new array that was sorted
+ */
+public func quickSortSlow<T: Comparable>(array: [T]) -> [T] {
+    if array.count <= 1 {
+        return array
+    }
+    let pivot = array[array.count/2]
+    let less = array.filter { $0 < pivot }
+    let equal = array.filter { $0 == pivot }
+    let greater = array.filter { $0 > pivot }
+    return quickSortSlow(less) + equal + quickSortSlow(greater)
+}
+
+/**
+ Partition technology could enhance the efficiency of sorting. Because it could reduce the walk through process, and copy, but lomuto is not good if there are a lot of duplicated elements.
+ 
+ - parameter array: array to be sourted, this array could be sorted in place
+ 
+ - parameter low: lower bound index for the array
+ 
+ - parameter high: higher bound index for the array
+ */
+
+public func quickSortLomuto<T: Comparable>(inout array: [T], low: Int, high: Int) {
+    if (low < high) {
+        let p = partitionLomuto(&array, low: low, high: high)
+        quickSortLomuto(&array, low: low, high: p-1)
+        quickSortLomuto(&array, low: p+1, high: high)
+    }
+}
+
+// ASCII art
+// [ values <= pivot | values > pivot | not looked at yet | pivot ]
+//  low          i       i+1     j-1    j          high-1    high
+private func partitionLomuto<T: Comparable>(inout array: [T], low: Int, high: Int) -> Int {
+    let pivot = array[high]
+    var i = low
+    for j in low..<high {
+        if array[j] <= pivot {
+            // swap array[i],array[j] to keep ASCII art
+            (array[j], array[i]) = (array[i], array[j])
+            ++i
+        }
+    }
+    // final swap i and high
+    (array[i], array[high]) = (array[high], array[i])
+    return i
+}
+
+public func quicksort<T: Comparable>(inout array: [T], low: Int, high: Int) {
+    if low < high {
+        let p = partitionHoare(&array, low: low, high: high)
+        quicksort(&array, low: low, high: p)
+        quicksort(&array, low: p+1, high: high)
+    }
+}
+
+private func partitionHoare<T: Comparable>(inout array: [T], low: Int, high: Int) -> Int {
+    let pivot = array[low]
+    var i = low-1
+    var j = high+1
+    
+    while true {
+        repeat { j -= 1 } while array[j] > pivot
+        repeat { i += 1 } while array[i] < pivot
+        if (i < j) {
+            (array[i], array[j]) = (array[j], array[i])
+        } else {
+            return j
+        }
+    }
+}
+
+// MARK: Helper Functions
+
+func *(left: String, right: Int) -> String {
+    if right < 0 {
+        return ""
+    }
+    
+    var retVal = ""
+    for _ in 0..<right {
+        retVal += left
+    }
+    return retVal
 }
 
 
