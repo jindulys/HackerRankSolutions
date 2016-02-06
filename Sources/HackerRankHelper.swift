@@ -246,7 +246,17 @@ public func binarySearchLessOrEqualIndex(inputs:[Int], target:Int) -> Int {
 // TODO: Binary Search (1)
 // https://github.com/hollance/swift-algorithm-club/tree/master/Binary%20Search
 
+/**
+Recursive version of binarySearch
+
+- parameter a:     array to do the search should be sorted
+- parameter key:   key to find
+- parameter range: range to find
+
+- returns: finded index or not
+*/
 func binarySearch<T: Comparable>(a: [T], key: T, range: Range<Int>) -> Int? {
+    precondition(a.adjacentTest{ $0 <= $1 }, "The array should be ordered to use binary search")
     if range.startIndex >= range.endIndex {
         // Base Case
         return nil
@@ -262,6 +272,31 @@ func binarySearch<T: Comparable>(a: [T], key: T, range: Range<Int>) -> Int? {
     } else {
         return midIndex
     }
+}
+
+/**
+ Iterative version of binarySearch
+ 
+ - parameter a:     array to do the search should be sorted
+ - parameter key:   key to find
+ - parameter range: range to find
+ 
+ - returns: finded index or not
+ */
+func iterativeBinarySearch<T: Comparable>(a: [T], key: T) -> Int? {
+    precondition(a.adjacentTest{ $0 <= $1 }, "The array should be ordered to use binary search")
+    var range = 0..<a.count
+    while range.startIndex < range.endIndex {
+        let mid = range.startIndex + (range.endIndex - range.startIndex)/2
+        if a[mid] == key {
+            return mid
+        } else if a[mid] < key {
+            range.startIndex = mid+1
+        } else {
+            range.endIndex = mid
+        }
+    }
+    return nil
 }
 
 // TODO: Merge Sort (2)
@@ -465,6 +500,28 @@ public extension Dictionary {
 //            self[k] = v
 //        }
 //    }
+}
+
+public extension Array {
+    /**
+     AdjacentTest test whether every pair of adjacent elements fullfill the condition
+     
+     - parameter condition: condition to be tested by every adjacent pair
+     
+     - parameter oneElementArrayAllowed:
+     
+     - returns: true if every pair fullfill the condition, otherwise false
+     */
+    func adjacentTest(oneElementArrayAllowed: Bool = true, condition: (Element, Element) -> Bool) -> Bool {
+        guard self.count > 1 else { return oneElementArrayAllowed }
+        
+        for i in 0..<self.count-1 {
+            if condition(self[i], self[i+1]) == false {
+                return false
+            }
+        }
+        return true
+    }
 }
 
 public extension SequenceType where Generator.Element: Hashable {

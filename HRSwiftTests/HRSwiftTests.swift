@@ -208,4 +208,37 @@ class HRSwiftTests: XCTestCase {
         XCTAssertEqual(nil, binarySearch(a, key: 100, range: 0..<a.count))
         XCTAssertEqual(nil, binarySearch(a, key: 0, range: 0..<a.count))
     }
+    
+    func testIterativeBinarySearch() {
+        let a = [1, 2, 10, 18, 19, 66, 88]
+        XCTAssertEqual(0, iterativeBinarySearch(a, key: 1))
+        XCTAssertEqual(1, iterativeBinarySearch(a, key: 2))
+        XCTAssertEqual(2, iterativeBinarySearch(a, key: 10))
+        XCTAssertEqual(3, iterativeBinarySearch(a, key: 18))
+        XCTAssertEqual(4, iterativeBinarySearch(a, key: 19))
+        XCTAssertEqual(5, iterativeBinarySearch(a, key: 66))
+        XCTAssertEqual(6, iterativeBinarySearch(a, key: 88))
+        XCTAssertEqual(nil, iterativeBinarySearch(a, key: 100))
+        XCTAssertEqual(nil, iterativeBinarySearch(a, key: 0))
+        
+        let b = [1]
+        XCTAssertEqual(0, iterativeBinarySearch(b, key: 1))
+        XCTAssertEqual(nil, iterativeBinarySearch(b, key: 3))
+    }
+    
+    func testArrayAdjacentConditon() {
+        let increasing = [1, 16, 18, 100, 200, 1001]
+        let disordered = [1, 17, 19, 29, 8, 100]
+        
+        XCTAssertEqual(increasing.adjacentTest { $0 < $1 }, true)
+        XCTAssertEqual(disordered.adjacentTest { $0 < $1 }, false)
+        
+        let equalDiff = [1, 3, 5, 7, 9, 11]
+        XCTAssertEqual(equalDiff.adjacentTest { $1 - $0 == 2 }, true)
+        
+        let singleElement = [1]
+        XCTAssertEqual(singleElement.adjacentTest { $1 - $0 == 2 }, true)
+        
+        XCTAssertEqual(singleElement.adjacentTest(false) { $1 - $0 == 2 }, false)
+    }
 }
