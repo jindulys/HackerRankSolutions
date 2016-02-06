@@ -154,4 +154,45 @@ class HRSwiftTests: XCTestCase {
         }
         XCTAssert(fib(8) == 21, "Pass")
     }
+    
+    func testHeap() {
+        var testHeap = MaxHeap(array: [1, 2, 3, 5, 7, 10])
+        XCTAssert(testHeap.peak()! == 10, "Pass")
+        testHeap.insert(61)
+        XCTAssert(testHeap.peak()! == 61, "Pass")
+        
+        let emptyHeap = MaxHeap<Int>()
+        XCTAssert(emptyHeap.peak() == nil, "Pass")
+    }
+    
+    func testHeapInsertRemove() {
+        /**   9
+         *  7    5
+         * 1 2  3
+         * Should be represented in memory as [9, 5, 7, 1, 3, 2] though we are just testing the effects.
+         */
+        var heap = MaxHeap<Int>(array: [1, 3, 2, 7, 5, 9])
+        
+        //Should be removed in order
+        XCTAssertEqual(9, heap.remove())
+        XCTAssertEqual(7, heap.remove())
+        XCTAssertEqual(5, heap.remove())
+        XCTAssertEqual(3, heap.remove())
+        XCTAssertEqual(2, heap.remove())
+        XCTAssertEqual(1, heap.remove())
+        XCTAssertNil(heap.remove())
+    }
+    
+    func testHeapCount() {
+        var heap = MaxHeap<Int>()
+        XCTAssertEqual(0, heap.count)
+        heap.insert(1)
+        XCTAssertEqual(1, heap.count)
+    }
+    
+    func testHeapRemoveEmpty() {
+        var heap = MaxHeap<Int>()
+        let removed = heap.remove()
+        XCTAssertNil(removed)
+    }
 }

@@ -1079,6 +1079,132 @@ public class BinaryIndexedTree {
     }
 }
 
+/**
+ *  A heap is a type of tree data structure with 2 characteristics:
+ *  1. Parent nodes are either greater or less than each of their children (called max heaps and min heaps respectively)
+ *  2. Only the top item is accessible (greatest or smallest)
+ *
+ *  This results in a data structure that stores n item in O(n) space. Both insertion and deletion take O(lg(n)) time (amortized)
+ */
+protocol Heap {
+    typealias Value
+    mutating func insert(value: Value)
+    mutating func remove() -> Value?
+    func peak() -> Value?
+    var count: Int { get }
+    var isEmpty: Bool { get }
+}
+
+public struct MaxHeap<T: Comparable> : Heap {
+    typealias Value = T
+    
+    /**     10
+     *   7      5
+     *  1 2    3
+     *  Will be represented as [10, 7, 5, 1, 2, 3]
+     */
+    private var mem: [T]
+    
+    init() {
+        mem = [T]()
+    }
+    
+    init(array: [T]) {
+        self.init()
+        mem.reserveCapacity(array.count)
+        for value in array {
+            insert(value)
+        }
+    }
+    
+    public var isEmpty: Bool {
+        return mem.isEmpty
+    }
+    
+    public var count: Int {
+        return mem.count
+    }
+    
+    public mutating func insert(value: T) {
+        mem.append(value)
+        shiftUp(index: mem.count - 1)
+    }
+    
+    public mutating func remove() -> T? {
+        if self.isEmpty {
+            return nil
+        }
+        
+        let retVal = mem[0]
+        (mem[0], mem[count-1]) = (mem[count-1], mem[0])
+        mem.removeLast()
+        
+        shiftDown()
+        
+        return retVal
+    }
+    
+    public func peak() -> T? {
+        guard self.count > 0 else { return nil }
+        return mem[0]
+    }
+    
+    private func parentIndex(childIndex childIndex: Int) -> Int {
+        return (childIndex - 1)/2
+    }
+    
+    private func firstChildIndex(index: Int) -> Int {
+        return index * 2 + 1
+    }
+    
+    @inline(__always) private func validIndex(index: Int) -> Bool {
+        return index < mem.endIndex
+    }
+    
+    private mutating func shiftUp(index index: Int) {
+        var currentIndex = index
+        var currentParentIndex = parentIndex(childIndex: index)
+        while currentIndex > 0 && mem[currentIndex]>mem[currentParentIndex] {
+            (mem[currentParentIndex], mem[currentIndex]) = (mem[currentIndex], mem[currentParentIndex])
+            currentIndex = currentParentIndex
+            currentParentIndex = parentIndex(childIndex: currentIndex)
+        }
+    }
+    
+    private mutating func shiftDown(index index: Int = 0) {
+        var parentIndex = index
+        var leftChildIndex = firstChildIndex(parentIndex)
+        
+        //Loop preconditions: parentIndex and left child index are set
+        while (validIndex(leftChildIndex)) {
+            let rightChildIndex = leftChildIndex + 1
+            let highestIndex: Int
+            
+            if validIndex(rightChildIndex) {
+                let left = mem[leftChildIndex]
+                let right = mem[rightChildIndex]
+                highestIndex = (left > right) ? leftChildIndex : rightChildIndex
+            } else {
+                highestIndex = leftChildIndex
+            }
+            
+            //If the child > parent, swap them
+            let parent = mem[parentIndex]
+            let biggerChild = mem[highestIndex]
+            if biggerChild < parent {
+                return
+            }
+            
+            //Swap parent with child
+            (mem[parentIndex], mem[highestIndex]) = (mem[highestIndex], mem[parentIndex])
+            
+            // update parentIndex and leftChildIndex
+            parentIndex = highestIndex
+            leftChildIndex = firstChildIndex(parentIndex)
+        }
+    }
+}
+
 
 // TODO: Priority Queue
 
