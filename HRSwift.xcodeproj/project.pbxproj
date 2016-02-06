@@ -16,6 +16,7 @@
 		0E5741951C001FAF004EB0FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5741931C001FAF004EB0FA /* LaunchScreen.storyboard */; };
 		0E5741A01C001FAF004EB0FA /* HRSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E57419F1C001FAF004EB0FA /* HRSwiftTests.swift */; };
 		0E5741AB1C001FAF004EB0FA /* HRSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5741AA1C001FAF004EB0FA /* HRSwiftUITests.swift */; };
+		0E9AC3521C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */; };
 		0EEDD4C41C3F635A00F94031 /* DynamicProgramming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */; };
 		0EEDD4C51C3F635A00F94031 /* HackerRankHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BF1C3F635A00F94031 /* HackerRankHelper.swift */; };
 		0EEDD4C61C3F635A00F94031 /* Implementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4C01C3F635A00F94031 /* Implementation.swift */; };
@@ -57,6 +58,7 @@
 		0E5741A61C001FAF004EB0FA /* HRSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HRSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5741AA1C001FAF004EB0FA /* HRSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRSwiftUITests.swift; sourceTree = "<group>"; };
 		0E5741AC1C001FAF004EB0FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleInterviewQuestions.swift; sourceTree = "<group>"; };
 		0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicProgramming.swift; path = Sources/DynamicProgramming.swift; sourceTree = "<group>"; };
 		0EEDD4BF1C3F635A00F94031 /* HackerRankHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HackerRankHelper.swift; path = Sources/HackerRankHelper.swift; sourceTree = "<group>"; };
 		0EEDD4C01C3F635A00F94031 /* Implementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Implementation.swift; path = Sources/Implementation.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				0E57418A1C001FAF004EB0FA /* AppDelegate.swift */,
 				0E57418C1C001FAF004EB0FA /* ViewController.swift */,
+				0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */,
 				0E57418E1C001FAF004EB0FA /* Main.storyboard */,
 				0E5741911C001FAF004EB0FA /* Assets.xcassets */,
 				0E5741931C001FAF004EB0FA /* LaunchScreen.storyboard */,
@@ -297,6 +300,7 @@
 				0EEDD4C51C3F635A00F94031 /* HackerRankHelper.swift in Sources */,
 				0E2DFC381C606F4B00644A7B /* Helper.swift in Sources */,
 				0E2DFC361C604E9200644A7B /* Int+HRSwift.swift in Sources */,
+				0E9AC3521C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift in Sources */,
 				0EEDD4C81C3F635A00F94031 /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

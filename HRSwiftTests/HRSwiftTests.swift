@@ -195,4 +195,17 @@ class HRSwiftTests: XCTestCase {
         let removed = heap.remove()
         XCTAssertNil(removed)
     }
+    
+    func testBinarySearch() {
+        let a = [1, 2, 10, 18, 19, 66, 88]
+        XCTAssertEqual(0, binarySearch(a, key: 1, range: 0..<a.count))
+        XCTAssertEqual(1, binarySearch(a, key: 2, range: 0..<a.count))
+        XCTAssertEqual(2, binarySearch(a, key: 10, range: 0..<a.count))
+        XCTAssertEqual(3, binarySearch(a, key: 18, range: 0..<a.count))
+        XCTAssertEqual(4, binarySearch(a, key: 19, range: 0..<a.count))
+        XCTAssertEqual(5, binarySearch(a, key: 66, range: 0..<a.count))
+        XCTAssertEqual(6, binarySearch(a, key: 88, range: 0..<a.count))
+        XCTAssertEqual(nil, binarySearch(a, key: 100, range: 0..<a.count))
+        XCTAssertEqual(nil, binarySearch(a, key: 0, range: 0..<a.count))
+    }
 }

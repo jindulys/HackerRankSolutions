@@ -243,19 +243,46 @@ public func binarySearchLessOrEqualIndex(inputs:[Int], target:Int) -> Int {
     return higherIndex + 1
 }
 
-// TODO: Binary Search
+// TODO: Binary Search (1)
+// https://github.com/hollance/swift-algorithm-club/tree/master/Binary%20Search
 
-// TODO: Boyer-Moore String Search
+func binarySearch<T: Comparable>(a: [T], key: T, range: Range<Int>) -> Int? {
+    if range.startIndex >= range.endIndex {
+        // Base Case
+        return nil
+    }
+    
+    let midIndex = range.startIndex + (range.endIndex - range.startIndex)/2
+    if a[midIndex] > key {
+        // Check left part of array
+        return binarySearch(a, key: key, range: range.startIndex..<midIndex)
+    } else if a[midIndex] < key {
+        // Check right part of array
+        return binarySearch(a, key: key, range: midIndex+1..<range.endIndex)
+    } else {
+        return midIndex
+    }
+}
 
-// TODO: Count Occurrences
+// TODO: Merge Sort (2)
 
-// TODO: k-th Largest Element
+// TODO: Binary Tree (3)
 
-// TODO: Array2D
+// TODO: Binary Search Tree(BST) (4)
 
-// TODO: Linked List
+// TODO: Array2D (5)
 
-// TODO: Hash Table
+// TODO: k-th Largest Element (6)
+
+// TODO: Count Occurrences (7)
+
+// TODO: Linked List (8)
+
+// TODO: Boyer-Moore String Search (9)
+
+// TODO: Hash Table (10)
+
+
 
 /**
  *  give an array find the smallest element's index that is larger or equal to key
