@@ -359,6 +359,31 @@ private func merge<T: Comparable>(leftPile leftPile: [T], rightPile: [T]) -> [T]
 // TODO: Binary Search Tree(BST) (4)
 
 // TODO: Array2D (5)
+// Reference: https://github.com/hollance/swift-algorithm-club/tree/master/Array2D
+public struct Array2D<T> {
+    public let columns: Int
+    public let rows: Int
+    private var array: [T]
+    
+    public init(rows: Int, columns: Int, initialValue: T) {
+        self.columns = columns
+        self.rows = rows
+        array = Array(count: self.rows * self.columns, repeatedValue: initialValue)
+    }
+    
+    public subscript(row: Int, col:Int) -> T {
+        get {
+            precondition(row < self.rows, "Row overbound")
+            precondition(col < self.columns, "Col overbound")
+            return array[row * self.columns + col]
+        }
+        set {
+            precondition(row < self.rows, "Row overbound")
+            precondition(col < self.columns, "Col overbound")
+            array[row * self.columns + col] = newValue
+        }
+    }
+}
 
 // TODO: k-th Largest Element (6)
 
