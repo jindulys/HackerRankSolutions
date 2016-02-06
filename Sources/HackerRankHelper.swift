@@ -243,6 +243,20 @@ public func binarySearchLessOrEqualIndex(inputs:[Int], target:Int) -> Int {
     return higherIndex + 1
 }
 
+// TODO: Binary Search
+
+// TODO: Boyer-Moore String Search
+
+// TODO: Count Occurrences
+
+// TODO: k-th Largest Element
+
+// TODO: Array2D
+
+// TODO: Linked List
+
+// TODO: Hash Table
+
 /**
  *  give an array find the smallest element's index that is larger or equal to key
  *  
