@@ -18,7 +18,7 @@
 		0E5741AB1C001FAF004EB0FA /* HRSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5741AA1C001FAF004EB0FA /* HRSwiftUITests.swift */; };
 		0E9AC3521C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */; };
 		0EEDD4C41C3F635A00F94031 /* DynamicProgramming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */; };
-		0EEDD4C51C3F635A00F94031 /* HackerRankHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BF1C3F635A00F94031 /* HackerRankHelper.swift */; };
+		0EEDD4C51C3F635A00F94031 /* HackerRankKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BF1C3F635A00F94031 /* HackerRankKit.swift */; };
 		0EEDD4C61C3F635A00F94031 /* Implementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4C01C3F635A00F94031 /* Implementation.swift */; };
 		0EEDD4C71C3F635A00F94031 /* IndeedPrime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4C11C3F635A00F94031 /* IndeedPrime.swift */; };
 		0EEDD4C81C3F635A00F94031 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4C21C3F635A00F94031 /* Strings.swift */; };
@@ -60,7 +60,7 @@
 		0E5741AC1C001FAF004EB0FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleInterviewQuestions.swift; sourceTree = "<group>"; };
 		0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicProgramming.swift; path = Sources/DynamicProgramming.swift; sourceTree = "<group>"; };
-		0EEDD4BF1C3F635A00F94031 /* HackerRankHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HackerRankHelper.swift; path = Sources/HackerRankHelper.swift; sourceTree = "<group>"; };
+		0EEDD4BF1C3F635A00F94031 /* HackerRankKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HackerRankKit.swift; path = Sources/HackerRankKit.swift; sourceTree = "<group>"; };
 		0EEDD4C01C3F635A00F94031 /* Implementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Implementation.swift; path = Sources/Implementation.swift; sourceTree = "<group>"; };
 		0EEDD4C11C3F635A00F94031 /* IndeedPrime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndeedPrime.swift; path = Sources/IndeedPrime.swift; sourceTree = "<group>"; };
 		0EEDD4C21C3F635A00F94031 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Sources/Strings.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */,
-				0EEDD4BF1C3F635A00F94031 /* HackerRankHelper.swift */,
+				0EEDD4BF1C3F635A00F94031 /* HackerRankKit.swift */,
 				0EEDD4C01C3F635A00F94031 /* Implementation.swift */,
 				0EEDD4C11C3F635A00F94031 /* IndeedPrime.swift */,
 				0EEDD4C21C3F635A00F94031 /* Strings.swift */,
@@ -297,7 +297,7 @@
 				0E57418D1C001FAF004EB0FA /* ViewController.swift in Sources */,
 				0EEDD4C41C3F635A00F94031 /* DynamicProgramming.swift in Sources */,
 				0E57418B1C001FAF004EB0FA /* AppDelegate.swift in Sources */,
-				0EEDD4C51C3F635A00F94031 /* HackerRankHelper.swift in Sources */,
+				0EEDD4C51C3F635A00F94031 /* HackerRankKit.swift in Sources */,
 				0E2DFC381C606F4B00644A7B /* Helper.swift in Sources */,
 				0E2DFC361C604E9200644A7B /* Int+HRSwift.swift in Sources */,
 				0E9AC3521C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift in Sources */,

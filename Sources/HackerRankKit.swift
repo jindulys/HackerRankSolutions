@@ -300,6 +300,59 @@ func iterativeBinarySearch<T: Comparable>(a: [T], key: T) -> Int? {
 }
 
 // TODO: Merge Sort (2)
+public func mergeSort<T: Comparable>(array: [T]) -> [T] {
+    guard array.count > 1 else { return array }
+    
+    let mid = array.count/2
+    
+    let leftArray = mergeSort(Array(array[0..<mid]))
+    let rightArray = mergeSort(Array(array[mid..<array.count]))
+    
+    return merge(leftPile: leftArray, rightPile: rightArray)
+}
+
+/**
+Merge two piles together
+
+- parameter leftPile:  Left pile to be merged
+- parameter rightPile: right pile to be merged
+
+- returns: merged pile
+*/
+private func merge<T: Comparable>(leftPile leftPile: [T], rightPile: [T]) -> [T] {
+    precondition(leftPile.count>=1 && rightPile.count>=1)
+    precondition(leftPile.isIncreasing && rightPile.isIncreasing)
+    var leftIndex = 0
+    var rightIndex = 0
+    
+    var retVal = [T]()
+    while leftIndex < leftPile.endIndex && rightIndex < rightPile.endIndex {
+        if leftPile[leftIndex] < rightPile[rightIndex] {
+            retVal.append(leftPile[leftIndex])
+            leftIndex = leftIndex.successor()
+        } else if leftPile[leftIndex] > rightPile[rightIndex] {
+            retVal.append(rightPile[rightIndex])
+            rightIndex = rightIndex.successor()
+        } else {
+            retVal.append(leftPile[leftIndex])
+            retVal.append(rightPile[rightIndex])
+            leftIndex = leftIndex.successor()
+            rightIndex = rightIndex.successor()
+        }
+    }
+    
+    while leftIndex < leftPile.endIndex {
+        retVal.append(leftPile[leftIndex])
+        leftIndex = leftIndex.successor()
+    }
+    
+    while rightIndex < rightPile.endIndex {
+        retVal.append(rightPile[rightIndex])
+        rightIndex = rightIndex.successor()
+    }
+    
+    return retVal
+}
 
 // TODO: Binary Tree (3)
 
@@ -521,6 +574,12 @@ public extension Array {
             }
         }
         return true
+    }
+}
+
+public extension Array where Element: Comparable {
+    public var isIncreasing: Bool {
+        return self.adjacentTest{ $0 <= $1 }
     }
 }
 

@@ -241,4 +241,10 @@ class HRSwiftTests: XCTestCase {
         
         XCTAssertEqual(singleElement.adjacentTest(false) { $1 - $0 == 2 }, false)
     }
+    
+    func testMergeSort() {
+        let unordered = [100, 1, 3, 19, 2016, 99]
+        let retVal = mergeSort(unordered)
+        XCTAssertEqual([1, 3, 19, 99, 100, 2016], mergeSort(unordered))
+    }
 }
