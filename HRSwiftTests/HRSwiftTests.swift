@@ -253,4 +253,15 @@ class HRSwiftTests: XCTestCase {
         XCTAssertEqual(10, myTestArray[0, 1])
         XCTAssertEqual(0, myTestArray[1, 4])
     }
+    
+    func testArrayAccumulate() {
+        let testArray = [1, 2, 3, 4, 10, 19]
+        let accumulated = testArray.accumulate(0) { $0 + $1 }
+        XCTAssertEqual(accumulated, [1, 3, 6, 10, 20, 39])
+    }
+    
+    func testSequenceAllMatch() {
+        let testArray = [2, 4, 6, 8, 10]
+        XCTAssertEqual(testArray.allMatch{element in element%2==0}, true)
+    }
 }

@@ -386,6 +386,11 @@ public struct Array2D<T> {
 }
 
 // TODO: k-th Largest Element (6)
+// Refer to: https://github.com/hollance/swift-algorithm-club/tree/master/Kth%20Largest%20Element
+// This implementation is awesome
+//public func randomizedSelect<T: Comparable>(array: [T], order k: Int) -> T {
+//    
+//}
 
 // TODO: Count Occurrences (7)
 
@@ -600,6 +605,14 @@ public extension Array {
         }
         return true
     }
+    
+    func accumulate<T>(initial: T, combine:(Element, T)->T) -> [T] {
+        var result = initial
+        return self.map { toCombine in
+            result = combine(toCombine, result)
+            return result
+        }
+    }
 }
 
 public extension Array where Element: Comparable {
@@ -609,7 +622,6 @@ public extension Array where Element: Comparable {
 }
 
 public extension SequenceType where Generator.Element: Hashable {
-    
     /**
         Given a sequence of array returns unique element
     */
@@ -623,6 +635,12 @@ public extension SequenceType where Generator.Element: Hashable {
                 return true
             }
         }
+    }
+}
+
+public extension SequenceType {
+    public func allMatch(predicate: Generator.Element -> Bool) -> Bool {
+        return !self.contains { !predicate($0) }
     }
 }
 
