@@ -913,6 +913,44 @@ extension ListNode: CustomStringConvertible {
     }
 }
 
+enum List<Element> {
+    case End
+    indirect case Node(Element, next: List<Element>)
+}
+
+extension List {
+    func cons(element: Element) -> List {
+        return .Node(element, next:self)
+    }
+}
+
+/**
+ *  A LIFO stack type with constant-time push and pop operations
+ */
+protocol StackType {
+    typealias Element
+    
+    mutating func push(x: Element)
+    
+    mutating func pop() -> Element?
+}
+
+extension List: StackType {
+    mutating func push(x: Element) {
+       self = self.cons(x)
+    }
+    
+    mutating func pop() -> Element? {
+        switch self {
+            case .End:
+                return nil
+            case let .Node(element, nx):
+                self = nx
+                return element
+        }
+    }
+}
+
 //
 //  AVLTree.swift
 //  AVLTree
