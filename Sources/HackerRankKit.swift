@@ -613,6 +613,33 @@ public extension Array {
             return result
         }
     }
+    
+    /**
+     reduce function, take a combination function and combine all elements from the first one
+     
+     - parameter combine: combine function to combine all elements
+     
+     - returns: the result or nil if the array is empty
+     */
+    func reduce(combine:(Element, Element)->Element) -> Element? {
+        guard let fst = first else { return nil }
+        return self.dropFirst().reduce(fst, combine: combine)
+    }
+}
+
+extension Array {
+    /**
+     reduce function, take a combination function and combine all elements from the first one
+     
+     - parameter combine: combine function to combine all elements
+     
+     - returns: the result or nil if the array is empty
+     */
+    func reduceByMap(combine:(Element, Element)->Element) -> Element? {
+        return first.map {
+            self.dropFirst().reduce($0, combine: combine)
+        }
+    }
 }
 
 public extension Array where Element: Comparable {
@@ -948,6 +975,15 @@ extension List: StackType {
                 self = nx
                 return element
         }
+    }
+}
+
+extension List: SequenceType {
+    func generate() -> AnyGenerator<Element> {
+        var current = self
+        return anyGenerator({ () -> Element? in
+            return current.pop()
+        })
     }
 }
 
