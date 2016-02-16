@@ -45,6 +45,7 @@ Different folders are named after corresponding domain names or contest names.
 * AVLNode
 * AVLTree
 * BinaryIndexedTree
+* Heap
 
 # Usage
 
