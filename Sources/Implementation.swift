@@ -115,4 +115,33 @@ public class FindDigits {
     }
 }
 
+public class FindLargestSmallerOrEqual {
+    /**
+    *   Input   arr:    A sorted array e.g: 1, 10, 16, 18, 20
+    *           targe:  The target to find e.g: 19
+    *   Output  :   The largest smaller number's index if not equal e.g 3
+    *               or -1, if something wrong.
+    */
+    public func ysBinarySearch(arr: [Int], target: Int) -> Int {
+        if arr.count == 0 { return -1 }
+        var low = 0
+        var high = arr.count - 1
+        while (low < high && arr[(low + high)/2] != target) {
+            if arr[(low + high)/2] < target {
+                low = (low + high)/2 + 1
+            } else {
+                high = (low + high)/2 - 1
+            }
+        }
+        if arr[(low + high)/2] == target {
+            return (low + high)/2
+        }
+        if arr[low] < target {
+            return low
+        } else {
+            return low - 1
+        }
+    }
+}
+
 

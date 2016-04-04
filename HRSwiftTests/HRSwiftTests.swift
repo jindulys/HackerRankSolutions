@@ -264,4 +264,24 @@ class HRSwiftTests: XCTestCase {
         let testArray = [2, 4, 6, 8, 10]
         XCTAssertEqual(testArray.allMatch{element in element%2==0}, true)
     }
+    
+    func testFindLargestSmallerOrEqual() {
+        let testArray = [1, 10, 16, 18, 20]
+        let test = FindLargestSmallerOrEqual()
+        XCTAssertEqual(test.ysBinarySearch(testArray, target:19), 3)
+        XCTAssertEqual(test.ysBinarySearch(testArray, target:60), 4)
+        XCTAssertEqual(test.ysBinarySearch(testArray, target:18), 3)
+        XCTAssertEqual(test.ysBinarySearch(testArray, target:0), -1)
+        XCTAssertEqual(test.ysBinarySearch(testArray, target:1), 0)
+        XCTAssertEqual(test.ysBinarySearch(testArray, target:2), 0)
+        XCTAssertEqual(test.ysBinarySearch(testArray, target:20), 4)
+        
+        let testOne = [100]
+        XCTAssertEqual(test.ysBinarySearch(testOne, target:19), -1)
+        XCTAssertEqual(test.ysBinarySearch(testOne, target:101), 0)
+        
+        let testZero:[Int] = []
+        XCTAssertEqual(test.ysBinarySearch(testZero, target:19), -1)
+        XCTAssertEqual(test.ysBinarySearch(testZero, target:101), -1)
+    }
 }
