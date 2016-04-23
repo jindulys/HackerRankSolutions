@@ -425,7 +425,7 @@ public class TravelAroundTheWorld {
             for i in 1..<N {
                 let currentPos = s + N - i
                 need[currentPos] = max(0, need[currentPos + 1] + earthB[currentPos] - earthA[currentPos])
-                if need[currentPos] == 0 { retVal++ }
+                if need[currentPos] == 0 { retVal += 1 }
             }
         }
         

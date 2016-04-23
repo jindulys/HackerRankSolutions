@@ -16,6 +16,7 @@
 		0E5741951C001FAF004EB0FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5741931C001FAF004EB0FA /* LaunchScreen.storyboard */; };
 		0E5741A01C001FAF004EB0FA /* HRSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E57419F1C001FAF004EB0FA /* HRSwiftTests.swift */; };
 		0E5741AB1C001FAF004EB0FA /* HRSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5741AA1C001FAF004EB0FA /* HRSwiftUITests.swift */; };
+		0E8D4FB51CCBE6C4004E9985 /* ThirtyDaysOfCodeChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D4FB41CCBE6C4004E9985 /* ThirtyDaysOfCodeChallenges.swift */; };
 		0E9AC3521C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */; };
 		0EEDD4C41C3F635A00F94031 /* DynamicProgramming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */; };
 		0EEDD4C51C3F635A00F94031 /* HackerRankKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BF1C3F635A00F94031 /* HackerRankKit.swift */; };
@@ -58,6 +59,7 @@
 		0E5741A61C001FAF004EB0FA /* HRSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HRSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5741AA1C001FAF004EB0FA /* HRSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRSwiftUITests.swift; sourceTree = "<group>"; };
 		0E5741AC1C001FAF004EB0FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E8D4FB41CCBE6C4004E9985 /* ThirtyDaysOfCodeChallenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirtyDaysOfCodeChallenges.swift; sourceTree = "<group>"; };
 		0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleInterviewQuestions.swift; sourceTree = "<group>"; };
 		0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicProgramming.swift; path = Sources/DynamicProgramming.swift; sourceTree = "<group>"; };
 		0EEDD4BF1C3F635A00F94031 /* HackerRankKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HackerRankKit.swift; path = Sources/HackerRankKit.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				0EEDD4C31C3F635A00F94031 /* ZenefitsContest.swift */,
 				0E2DFC351C604E9200644A7B /* Int+HRSwift.swift */,
 				0E2DFC371C606F4B00644A7B /* Helper.swift */,
+				0E8D4FB41CCBE6C4004E9985 /* ThirtyDaysOfCodeChallenges.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				0E57418B1C001FAF004EB0FA /* AppDelegate.swift in Sources */,
 				0EEDD4C51C3F635A00F94031 /* HackerRankKit.swift in Sources */,
 				0E2DFC381C606F4B00644A7B /* Helper.swift in Sources */,
+				0E8D4FB51CCBE6C4004E9985 /* ThirtyDaysOfCodeChallenges.swift in Sources */,
 				0E2DFC361C604E9200644A7B /* Int+HRSwift.swift in Sources */,
 				0E9AC3521C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift in Sources */,
 				0EEDD4C81C3F635A00F94031 /* Strings.swift in Sources */,
