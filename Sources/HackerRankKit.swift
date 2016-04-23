@@ -24,14 +24,7 @@ import Foundation
 */
 
 public func getLine() -> String {
-    var buf = String()
-    var c = getchar()
-    // 10 is the ascii code for new line
-    while c != EOF && c != 10 {
-        buf.append(UnicodeScalar(UInt32(c)))
-        c = getchar()
-    }
-    return buf
+    return readLine()!
 }
 
 public func getInt() -> Int {

@@ -16,3 +16,15 @@ public class DayO {
         print(input)
     }
 }
+
+/// Day1 Data Types
+public class DayOne {
+    func solution() {
+        var i = 4
+        var d = 4.0
+        var s = "HackerRank"
+        print(i + getInt())
+        print(d + Double(getInt()))
+        print(s + getLine())
+    }
+}
