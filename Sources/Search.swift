@@ -137,3 +137,34 @@ public class MaximiseSum {
         return retVal
     }
 }
+
+/// https://www.hackerrank.com/challenges/sherlock-and-array
+public class SherlockAndArray {
+    func solution() {
+        let T = getInt()
+        for _ in 0..<T {
+            let _ = getInt()
+            let elements = getLineToInts()
+            let result = solve(elements)
+            if result {
+                print("YES")
+            } else {
+                print("NO")
+            }
+        }
+    }
+    
+    func solve(arr: [Int]) -> Bool {
+        let arrCount = arr.count
+        var leftSum = Array(count: arrCount + 1, repeatedValue: 0)
+        for i in 1..<arrCount+1 {
+            leftSum[i] = leftSum[i-1] + arr[i-1]
+        }
+        for i in SRange(start: arrCount - 1, end: -1, step: -1) {
+            if leftSum[i] == leftSum[arrCount] - leftSum[i+1] {
+                return true
+            }
+        }
+        return false
+    }
+}
