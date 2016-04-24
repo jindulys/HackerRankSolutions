@@ -20,9 +20,9 @@ public class DayO {
 /// Day1 Data Types
 public class DayOne {
     func solution() {
-        var i = 4
-        var d = 4.0
-        var s = "HackerRank"
+        let i = 4
+        let d = 4.0
+        let s = "HackerRank"
         print(i + getInt())
         print(d + Double(getInt()))
         print(s + getLine())

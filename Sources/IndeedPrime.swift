@@ -128,7 +128,7 @@ public class Gretchen {
         var segCount = Array(count: M, repeatedValue: 0)
         
         for i in 0..<N {
-            segCount[actors[i]]++
+            segCount[actors[i]] += 1
         }
         
         // create and update BIT
@@ -149,13 +149,13 @@ public class Gretchen {
                 let newCount1 = oldCount1 - 1
                 BIT.update(oldCount1, val: -1)
                 BIT.update(newCount1, val: 1)
-                segCount[oldScene]--
+                segCount[oldScene] -= 1
                 
                 let oldCount2 = segCount[newScene]
                 let newCount2 = oldCount2 + 1
                 BIT.update(oldCount2, val: -1)
                 BIT.update(newCount2, val: 1)
-                segCount[newScene]++
+                segCount[newScene] += 1
                 
                 actors[currentActor] = newScene
             } else {

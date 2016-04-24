@@ -517,7 +517,7 @@ private func partitionLomuto<T: Comparable>(inout array: [T], low: Int, high: In
         if array[j] <= pivot {
             // swap array[i],array[j] to keep ASCII art
             (array[j], array[i]) = (array[i], array[j])
-            ++i
+            i += 1
         }
     }
     // final swap i and high

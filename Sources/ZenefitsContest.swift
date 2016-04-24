@@ -333,8 +333,8 @@ class BattleOfRyloth {
         
         for _ in 0..<numberOfNodes-1 {
             let edge = getLineToArray().map {Int($0)!}
-            degree[edge[0]]++;
-            degree[edge[1]]++;
+            degree[edge[0]] += 1;
+            degree[edge[1]] += 1;
             graph[edge[0]].append(edge[1])
             graph[edge[1]].append(edge[0])
         }
@@ -361,7 +361,7 @@ class BattleOfRyloth {
                     continue
                 }
                 
-                degree[adjacentNode]--
+                degree[adjacentNode] -= 1
                 if degree[adjacentNode] == 1 {
                     leafNodes.enqueue(adjacentNode)
                 }
@@ -383,8 +383,8 @@ class BattleOfRyloth {
         
         for _ in 0..<numberOfNodes-1 {
             let edge = getLineToArray().map {Int($0)!}
-            degree[edge[0]]++;
-            degree[edge[1]]++;
+            degree[edge[0]] += 1;
+            degree[edge[1]] += 1;
             graph[edge[0]].append(edge[1])
             graph[edge[1]].append(edge[0])
         }
