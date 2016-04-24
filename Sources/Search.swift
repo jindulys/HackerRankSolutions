@@ -18,7 +18,7 @@ class IceCreamParlor {
             let arrString = getLine()
             let arr = arrString.componentsSeparatedByString(" ").map {Int($0)!}
             let result = solve(M, N: N, prices:arr)
-            if (result != (-1, -1)) {
+            if result.0 != -1 && result.1 != -1 {
                 print("\(result.0) \(result.1)")
             }
         }
