@@ -33,6 +33,7 @@ Different folders are named after corresponding domain names or contest names.
 [Sherlock and Cost](https://www.hackerrank.com/challenges/sherlock-and-cost) |  _O(N)_   | _O(N)_  | Moderate | Dynamic Programming | | 28.13 | 50.0
 [Dorsey Thief](https://www.hackerrank.com/challenges/dorsey-thief) |  _O(NM)_   | _O(NM)_  | Advanced | Dynamic Programming | | 52.76| 85.0
 [Travel Around the World](https://www.hackerrank.com/challenges/travel-around-the-world) |  _O(N)_   | _O(N)_  | Moderate | Dynamic Programming | validation pass and candidates finding pass | 120.0 | 120.0
+[Ice Cream Parlor](https://www.hackerrank.com/challenges/icecream-parlor) |  _O(N)_   | _O(N)_  | Easy | Search |  | 30.0 | 30.0
 
 ## [30 Days of Code Challenges](Sources/)
  Problem         |    Time           | Space           | Difficulty    | Tag          | Note       | Score    | Max Score
