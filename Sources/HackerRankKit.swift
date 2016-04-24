@@ -958,7 +958,7 @@ extension List {
  *  A LIFO stack type with constant-time push and pop operations
  */
 protocol StackType {
-    associatedtype Element
+    typealias Element
     
     mutating func push(x: Element)
     
