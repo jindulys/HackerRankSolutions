@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E2DFC361C604E9200644A7B /* Int+HRSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DFC351C604E9200644A7B /* Int+HRSwift.swift */; };
 		0E2DFC381C606F4B00644A7B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DFC371C606F4B00644A7B /* Helper.swift */; };
+		0E5112D21CCC69AF00948DC0 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5112D11CCC69AF00948DC0 /* Search.swift */; };
 		0E57418B1C001FAF004EB0FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E57418A1C001FAF004EB0FA /* AppDelegate.swift */; };
 		0E57418D1C001FAF004EB0FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E57418C1C001FAF004EB0FA /* ViewController.swift */; };
 		0E5741901C001FAF004EB0FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E57418E1C001FAF004EB0FA /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		0E2DFC351C604E9200644A7B /* Int+HRSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+HRSwift.swift"; path = "Sources/Int+HRSwift.swift"; sourceTree = "<group>"; };
 		0E2DFC371C606F4B00644A7B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		0E5112D11CCC69AF00948DC0 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		0E5741871C001FAF004EB0FA /* HRSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E57418A1C001FAF004EB0FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E57418C1C001FAF004EB0FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				0E2DFC351C604E9200644A7B /* Int+HRSwift.swift */,
 				0E2DFC371C606F4B00644A7B /* Helper.swift */,
 				0E8D4FB41CCBE6C4004E9985 /* ThirtyDaysOfCodeChallenges.swift */,
+				0E5112D11CCC69AF00948DC0 /* Search.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5112D21CCC69AF00948DC0 /* Search.swift in Sources */,
 				0EEDD4C91C3F635A00F94031 /* ZenefitsContest.swift in Sources */,
 				0EEDD4C71C3F635A00F94031 /* IndeedPrime.swift in Sources */,
 				0EEDD4C61C3F635A00F94031 /* Implementation.swift in Sources */,
