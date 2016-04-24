@@ -18,6 +18,8 @@
 		0E5741951C001FAF004EB0FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5741931C001FAF004EB0FA /* LaunchScreen.storyboard */; };
 		0E5741A01C001FAF004EB0FA /* HRSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E57419F1C001FAF004EB0FA /* HRSwiftTests.swift */; };
 		0E5741AB1C001FAF004EB0FA /* HRSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5741AA1C001FAF004EB0FA /* HRSwiftUITests.swift */; };
+		0E6F18021CCCA49F00FDE043 /* input10.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F18001CCCA49F00FDE043 /* input10.txt */; };
+		0E6F18031CCCA49F00FDE043 /* output10.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F18011CCCA49F00FDE043 /* output10.txt */; };
 		0E9AC3521C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */; };
 		0EEDD4C41C3F635A00F94031 /* DynamicProgramming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */; };
 		0EEDD4C51C3F635A00F94031 /* HackerRankKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BF1C3F635A00F94031 /* HackerRankKit.swift */; };
@@ -62,6 +64,8 @@
 		0E5741A61C001FAF004EB0FA /* HRSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HRSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5741AA1C001FAF004EB0FA /* HRSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRSwiftUITests.swift; sourceTree = "<group>"; };
 		0E5741AC1C001FAF004EB0FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E6F18001CCCA49F00FDE043 /* input10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input10.txt; sourceTree = "<group>"; };
+		0E6F18011CCCA49F00FDE043 /* output10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = output10.txt; sourceTree = "<group>"; };
 		0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleInterviewQuestions.swift; sourceTree = "<group>"; };
 		0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicProgramming.swift; path = Sources/DynamicProgramming.swift; sourceTree = "<group>"; };
 		0EEDD4BF1C3F635A00F94031 /* HackerRankKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HackerRankKit.swift; path = Sources/HackerRankKit.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		0E5741891C001FAF004EB0FA /* HRSwift */ = {
 			isa = PBXGroup;
 			children = (
+				0E6F17FE1CCCA49F00FDE043 /* TestFile */,
 				0E57418A1C001FAF004EB0FA /* AppDelegate.swift */,
 				0E57418C1C001FAF004EB0FA /* ViewController.swift */,
 				0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */,
@@ -147,6 +152,23 @@
 				0E5741AC1C001FAF004EB0FA /* Info.plist */,
 			);
 			path = HRSwiftUITests;
+			sourceTree = "<group>";
+		};
+		0E6F17FE1CCCA49F00FDE043 /* TestFile */ = {
+			isa = PBXGroup;
+			children = (
+				0E6F17FF1CCCA49F00FDE043 /* MaximiseSum */,
+			);
+			path = TestFile;
+			sourceTree = "<group>";
+		};
+		0E6F17FF1CCCA49F00FDE043 /* MaximiseSum */ = {
+			isa = PBXGroup;
+			children = (
+				0E6F18001CCCA49F00FDE043 /* input10.txt */,
+				0E6F18011CCCA49F00FDE043 /* output10.txt */,
+			);
+			path = MaximiseSum;
 			sourceTree = "<group>";
 		};
 		0EEDD4BD1C3F634500F94031 /* Sources */ = {
@@ -272,6 +294,8 @@
 			files = (
 				0E5741951C001FAF004EB0FA /* LaunchScreen.storyboard in Resources */,
 				0E5741921C001FAF004EB0FA /* Assets.xcassets in Resources */,
+				0E6F18021CCCA49F00FDE043 /* input10.txt in Resources */,
+				0E6F18031CCCA49F00FDE043 /* output10.txt in Resources */,
 				0E5741901C001FAF004EB0FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -149,8 +149,33 @@ public class StreamReader {
 }
 
 extension StreamReader {
+    /**
+     Convenience Initializer return a StreamReader from main bundle
+     
+     - parameter name:  name of the file
+     - parameter type:  type of the file
+     
+     - returns: fully-fledged instance or nil if meet with some error
+     */
+    public convenience init?(name: String, type: String) {
+        guard let path = NSBundle.mainBundle().pathForResource(name, ofType: type) else {
+            return nil
+        }
+        self.init(path: path)
+    }
+    
     public func getLine() -> String {
         return self.nextLine()!
+    }
+    
+    public func getInt() -> Int {
+        return Int(getLine())!
+    }
+    
+    public func getLineToInts() -> [Int] {
+        let currentLine = getLine()
+        let retVal = currentLine.componentsSeparatedByString(" ").map { Int($0)! }
+        return retVal
     }
 }
 
@@ -164,7 +189,7 @@ A helper function which takes in a block execute, print out executionTime
 
 - returns: execution time
 */
-public func logRunTime(executedBlock:()->()) -> NSTimeInterval {
+public func logRunTime(@noescape executedBlock:()->()) -> NSTimeInterval {
     let startDate = NSDate()
     executedBlock()
     let endDate = NSDate()

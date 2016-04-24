@@ -53,6 +53,27 @@ public class MaximiseSum {
         }
     }
     
+    func localTest() {
+        if let testStreamReader = StreamReader(name: "input10", type: "txt"),
+            testOutStreamReader = StreamReader(name: "output10", type: "txt") {
+                let T = testStreamReader.getInt()
+                for _ in 0..<T {
+                    let metrics = testStreamReader.getLineToInts()
+                    let elements = testStreamReader.getLineToInts()
+                    logRunTime {
+                        //let result = self.slowSolve(metrics[1], elements: elements)
+                        let result = self.solve(metrics[1], elements: elements)
+                        let expect = testOutStreamReader.getInt()
+                        if result == expect {
+                            print("Pass")
+                        } else {
+                            print("Failed")
+                        }
+                    }
+                }
+        }
+    }
+    
     /// Math behind the scene of modular
     /// (a + b) % M = (a % M + b % M) % M
     /// (a - b) % M = (a % M - b % M) % M
@@ -85,5 +106,34 @@ public class MaximiseSum {
             }
         }
         return max(maxRet, modulo - min)
+    }
+    
+    /// Math behind the scene of modular
+    /// (a + b) % M = (a % M + b % M) % M
+    /// (a - b) % M = (a % M - b % M) % M
+    /// Another important point to note is that to solve array related question, it is common to
+    /// construct a prefix table.
+    /// O(N^2)
+    func slowSolve(modulo: Int, elements: [Int]) -> Int {
+        // use elements and modulo generate prefix table
+        var prefix: [Int] = Array(count: elements.count, repeatedValue: 0)
+        var current = 0
+        for i in 0..<elements.count {
+            current = (elements[i]%modulo + current) % modulo
+            prefix[i] = current
+        }
+        // ran through prefix table to find the largest one
+        var retVal = 0
+        for i in 0..<elements.count {
+            for j in SRange(start: i-1, end: -1, step: -1) {
+                // prefix[i] - prefix[j] means subparts from j+1 to i
+                if prefix[j] > prefix[i] {
+                    retVal = max(retVal, (prefix[i] - prefix[j] + modulo) % modulo)
+                }
+            }
+            // prefix[i] means from beginning to i
+            retVal = max(retVal, prefix[i])
+        }
+        return retVal
     }
 }
