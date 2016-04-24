@@ -37,6 +37,12 @@ public func getLineToArray() -> [String] {
     return retVal.filter { Int($0) != nil }
 }
 
+public func getLineToInts() -> [Int] {
+    let currentLine = getLine()
+    let retVal = currentLine.componentsSeparatedByString(" ").map { Int($0)! }
+    return retVal
+}
+
 /**
  *  reading into n lines and combine them into an Array
  *  
@@ -767,10 +773,14 @@ public class RangeGenerator: GeneratorType {
     public func next() -> Int? {
         if clockWise {
             guard start + stepNum * step < end else { return nil }
-            return start + step * stepNum++
+            let ret = start + step * stepNum
+            stepNum += 1
+            return ret
         } else {
             guard start + stepNum * step > end else { return nil }
-            return start + step * stepNum++
+            let ret = start + step * stepNum
+            stepNum += 1
+            return ret
         }
     }
 }
@@ -948,7 +958,7 @@ extension List {
  *  A LIFO stack type with constant-time push and pop operations
  */
 protocol StackType {
-    typealias Element
+    associatedtype Element
     
     mutating func push(x: Element)
     

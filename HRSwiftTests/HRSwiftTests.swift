@@ -284,4 +284,11 @@ class HRSwiftTests: XCTestCase {
         XCTAssertEqual(test.ysBinarySearch(testZero, target:19), -1)
         XCTAssertEqual(test.ysBinarySearch(testZero, target:101), -1)
     }
+    
+    func testMaximiseSum() {
+        let testArray = [3, 3, 9, 9, 5]
+        let mod = 7
+        let test = MaximiseSum()
+        XCTAssertEqual(test.solve(mod, elements: testArray), 6)
+    }
 }

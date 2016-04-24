@@ -9,7 +9,7 @@
 import Foundation
 
 /// https://www.hackerrank.com/challenges/icecream-parlor
-class IceCreamParlor {
+public class IceCreamParlor {
     func solution() {
         let T = getInt()
         for _ in 0..<T {
@@ -38,5 +38,50 @@ class IceCreamParlor {
             }
         }
         return (-1, -1)
+    }
+}
+
+/// https://www.hackerrank.com/challenges/maximise-sum
+public class MaximiseSum {
+    func solution() {
+        let T = getInt()
+        for _ in 0..<T {
+            let metrics = getLineToInts()
+            let elements = getLineToInts()
+            let result = solve(metrics[1], elements: elements)
+            print(result)
+        }
+    }
+    
+    /// Math behind the scene of modular
+    /// (a + b) % M = (a % M + b % M) % M
+    /// (a - b) % M = (a % M - b % M) % M
+    /// Another important point to note is that to solve array related question, it is common to
+    /// construct a prefix table.
+    /// O(NlgN)
+    func solve(modulo: Int, elements: [Int]) -> Int {
+        // use elements and modulo generate prefix table
+        var prefix: [(Int, Int)] = Array(count: elements.count, repeatedValue: (0, 0))
+        var current = 0
+        var maxRet = 0
+        for i in 0..<elements.count {
+            current = (elements[i]%modulo + current) % modulo
+            if current > maxRet {
+                maxRet = current
+            }
+            prefix[i] = (current, i+1)
+        }
+        // ran through prefix table to find the largest one
+        prefix.sortInPlace { $0.0 == $1.0 ? $0.1 < $1.1 : $0.0 < $1.0 }
+        var min = Int.max
+        for i in 0..<elements.count-1 {
+            // has a higher index
+            if prefix[i].1 > prefix[i+1].1 {
+                if prefix[i+1].0 - prefix[i].0 < min {
+                    min = prefix[i+1].0 - prefix[i].0
+                }
+            }
+        }
+        return max(maxRet, modulo - min)
     }
 }
