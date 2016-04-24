@@ -66,19 +66,21 @@ public class MaximiseSum {
         var maxRet = 0
         for i in 0..<elements.count {
             current = (elements[i]%modulo + current) % modulo
-            if current > maxRet {
-                maxRet = current
-            }
             prefix[i] = (current, i+1)
         }
         // ran through prefix table to find the largest one
         prefix.sortInPlace { $0.0 == $1.0 ? $0.1 < $1.1 : $0.0 < $1.0 }
         var min = Int.max
+        maxRet = prefix[elements.count - 1].0
+        if (maxRet == modulo - 1) { return maxRet}
         for i in 0..<elements.count-1 {
             // has a higher index
             if prefix[i].1 > prefix[i+1].1 {
                 if prefix[i+1].0 - prefix[i].0 < min {
                     min = prefix[i+1].0 - prefix[i].0
+                    if min == 1 {
+                        break
+                    }
                 }
             }
         }
