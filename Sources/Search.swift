@@ -170,11 +170,11 @@ public class SherlockAndArray {
 }
 
 /// https://www.hackerrank.com/challenges/missing-numbers
-public class missingNumbers {
+public class MissingNumbers {
     func solution() {
-        let n = getInt()
+        let _ = getInt()
         let listA = getLineToInts()
-        let m = getInt()
+        let _ = getInt()
         let listB = getLineToInts()
         let retVal = solve(listA, arrB: listB)
         print(retVal.joinWithSeparator(" "))
@@ -189,14 +189,32 @@ public class missingNumbers {
         var baseArray = Array(count: 201, repeatedValue: 0)
         // Find the base, to index that array.
         let base = arrA[0] - 100
+        var result = [Int]()
         arrA.forEach { i in
             let index = i - base
-            missArray[index] += missArray[index]
+            missArray[index] += 1
         }
         arrB.forEach { i in
             let index = i - base
-            baseArray[index] += baseArray[index]
+            baseArray[index] += 1
         }
-        return []
+        for (i, e) in baseArray.enumerate() {
+            if e != missArray[i] {
+                result.append(e)
+            }
+        }
+        return result.map { String($0) }
+    }
+    
+    func localTest() {
+        if let testStreamReader = StreamReader(name: "missnumberinput", type: "txt") {
+            let _ = testStreamReader.getInt()
+            let a = testStreamReader.getLineToInts()
+            let _ = testStreamReader.getInt()
+            let b = testStreamReader.getLineToInts()
+            logRunTime {
+                print(self.solve(a, arrB:b))
+            }
+        }
     }
 }

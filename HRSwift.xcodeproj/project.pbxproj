@@ -11,6 +11,8 @@
 		0E5112D61CCC6C2500948DC0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5112D31CCC6C2500948DC0 /* Helper.swift */; };
 		0E5112D71CCC6C2500948DC0 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5112D41CCC6C2500948DC0 /* Search.swift */; };
 		0E5112D81CCC6C2500948DC0 /* ThirtyDaysOfCodeChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5112D51CCC6C2500948DC0 /* ThirtyDaysOfCodeChallenges.swift */; };
+		0E55254E1CD525A000942AD2 /* missnumberinput.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E55254D1CD525A000942AD2 /* missnumberinput.txt */; };
+		0E5525501CD5280800942AD2 /* misstest1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E55254F1CD5280800942AD2 /* misstest1.txt */; };
 		0E57418B1C001FAF004EB0FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E57418A1C001FAF004EB0FA /* AppDelegate.swift */; };
 		0E57418D1C001FAF004EB0FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E57418C1C001FAF004EB0FA /* ViewController.swift */; };
 		0E5741901C001FAF004EB0FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E57418E1C001FAF004EB0FA /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		0E5112D31CCC6C2500948DC0 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Sources/Helper.swift; sourceTree = "<group>"; };
 		0E5112D41CCC6C2500948DC0 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Search.swift; path = Sources/Search.swift; sourceTree = "<group>"; };
 		0E5112D51CCC6C2500948DC0 /* ThirtyDaysOfCodeChallenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirtyDaysOfCodeChallenges.swift; path = Sources/ThirtyDaysOfCodeChallenges.swift; sourceTree = "<group>"; };
+		0E55254D1CD525A000942AD2 /* missnumberinput.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = missnumberinput.txt; sourceTree = "<group>"; };
+		0E55254F1CD5280800942AD2 /* misstest1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = misstest1.txt; sourceTree = "<group>"; };
 		0E5741871C001FAF004EB0FA /* HRSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E57418A1C001FAF004EB0FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E57418C1C001FAF004EB0FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 		0E6F17FF1CCCA49F00FDE043 /* MaximiseSum */ = {
 			isa = PBXGroup;
 			children = (
+				0E55254D1CD525A000942AD2 /* missnumberinput.txt */,
+				0E55254F1CD5280800942AD2 /* misstest1.txt */,
 				0E6F18001CCCA49F00FDE043 /* input10.txt */,
 				0E6F18011CCCA49F00FDE043 /* output10.txt */,
 			);
@@ -294,8 +300,10 @@
 			files = (
 				0E5741951C001FAF004EB0FA /* LaunchScreen.storyboard in Resources */,
 				0E5741921C001FAF004EB0FA /* Assets.xcassets in Resources */,
+				0E55254E1CD525A000942AD2 /* missnumberinput.txt in Resources */,
 				0E6F18021CCCA49F00FDE043 /* input10.txt in Resources */,
 				0E6F18031CCCA49F00FDE043 /* output10.txt in Resources */,
+				0E5525501CD5280800942AD2 /* misstest1.txt in Resources */,
 				0E5741901C001FAF004EB0FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

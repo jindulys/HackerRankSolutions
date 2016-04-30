@@ -676,7 +676,7 @@ extension Array {
      
      - returns: the result or nil if the array is empty
      */
-    func removePreElementsSatisfy(combine:(Element, Element)->Element) -> Element? {
+    func reduceByMap(combine:(Element, Element)->Element) -> Element? {
         return first.map {
             self.dropFirst().reduce($0, combine: combine)
         }
