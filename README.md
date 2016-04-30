@@ -36,6 +36,7 @@ Different folders are named after corresponding domain names or contest names.
 [Sherlock and Array](https://www.hackerrank.com/challenges/sherlock-and-array) | _O(N)_ | _O(N)_ | Easy | Search | | 40.0 | 40.0|
 [Ice Cream Parlor](https://www.hackerrank.com/challenges/icecream-parlor) |  _O(N)_   | _O(N)_  | Easy | Search |  | 30.0 | 30.0
 [Maximise Sum](https://www.hackerrank.com/challenges/maximise-sum) |  _O(N)_   | _O(NlgN)_  | Moderate | Search |  | 20.31 | 65.0
+[Missing Number](https://www.hackerrank.com/challenges/missing-numbers)| _O(N)_ | _O(N)_ | Moderate | Search| Do you believe 0.59s overtime? | 25.99 | 45 
 
 ## [30 Days of Code Challenges](Sources/)
  Problem         |    Time           | Space           | Difficulty    | Tag          | Note       | Score    | Max Score
