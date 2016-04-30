@@ -649,6 +649,23 @@ public extension Array {
         guard let fst = first else { return nil }
         return self.dropFirst().reduce(fst, combine: combine)
     }
+    
+    /**
+     Remove first few elements that satisfy removing condition.
+     
+     - parameter removeCondition: condition to remove an element.
+    */
+    func removePreElementsSatisfy(removeCondition:(Element) -> Bool) -> [Element] {
+        let count = self.count
+        var leftStartIndex = 0
+        for (i, e) in self.enumerate() {
+            if !removeCondition(e) {
+                break
+            }
+            leftStartIndex = i
+        }
+        return leftStartIndex+1<count ? Array(self[(leftStartIndex+1)..<count]) : []
+    }
 }
 
 extension Array {
@@ -659,7 +676,7 @@ extension Array {
      
      - returns: the result or nil if the array is empty
      */
-    func reduceByMap(combine:(Element, Element)->Element) -> Element? {
+    func removePreElementsSatisfy(combine:(Element, Element)->Element) -> Element? {
         return first.map {
             self.dropFirst().reduce($0, combine: combine)
         }

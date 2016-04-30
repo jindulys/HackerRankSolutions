@@ -291,4 +291,22 @@ class HRSwiftTests: XCTestCase {
         let test = MaximiseSum()
         XCTAssertEqual(test.solve(mod, elements: testArray), 6)
     }
+    
+    func testArrayExtention() {
+        let normalArr = [0, 0, 1, 2, 3]
+        let tn = normalArr.removePreElementsSatisfy { $0 == 0 }
+        XCTAssertEqual(tn, [1, 2, 3])
+        
+        let another = [0, 0, 1, 0, 2, 3]
+        let tn1 = another.removePreElementsSatisfy { $0 == 0 }
+        XCTAssertEqual(tn1, [1, 0, 2, 3])
+        
+        let empty:[Int] = []
+        let tn2 = empty.removePreElementsSatisfy { $0 < 0 }
+        XCTAssertEqual(tn2, [])
+        
+        let negArr = [1]
+        let tn3 = negArr.removePreElementsSatisfy { $0 > 0 }
+        XCTAssertEqual(tn3, [])
+    }
 }

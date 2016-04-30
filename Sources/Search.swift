@@ -168,3 +168,35 @@ public class SherlockAndArray {
         return false
     }
 }
+
+/// https://www.hackerrank.com/challenges/missing-numbers
+public class missingNumbers {
+    func solution() {
+        let n = getInt()
+        let listA = getLineToInts()
+        let m = getInt()
+        let listB = getLineToInts()
+        let retVal = solve(listA, arrB: listB)
+        print(retVal.joinWithSeparator(" "))
+    }
+    
+    func solve(arrA: [Int], arrB: [Int]) -> [String] {
+        // According to the requirement, the difference's maximum is 
+        // 100. So if we take in an arbitrary number including itself
+        // maximum count of this array is 201, expanding that number 
+        // to left and right by 100.
+        var missArray = Array(count: 201, repeatedValue: 0)
+        var baseArray = Array(count: 201, repeatedValue: 0)
+        // Find the base, to index that array.
+        let base = arrA[0] - 100
+        arrA.forEach { i in
+            let index = i - base
+            missArray[index] += missArray[index]
+        }
+        arrB.forEach { i in
+            let index = i - base
+            baseArray[index] += baseArray[index]
+        }
+        return []
+    }
+}
