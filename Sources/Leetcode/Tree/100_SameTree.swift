@@ -25,8 +25,8 @@ public class TreeNode {
   Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
  */
 
-public class Solution {
-  public func isSameTree(p: TreeNode?, _ q: TreeNode?) -> Bool {
+class Solution_SameTree {
+  func isSameTree(p: TreeNode?, _ q: TreeNode?) -> Bool {
     switch(p, q){
       case (let .Some(leftRoot), let .Some(rightRoot)):
         let valEqual = (leftRoot.val == rightRoot.val)
