@@ -1,3 +1,9 @@
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/jindulys/HackerRankSolutions/master/Images/logo1.png" alt="HackerRankSolutions" title="HackerRankSolutions" width="1200"/>
+
+</p>
+
 # HackerRankSolutions 
 ![Language](https://img.shields.io/badge/language-Swift-orange.svg) [![Build Status](https://travis-ci.org/jindulys/HackerRankSolutions.svg)](https://travis-ci.org/jindulys/HackerRankSolutions) [![Codewake](https://www.codewake.com/badges/ask_question.svg)](https://www.codewake.com/p/hackerranksolutions)
 
