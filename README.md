@@ -58,6 +58,7 @@ I won't create a seperate repo for `LeetCode` for now, unless I finish a lot of 
 Problem         |    Category           | Space           | Time   
 --------------- |  -------------------- | --------------- | ------------
 [100 Same Tree](https://leetcode.com/problems/same-tree/) | Tree | O(n)(recursive call) | O(n)
+[226 Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | Tree | O(n) | O(n)
 
 
 ## Data Structures in [HackerRankHelper](Sources/HackerRankHelper.swift)
