@@ -1,5 +1,5 @@
 # HackerRankSolutions 
-![Language](https://img.shields.io/badge/language-Swift-orange.svg) [![Build Status](https://travis-ci.org/jindulys/HackerRankSolutions.svg)](https://travis-ci.org/jindulys/HackerRankSolutions)
+![Language](https://img.shields.io/badge/language-Swift-orange.svg) [![Build Status](https://travis-ci.org/jindulys/HackerRankSolutions.svg)](https://travis-ci.org/jindulys/HackerRankSolutions) [![Codewake](https://www.codewake.com/badges/ask_question.svg)](https://www.codewake.com/p/hackerranksolutions)
 
 This is a repo for [HackerRank](https://www.hackerrank.com/domains) Solutions in Swift
 
