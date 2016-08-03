@@ -660,7 +660,7 @@ public extension Array {
         var leftStartIndex = 0
         for (i, e) in self.enumerate() {
             if !removeCondition(e) {
-                break
+                break 
             }
             leftStartIndex = i
         }
