@@ -52,6 +52,14 @@ Different folders are named after corresponding domain names or contest names.
 * [IndeedPrimeCodeSprint](https://www.hackerrank.com/contests/indeed-prime-codesprint/challenges)
 * [ZenefitsCodeSprint](https://www.hackerrank.com/contests/zenhacks/challenges)
 
+## [LeetCode](https://leetcode.com)
+I won't create a seperate repo for `LeetCode` for now, unless I finish a lot of them.
+
+Problem         |    Category           | Space           | Time   
+--------------- |  -------------------- | --------------- | ------------
+[100 Same Tree](https://leetcode.com/problems/same-tree/) | Tree | O(n)(recursive call) | O(n)
+
+
 ## Data Structures in [HackerRankHelper](Sources/HackerRankHelper.swift)
 * FIFO Queue with Two Arraies
 * FIFO Queue with Listnode
