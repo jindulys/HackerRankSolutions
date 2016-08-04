@@ -25,6 +25,16 @@ import Foundation
  * }
  */
 
+/**
+  Swift Knowledge:
+ 
+  Class
+ 
+ Algorithem Knowledge:
+ 
+  Top to bottom
+ */
+
 class Solution_invertTree {
   func invertTree(root: TreeNode?) -> TreeNode? {
     guard let root = root else {

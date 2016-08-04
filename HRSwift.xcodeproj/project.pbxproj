@@ -24,6 +24,7 @@
 		0E6F18031CCCA49F00FDE043 /* output10.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F18011CCCA49F00FDE043 /* output10.txt */; };
 		0E9AC3521C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */; };
 		0ED7FD561D52C51300EF082B /* 111_MinimumDepthOfBinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED7FD551D52C51300EF082B /* 111_MinimumDepthOfBinaryTree.swift */; };
+		0ED7FD581D52E41400EF082B /* 104_MaximumDepthOfBinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED7FD571D52E41400EF082B /* 104_MaximumDepthOfBinaryTree.swift */; };
 		0EE20BA21D51910500455550 /* 100_SameTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE20BA11D51910500455550 /* 100_SameTree.swift */; };
 		0EE20BA41D51AA5800455550 /* 226_InvertBinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE20BA31D51AA5800455550 /* 226_InvertBinaryTree.swift */; };
 		0EEDD4C41C3F635A00F94031 /* DynamicProgramming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */; };
@@ -75,6 +76,7 @@
 		0E6F18011CCCA49F00FDE043 /* output10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = output10.txt; sourceTree = "<group>"; };
 		0E9AC3511C65B0B0001DE1B6 /* GoogleInterviewQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleInterviewQuestions.swift; sourceTree = "<group>"; };
 		0ED7FD551D52C51300EF082B /* 111_MinimumDepthOfBinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 111_MinimumDepthOfBinaryTree.swift; sourceTree = "<group>"; };
+		0ED7FD571D52E41400EF082B /* 104_MaximumDepthOfBinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 104_MaximumDepthOfBinaryTree.swift; sourceTree = "<group>"; };
 		0EE20BA11D51910500455550 /* 100_SameTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 100_SameTree.swift; sourceTree = "<group>"; };
 		0EE20BA31D51AA5800455550 /* 226_InvertBinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 226_InvertBinaryTree.swift; sourceTree = "<group>"; };
 		0EEDD4BE1C3F635A00F94031 /* DynamicProgramming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicProgramming.swift; path = Sources/DynamicProgramming.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				0EE20BA11D51910500455550 /* 100_SameTree.swift */,
 				0EE20BA31D51AA5800455550 /* 226_InvertBinaryTree.swift */,
 				0ED7FD551D52C51300EF082B /* 111_MinimumDepthOfBinaryTree.swift */,
+				0ED7FD571D52E41400EF082B /* 104_MaximumDepthOfBinaryTree.swift */,
 			);
 			path = Tree;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				0EEDD4C71C3F635A00F94031 /* IndeedPrime.swift in Sources */,
 				0EE20BA41D51AA5800455550 /* 226_InvertBinaryTree.swift in Sources */,
 				0EEDD4C61C3F635A00F94031 /* Implementation.swift in Sources */,
+				0ED7FD581D52E41400EF082B /* 104_MaximumDepthOfBinaryTree.swift in Sources */,
 				0E5112D81CCC6C2500948DC0 /* ThirtyDaysOfCodeChallenges.swift in Sources */,
 				0E57418D1C001FAF004EB0FA /* ViewController.swift in Sources */,
 				0EEDD4C41C3F635A00F94031 /* DynamicProgramming.swift in Sources */,

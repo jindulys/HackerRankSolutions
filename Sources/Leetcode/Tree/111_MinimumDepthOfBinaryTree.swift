@@ -14,6 +14,19 @@ import Foundation
   The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
  */
 
+/**
+  Swift Knowledge:
+ 
+  Generic, custom struct, tuple, optional
+ 
+  Algorithem Knowledge:
+  
+  1) How to define meaningful helper object like nonLeafQueue means you will store
+      node that is not a leaf.
+  2) Breadth first treverse.
+  3) Queue
+ */
+
 class MinimumDepthOfBinaryTree_Solution {
   func minDepth(root: TreeNode?) -> Int {
     if let root = root {
