@@ -56,7 +56,7 @@ Different folders are named after corresponding domain names or contest names.
 I won't create a seperate repo for `LeetCode` for now, unless I finish a lot of them.
 
 Problem         |    Category           |    Difficulty   |    Space           | Time        
---------------- |  -------------------- | --------------- | -------------------|
+--------------- |  -------------------- | --------------- | -------------------|--------
 [100 Same Tree](https://leetcode.com/problems/same-tree/) | Tree | Easy | O(n)(recursive call) | O(n)
 [226 Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | Tree | Easy | O(n) | O(n)
 [111 Minimum Depth Of Binary Tree](https://leetcode.com/submissions/detail/69271743/) | Tree | Easy |  O(n) | O(n)
