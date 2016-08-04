@@ -13,6 +13,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+      
+      let root = TreeNode(2)
+      let rootleft = TreeNode(2)
+      let rootright = TreeNode(3)
+      let rootleftleft = TreeNode(2)
+      root.left = rootleft
+      root.right = rootright
+      root.left?.left = rootleftleft
+      let solution = MinimumDepthOfBinaryTree_Solution()
+      let result = solution.minDepth(root)
+      print(result)
     }
 
     override func didReceiveMemoryWarning() {
