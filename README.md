@@ -44,10 +44,6 @@ Different folders are named after corresponding domain names or contest names.
 [Maximise Sum](https://www.hackerrank.com/challenges/maximise-sum) |  _O(N)_   | _O(NlgN)_  | Moderate | Search |  | 20.31 | 65.0
 [Missing Number](https://www.hackerrank.com/challenges/missing-numbers)| _O(N)_ | _O(N)_ | Moderate | Search| Do you believe 0.59s overtime? | 25.99 | 45 
 
-## [30 Days of Code Challenges](Sources/)
- Problem         |    Time           | Space           | Difficulty    | Tag          | Note       | Score    | Max Score
----------------- |  ---------------- | --------------- | ------------- |--------------| -----------| ---------| --------
-
 ## Contests
 * [IndeedPrimeCodeSprint](https://www.hackerrank.com/contests/indeed-prime-codesprint/challenges)
 * [ZenefitsCodeSprint](https://www.hackerrank.com/contests/zenhacks/challenges)
@@ -60,6 +56,7 @@ Problem         |    Category           |    Difficulty   |    Space           |
 [100 Same Tree](https://leetcode.com/problems/same-tree/) | Tree | Easy | O(n)(recursive call) | O(n)
 [226 Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | Tree | Easy | O(n) | O(n)
 [111 Minimum Depth Of Binary Tree](https://leetcode.com/submissions/detail/69271743/) | Tree | Easy |  O(n) | O(n)
+[104 Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Tree | Easy | O(n) | O(n)
 
 
 ## Data Structures in [HackerRankHelper](Sources/HackerRankHelper.swift)
