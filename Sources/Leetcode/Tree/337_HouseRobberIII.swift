@@ -64,4 +64,26 @@ class HouseRobberIII_Solution {
     }
     return ans(hashableRoot!)
   }
+
+  /// Second solution. A little better than first one.
+  func robII(root: TreeNode?) -> Int {
+    let ans = subRob(root)
+    return max(ans[0], ans[1])
+  }
+
+  /// SubRob will calculate from the root and return an Array of 2.
+  /// A[0]: The maximum money if root is Robbed.
+  /// A[1]: The maximum money if root is not Robbed.
+  private func subRob(root: TreeNode?) -> [Int] {
+    guard let root = root else {
+      return [0, 0]
+    }
+    let leftProfit = subRob(root.left)
+    let rightProfit = subRob(root.right)
+    // If root is rob then left, right must not be robbed.
+    let robRootProfit = root.val + leftProfit[1] + rightProfit[1]
+    let robNonRootProfit =
+        max(leftProfit[0], leftProfit[1]) + max(rightProfit[0], rightProfit[1])
+    return [robRootProfit, robNonRootProfit]
+  }
 }
