@@ -57,6 +57,7 @@ Problem         |    Category           |    Difficulty   |    Space           |
 [226 Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | Tree | Easy | O(n) | O(n)
 [111 Minimum Depth Of Binary Tree](https://leetcode.com/submissions/detail/69271743/) | Tree | Easy |  O(n) | O(n)
 [104 Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Tree | Easy | O(n) | O(n)
+[337 House Robber III](https://leetcode.com/problems/house-robber-iii/) | Tree | Medium | O(n) | O(n)
 
 
 ## Data Structures in [HackerRankHelper](Sources/HackerRankHelper.swift)
