@@ -24,6 +24,9 @@ class ViewController: UIViewController {
       let solution = MinimumDepthOfBinaryTree_Solution()
       let result = solution.minDepth(root)
       print(result)
+      
+      let hashableRoot = HashableTreeNode.buildHashableTreeWith(root)
+      print(hashableRoot?.left)
     }
 
     override func didReceiveMemoryWarning() {

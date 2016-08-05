@@ -20,3 +20,39 @@ public class TreeNode {
     self.right = nil
   }
 }
+
+/// HashableTreeNode is a wrapper around TreeNode, to facilitate Hash.
+public class HashableTreeNode {
+  public var val: Int
+  public var left: HashableTreeNode?
+  public var right: HashableTreeNode?
+  public var id: Int
+  
+  public init(val: Int, id: Int) {
+    self.val = val
+    self.id = id
+  }
+  
+  /// Helper function to build a HashableTreeNode with TreeNode.
+  public class func buildHashableTreeWith(root: TreeNode?, id: Int = 0) -> HashableTreeNode? {
+    guard let root = root else {
+      return nil
+    }
+    let hashableRoot = HashableTreeNode(val: root.val, id: id)
+    let leftHashableRoot = self.buildHashableTreeWith(root.left, id: id - 1)
+    let rightHashableRoot = self.buildHashableTreeWith(root.right, id: id + 1)
+    hashableRoot.left = leftHashableRoot
+    hashableRoot.right = rightHashableRoot
+    return hashableRoot
+  }
+}
+
+extension HashableTreeNode: Hashable {
+  public var hashValue: Int {
+    return self.id
+  }
+}
+
+public func ==(lhs: HashableTreeNode, rhs: HashableTreeNode) -> Bool {
+  return lhs.hashValue == rhs.hashValue
+}
