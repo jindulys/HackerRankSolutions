@@ -14,19 +14,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
       
-      let root = TreeNode(2)
+      let root = TreeNode(3)
       let rootleft = TreeNode(2)
       let rootright = TreeNode(3)
-      let rootleftleft = TreeNode(2)
+      let rootleftRight = TreeNode(3)
+      let rootRightRight = TreeNode(1)
       root.left = rootleft
       root.right = rootright
-      root.left?.left = rootleftleft
-      let solution = MinimumDepthOfBinaryTree_Solution()
-      let result = solution.minDepth(root)
-      print(result)
-      
-      let hashableRoot = HashableTreeNode.buildHashableTreeWith(root)
-      print(hashableRoot?.left)
+      root.left?.right = rootleftRight
+      root.right?.right = rootRightRight
+
+      let houseRobber = HouseRobberIII_Solution()
+      let ans = houseRobber.rob(root)
+      print(ans)
     }
 
     override func didReceiveMemoryWarning() {

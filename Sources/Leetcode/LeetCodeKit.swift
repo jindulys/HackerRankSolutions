@@ -39,8 +39,8 @@ public class HashableTreeNode {
       return nil
     }
     let hashableRoot = HashableTreeNode(val: root.val, id: id)
-    let leftHashableRoot = self.buildHashableTreeWith(root.left, id: id - 1)
-    let rightHashableRoot = self.buildHashableTreeWith(root.right, id: id + 1)
+    let leftHashableRoot = self.buildHashableTreeWith(root.left, id: id * 2 + 1)
+    let rightHashableRoot = self.buildHashableTreeWith(root.right, id: id * 2 + 2)
     hashableRoot.left = leftHashableRoot
     hashableRoot.right = rightHashableRoot
     return hashableRoot
