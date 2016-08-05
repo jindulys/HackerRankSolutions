@@ -27,6 +27,10 @@ class ViewController: UIViewController {
       let houseRobber = HouseRobberIII_Solution()
       let ans = houseRobber.rob(root)
       print(ans)
+      
+      let levelTraversal = BinaryTreeLevelOrderTraversal_Solution()
+      let ansl = levelTraversal.levelOrder(root)
+      print(ansl)
     }
 
     override func didReceiveMemoryWarning() {
