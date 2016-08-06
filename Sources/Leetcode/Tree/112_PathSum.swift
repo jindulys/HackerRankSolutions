@@ -28,19 +28,13 @@ class PathSum_Solution {
     guard let root = root else {
       return false
     }
-    let currentSum = root.val + prevSum
-    if let left = root.left {
-      let leftSatisfied = dfsSum(left, prevSum: currentSum)
-      if leftSatisfied {
-        return true
-      }
+    
+    let currentSum = prevSum + root.val
+    
+    if (root.left == nil) && (root.right == nil) && currentSum == target {
+      return true
     }
-    if let right = root.right {
-      let rightSatisfied = dfsSum(right, prevSum: currentSum)
-      if rightSatisfied {
-        return true
-      }
-    }
-    return (root.left == nil) && (root.right == nil) && currentSum == target
+
+    return dfsSum(root.left, prevSum: currentSum) || dfsSum(root.right, prevSum: currentSum)
   }
 }
