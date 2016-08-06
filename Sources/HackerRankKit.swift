@@ -687,6 +687,10 @@ public extension Array where Element: Comparable {
     public var isIncreasing: Bool {
         return self.adjacentTest{ $0 <= $1 }
     }
+  
+  public var isStrictlyIncreasing: Bool {
+    return self.adjacentTest { $0 < $1 }
+  }
 }
 
 public extension SequenceType where Generator.Element: Hashable {
