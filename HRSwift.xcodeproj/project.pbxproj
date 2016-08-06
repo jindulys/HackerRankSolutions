@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2C0C941D565C9700748BAF /* 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C0C931D565C9700748BAF /* 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.swift */; };
 		0E2DFC361C604E9200644A7B /* Int+HRSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DFC351C604E9200644A7B /* Int+HRSwift.swift */; };
 		0E3C7E381D542BB200D6550A /* 337_HouseRobberIII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3C7E371D542BB200D6550A /* 337_HouseRobberIII.swift */; };
 		0E3C7E3A1D54431100D6550A /* 102_BinaryTreeLevelOrderTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3C7E391D54431100D6550A /* 102_BinaryTreeLevelOrderTraversal.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E2C0C931D565C9700748BAF /* 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.swift; sourceTree = "<group>"; };
 		0E2DFC351C604E9200644A7B /* Int+HRSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+HRSwift.swift"; path = "Sources/Int+HRSwift.swift"; sourceTree = "<group>"; };
 		0E3C7E371D542BB200D6550A /* 337_HouseRobberIII.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 337_HouseRobberIII.swift; sourceTree = "<group>"; };
 		0E3C7E391D54431100D6550A /* 102_BinaryTreeLevelOrderTraversal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 102_BinaryTreeLevelOrderTraversal.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				0E9141421D56372400C4CEFC /* 101_SymmetricTree.swift */,
 				0E3C7E391D54431100D6550A /* 102_BinaryTreeLevelOrderTraversal.swift */,
 				0ED7FD571D52E41400EF082B /* 104_MaximumDepthOfBinaryTree.swift */,
+				0E2C0C931D565C9700748BAF /* 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.swift */,
 				0E91413E1D5596D600C4CEFC /* 110_BalancedBinaryTree.swift */,
 				0ED7FD551D52C51300EF082B /* 111_MinimumDepthOfBinaryTree.swift */,
 				0E9141401D56213D00C4CEFC /* 112_PathSum.swift */,
@@ -391,6 +394,7 @@
 				0EEDD4C41C3F635A00F94031 /* DynamicProgramming.swift in Sources */,
 				0E9141431D56372400C4CEFC /* 101_SymmetricTree.swift in Sources */,
 				0EE20BA21D51910500455550 /* 100_SameTree.swift in Sources */,
+				0E2C0C941D565C9700748BAF /* 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.swift in Sources */,
 				0E57418B1C001FAF004EB0FA /* AppDelegate.swift in Sources */,
 				0E3C7E3A1D54431100D6550A /* 102_BinaryTreeLevelOrderTraversal.swift in Sources */,
 				0EEDD4C51C3F635A00F94031 /* HackerRankKit.swift in Sources */,
