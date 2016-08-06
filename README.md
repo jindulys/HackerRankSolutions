@@ -54,6 +54,7 @@ I won't create a seperate repo for `LeetCode` for now, unless I finish a lot of 
 Problem         |    Category           |    Difficulty   |    Space           | Time        
 --------------- |  -------------------- | --------------- | -------------------|--------
 [100 Same Tree](https://leetcode.com/problems/same-tree/) | Tree | Easy | O(n) | O(n)
+[101 Symmetric Tree]( https://leetcode.com/problems/symmetric-tree/) |  Tree |  Easy |  O(n) |  O(n)
 [102 Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Tree | Easy | O(n) | O(n)
 [110 Balanced Binary Tree]( https://leetcode.com/problems/balanced-binary-tree/) |  Tree |  Easy |  O(n) |  O(n)
 [112 Path Sum]( https://leetcode.com/problems/path-sum/) |  Tree |  Easy |  O(n) |  O(n)
