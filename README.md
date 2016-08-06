@@ -55,6 +55,7 @@ Problem         |    Category           |    Difficulty   |    Space           |
 --------------- |  -------------------- | --------------- | -------------------|--------
 [100 Same Tree](https://leetcode.com/problems/same-tree/) | Tree | Easy | O(n) | O(n)
 [102 Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Tree | Easy | O(n) | O(n)
+[110 Balanced Binary Tree]( https://leetcode.com/problems/balanced-binary-tree/) |  Tree |  Easy |  O(n) |  O(n)
 [226 Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | Tree | Easy | O(n) | O(n)
 [111 Minimum Depth Of Binary Tree](https://leetcode.com/submissions/detail/69271743/) | Tree | Easy |  O(n) | O(n)
 [104 Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Tree | Easy | O(n) | O(n)
