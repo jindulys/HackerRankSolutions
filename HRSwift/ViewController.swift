@@ -14,23 +14,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
       
-      let root = TreeNode(3)
+      let root = TreeNode(1)
+      
       let rootleft = TreeNode(2)
-      let rootright = TreeNode(3)
-      let rootleftRight = TreeNode(3)
-      let rootRightRight = TreeNode(1)
+      let rootright = TreeNode(2)
+      
+      let leftRight = TreeNode(3)
+      
+      let rightRight = TreeNode(3)
+      
       root.left = rootleft
       root.right = rootright
-      root.left?.right = rootleftRight
-      root.right?.right = rootRightRight
-
-      let houseRobber = HouseRobberIII_Solution()
-      let ans = houseRobber.rob(root)
-      print(ans)
+      root.left?.right = leftRight
+      root.right?.right = rightRight
       
-      let levelTraversal = BinaryTreeLevelOrderTraversal_Solution()
-      let ansl = levelTraversal.levelOrder(root)
-      print(ansl)
+      let symmetric = SymmetricTree_Solution()
+      if symmetric.isSymmetric(root) {
+        print("Symmetric")
+      } else {
+        print("Not Symmetric")
+      }
     }
 
     override func didReceiveMemoryWarning() {
