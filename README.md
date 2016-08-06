@@ -53,6 +53,7 @@ I won't create a seperate repo for `LeetCode` for now, unless I finish a lot of 
 
 Problem         |    Category           |    Difficulty   |    Space           | Time        
 --------------- |  -------------------- | --------------- | -------------------|--------
+[98 Validate Binary Search Tree]( https://leetcode.com/problems/validate-binary-search-tree/) |  Tree |  Medium |  O(n) |  O(n)
 [100 Same Tree](https://leetcode.com/problems/same-tree/) | Tree | Easy | O(n) | O(n)
 [101 Symmetric Tree]( https://leetcode.com/problems/symmetric-tree/) |  Tree |  Easy |  O(n) |  O(n)
 [102 Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Tree | Easy | O(n) | O(n)
