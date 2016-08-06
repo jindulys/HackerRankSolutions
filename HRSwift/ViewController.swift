@@ -28,12 +28,8 @@ class ViewController: UIViewController {
       root.left?.right = leftRight
       root.right?.right = rightRight
       
-      let symmetric = SymmetricTree_Solution()
-      if symmetric.isSymmetric(root) {
-        print("Symmetric")
-      } else {
-        print("Not Symmetric")
-      }
+      let pathSum = PathSumII_Solution()
+      print(pathSum.pathSum(root, 6))
     }
 
     override func didReceiveMemoryWarning() {
