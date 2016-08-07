@@ -54,9 +54,11 @@ I won't create a seperate repo for `LeetCode` for now, unless I finish a lot of 
 ###[String](Sources/Leetcode/String)
 Problem         |    Category           |    Difficulty   |    Space           | Time        
 --------------- |  -------------------- | --------------- | -------------------|--------
+[205 Isomorphic Strings]( https://leetcode.com/problems/isomorphic-strings/) |  String |  Easy |  O(n) |  O(n) 
 [290 Word Pattern]( https://leetcode.com/problems/word-pattern/) |  String |  Easy |  O(n) |  O(n)
 [344 Reverse String]( https://leetcode.com/problems/reverse-string/) |  String |  Easy |  O(n) |  O(n)
-[345 Reverse Vowels of a String]( https://leetcode.com/problems/reverse-vowels-of-a-string/) |  String |  Easy |  O(n) |  O(n)
+[345 Reverse Vowels of a String]( https://leetcode.com/problems/reverse-vowels-of-a-string/) |  String |  Easy |  O(n) |  O(n) 
+
 
 ###[Tree](Sources/Leetcode/Tree)
 Problem         |    Category           |    Difficulty   |    Space           | Time        
