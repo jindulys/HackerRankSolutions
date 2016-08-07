@@ -55,6 +55,7 @@ I won't create a seperate repo for `LeetCode` for now, unless I finish a lot of 
 Problem         |    Category           |    Difficulty   |    Space           | Time        
 --------------- |  -------------------- | --------------- | -------------------|--------
 [290 Word Pattern]( https://leetcode.com/problems/word-pattern/) |  String |  Easy |  O(n) |  O(n)
+[344 Reverse String]( https://leetcode.com/problems/reverse-string/) |  String |  Easy |  O(n) |  O(n)
 
 ###[Tree](Sources/Leetcode/Tree)
 Problem         |    Category           |    Difficulty   |    Space           | Time        
