@@ -30,6 +30,9 @@ class ViewController: UIViewController {
       
       let pathSum = PathSumII_Solution()
       print(pathSum.pathSum(root, 6))
+      
+      let reverseVowels = ReverseVowels_Solution()
+      print(reverseVowels.reverseVowels("a."))
     }
 
     override func didReceiveMemoryWarning() {

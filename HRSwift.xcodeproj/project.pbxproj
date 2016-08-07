@@ -13,6 +13,7 @@
 		0E2C0C9A1D56973300748BAF /* 98_ValidateBinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C0C991D56973300748BAF /* 98_ValidateBinarySearchTree.swift */; };
 		0E2C0C9D1D56A18700748BAF /* 290_WordPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C0C9C1D56A18700748BAF /* 290_WordPattern.swift */; };
 		0E2C0C9F1D56E4F900748BAF /* 344_ReverseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C0C9E1D56E4F900748BAF /* 344_ReverseString.swift */; };
+		0E2C0CA11D56E9A700748BAF /* 345_ReverseVowelsOfAString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C0CA01D56E9A700748BAF /* 345_ReverseVowelsOfAString.swift */; };
 		0E2DFC361C604E9200644A7B /* Int+HRSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DFC351C604E9200644A7B /* Int+HRSwift.swift */; };
 		0E3C7E381D542BB200D6550A /* 337_HouseRobberIII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3C7E371D542BB200D6550A /* 337_HouseRobberIII.swift */; };
 		0E3C7E3A1D54431100D6550A /* 102_BinaryTreeLevelOrderTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3C7E391D54431100D6550A /* 102_BinaryTreeLevelOrderTraversal.swift */; };
@@ -71,6 +72,7 @@
 		0E2C0C991D56973300748BAF /* 98_ValidateBinarySearchTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 98_ValidateBinarySearchTree.swift; sourceTree = "<group>"; };
 		0E2C0C9C1D56A18700748BAF /* 290_WordPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 290_WordPattern.swift; sourceTree = "<group>"; };
 		0E2C0C9E1D56E4F900748BAF /* 344_ReverseString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 344_ReverseString.swift; sourceTree = "<group>"; };
+		0E2C0CA01D56E9A700748BAF /* 345_ReverseVowelsOfAString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 345_ReverseVowelsOfAString.swift; sourceTree = "<group>"; };
 		0E2DFC351C604E9200644A7B /* Int+HRSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+HRSwift.swift"; path = "Sources/Int+HRSwift.swift"; sourceTree = "<group>"; };
 		0E3C7E371D542BB200D6550A /* 337_HouseRobberIII.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 337_HouseRobberIII.swift; sourceTree = "<group>"; };
 		0E3C7E391D54431100D6550A /* 102_BinaryTreeLevelOrderTraversal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 102_BinaryTreeLevelOrderTraversal.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				0E2C0C9C1D56A18700748BAF /* 290_WordPattern.swift */,
 				0E2C0C9E1D56E4F900748BAF /* 344_ReverseString.swift */,
+				0E2C0CA01D56E9A700748BAF /* 345_ReverseVowelsOfAString.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				0E2C0C9F1D56E4F900748BAF /* 344_ReverseString.swift in Sources */,
 				0EE20BA41D51AA5800455550 /* 226_InvertBinaryTree.swift in Sources */,
 				0EEDD4C61C3F635A00F94031 /* Implementation.swift in Sources */,
+				0E2C0CA11D56E9A700748BAF /* 345_ReverseVowelsOfAString.swift in Sources */,
 				0E3C7E381D542BB200D6550A /* 337_HouseRobberIII.swift in Sources */,
 				0ED7FD581D52E41400EF082B /* 104_MaximumDepthOfBinaryTree.swift in Sources */,
 				0E2C0C9A1D56973300748BAF /* 98_ValidateBinarySearchTree.swift in Sources */,

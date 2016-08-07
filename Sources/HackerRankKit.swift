@@ -783,6 +783,7 @@ public extension Double {
  *   Python range() like Structure
  *
  *   it will generate a sequence from start to end with step. e.g start 1, end 10, step 2 -> 1, 3, 5, 7, 9
+ *   Note: end is exclusive
  */
 
 public struct SRange: SequenceType {
@@ -830,8 +831,6 @@ public class RangeGenerator: GeneratorType {
         }
     }
 }
-
-
 
 // MARK: Data Structures
 
