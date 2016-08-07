@@ -16,6 +16,7 @@ import Foundation
  */
 
 class SymmetricTree_Solution {
+  /// Bonus points: Iterative
   func isSymmetric(root: TreeNode?) -> Bool {
     guard let root = root else {
       return true
@@ -71,7 +72,7 @@ class SymmetricTree_Solution {
     return retVal
   }
   
-  /// A simpler solution
+  /// A simpler solution, recursive
   func solutionTwo(root: TreeNode?) -> Bool {
     guard let root = root else {
       return true
