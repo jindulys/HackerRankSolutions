@@ -32,6 +32,7 @@
 		0E5741AB1C001FAF004EB0FA /* HRSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5741AA1C001FAF004EB0FA /* HRSwiftUITests.swift */; };
 		0E6F18021CCCA49F00FDE043 /* input10.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F18001CCCA49F00FDE043 /* input10.txt */; };
 		0E6F18031CCCA49F00FDE043 /* output10.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F18011CCCA49F00FDE043 /* output10.txt */; };
+		0E6FAD471D577DB800C8D71D /* 205_IsomorphicString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAD461D577DB800C8D71D /* 205_IsomorphicString.swift */; };
 		0E91413F1D5596D600C4CEFC /* 110_BalancedBinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91413E1D5596D600C4CEFC /* 110_BalancedBinaryTree.swift */; };
 		0E9141411D56213D00C4CEFC /* 112_PathSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9141401D56213D00C4CEFC /* 112_PathSum.swift */; };
 		0E9141431D56372400C4CEFC /* 101_SymmetricTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9141421D56372400C4CEFC /* 101_SymmetricTree.swift */; };
@@ -97,6 +98,7 @@
 		0E5741AC1C001FAF004EB0FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E6F18001CCCA49F00FDE043 /* input10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input10.txt; sourceTree = "<group>"; };
 		0E6F18011CCCA49F00FDE043 /* output10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = output10.txt; sourceTree = "<group>"; };
+		0E6FAD461D577DB800C8D71D /* 205_IsomorphicString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 205_IsomorphicString.swift; sourceTree = "<group>"; };
 		0E91413E1D5596D600C4CEFC /* 110_BalancedBinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 110_BalancedBinaryTree.swift; sourceTree = "<group>"; };
 		0E9141401D56213D00C4CEFC /* 112_PathSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 112_PathSum.swift; sourceTree = "<group>"; };
 		0E9141421D56372400C4CEFC /* 101_SymmetricTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 101_SymmetricTree.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				0E2C0C9C1D56A18700748BAF /* 290_WordPattern.swift */,
 				0E2C0C9E1D56E4F900748BAF /* 344_ReverseString.swift */,
 				0E2C0CA01D56E9A700748BAF /* 345_ReverseVowelsOfAString.swift */,
+				0E6FAD461D577DB800C8D71D /* 205_IsomorphicString.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				0E9141411D56213D00C4CEFC /* 112_PathSum.swift in Sources */,
 				0EEDD4C41C3F635A00F94031 /* DynamicProgramming.swift in Sources */,
 				0E9141431D56372400C4CEFC /* 101_SymmetricTree.swift in Sources */,
+				0E6FAD471D577DB800C8D71D /* 205_IsomorphicString.swift in Sources */,
 				0E2C0C961D56714500748BAF /* 106_ConstructBinaryTreeFromInorderAndPostorderTraversal.swift in Sources */,
 				0EE20BA21D51910500455550 /* 100_SameTree.swift in Sources */,
 				0E2C0C981D5680B800748BAF /* 113_PathSumII.swift in Sources */,
