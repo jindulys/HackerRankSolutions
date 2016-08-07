@@ -51,7 +51,12 @@ Different folders are named after corresponding domain names or contest names.
 ## [LeetCode](https://leetcode.com)
 I won't create a seperate repo for `LeetCode` for now, unless I finish a lot of them.
 
-###[Tree]((Sources/Leetcode/Tree))
+###[String](Sources/Leetcode/String)
+Problem         |    Category           |    Difficulty   |    Space           | Time        
+--------------- |  -------------------- | --------------- | -------------------|--------
+[290 Word Pattern]( https://leetcode.com/problems/word-pattern/) |  String |  Easy |  O(n) |  O(n)
+
+###[Tree](Sources/Leetcode/Tree)
 Problem         |    Category           |    Difficulty   |    Space           | Time        
 --------------- |  -------------------- | --------------- | -------------------|--------
 [98 Validate Binary Search Tree]( https://leetcode.com/problems/validate-binary-search-tree/) |  Tree |  Medium |  O(n) |  O(n)
