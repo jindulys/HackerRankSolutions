@@ -48,36 +48,6 @@ Different folders are named after corresponding domain names or contest names.
 * [IndeedPrimeCodeSprint](https://www.hackerrank.com/contests/indeed-prime-codesprint/challenges)
 * [ZenefitsCodeSprint](https://www.hackerrank.com/contests/zenhacks/challenges)
 
-## [LeetCode](https://leetcode.com)
-I won't create a seperate repo for `LeetCode` for now, unless I finish a lot of them.
-
-###[String](Sources/Leetcode/String)
-Problem         |    Category           |    Difficulty   |    Space           | Time        
---------------- |  -------------------- | --------------- | -------------------|--------
-[205 Isomorphic Strings]( https://leetcode.com/problems/isomorphic-strings/) |  String |  Easy |  O(n) |  O(n) 
-[290 Word Pattern]( https://leetcode.com/problems/word-pattern/) |  String |  Easy |  O(n) |  O(n)
-[344 Reverse String]( https://leetcode.com/problems/reverse-string/) |  String |  Easy |  O(n) |  O(n)
-[345 Reverse Vowels of a String]( https://leetcode.com/problems/reverse-vowels-of-a-string/) |  String |  Easy |  O(n) |  O(n) 
-
-
-###[Tree](Sources/Leetcode/Tree)
-Problem         |    Category           |    Difficulty   |    Space           | Time        
---------------- |  -------------------- | --------------- | -------------------|--------
-[98 Validate Binary Search Tree]( https://leetcode.com/problems/validate-binary-search-tree/) |  Tree |  Medium |  O(n) |  O(n)
-[100 Same Tree](https://leetcode.com/problems/same-tree/) | Tree | Easy | O(n) | O(n)
-[101 Symmetric Tree]( https://leetcode.com/problems/symmetric-tree/) |  Tree |  Easy |  O(n) |  O(n)
-[102 Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Tree | Easy | O(n) | O(n)
-[104 Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Tree | Easy | O(n) | O(n)
-[105 Construct Binary Tree From Preorder and InOorer Traversal]( https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |  Tree |  Medium |  O(n) |  O(n)
-[106 Construct Binary Tree From Inorder and Postorder Traversal]( https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |  Tree |  Medium |  O(n) |  O(n)
-[110 Balanced Binary Tree]( https://leetcode.com/problems/balanced-binary-tree/) |  Tree |  Easy |  O(n) |  O(n)
-[111 Minimum Depth Of Binary Tree](https://leetcode.com/submissions/detail/69271743/) | Tree | Easy |  O(n) | O(n)
-[112 Path Sum]( https://leetcode.com/problems/path-sum/) |  Tree |  Easy |  O(n) |  O(n)
-[113 Path Sum II]( https://leetcode.com/problems/path-sum-ii/) |  Tree |  Medium |  O(n) |  O(n)
-[226 Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | Tree | Easy | O(n) | O(n)
-[337 House Robber III](https://leetcode.com/problems/house-robber-iii/) | Tree | Medium | O(n) | O(n)
-
-
 ## Data Structures in [HackerRankHelper](Sources/HackerRankHelper.swift)
 * FIFO Queue with Two Arraies
 * FIFO Queue with Listnode
