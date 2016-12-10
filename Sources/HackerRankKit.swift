@@ -209,7 +209,7 @@ public func getBetterPrimes(length:Int) -> [Int] {
     // This prime finder is a specific one because we want to find gap that is prime
     // so we start from 3
     var primes = [Int]()
-    if length < 3 {
+    if length < 2 {
         return primes
     }
     
