@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// CoinChangeProblem
 public class CoinChangeProblem {
     public init() {}
     
